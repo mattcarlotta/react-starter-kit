@@ -1,17 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
+import { Router } from 'react-router';
 import { hot } from 'react-hot-loader';
-import App from '../routes';
+import configureRoutes from '../routes';
 
-const Root = ({ store }) => (
+const routes = configureRoutes();
+
+const Root = ({ history, store }) => (
   <Provider store={store}>
-    <App />
+    <Router history={history} routes={routes} />
   </Provider>
 );
 
 export default hot(module)(Root);
 
 Root.propTypes = {
-  store: PropTypes.PropTypes.objectOf(PropTypes.func).isRequired,
+  history: PropTypes.objectOf(PropTypes.func),
+  store: PropTypes.PropTypes.objectOf(PropTypes.func),
 };

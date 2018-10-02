@@ -1,31 +1,20 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { IndexRoute, Route } from 'react-router';
 
-// import App from '../components/App';
+import App from '../components/App';
 import Home from '../components/Home';
 import NotFound from '../components/NotFound';
 
-export default () => (
-  <BrowserRouter>
-    <div>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="*" component={NotFound} />
-      </Switch>
-    </div>
-  </BrowserRouter>
-);
-
 // CONFIG APP VIEWS
-// const configureRoutes = () => {
-//   const routes = (
-//     <Switch>
-//       <Route path="/" component={Home} />
-//       <Route path="*" component={NotFound} />
-//     </Switch>
-//   );
-//
-//   return routes;
-// };
+const configureRoutes = () => {
+  const routes = (
+    <Route path="/" component={App}>
+      <IndexRoute component={Home} />
+      <Route path="*" component={NotFound} />
+    </Route>
+  );
 
-// export default configureRoutes;
+  return routes;
+};
+
+export default configureRoutes;
