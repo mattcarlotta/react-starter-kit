@@ -1,0 +1,17 @@
+.app {
+  @include h(100vh);
+  text-align: center;
+  color: $blue;
+  background-color: $navyblue;
+}
+
+.logoContainer {
+  @extend %centered;
+  @include c($white);
+  min-height: 100vh;
+}
+
+.logoStyle {
+  @include anim(flipIn infinite 2s linear);
+  height: 40vh;
+}

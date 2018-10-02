@@ -13,7 +13,9 @@
   },
   "root": true,
   "rules": {
-    "indent": ["error", 2],
+    "indent": 0,
+    "no-param-reassign": 0,
+    "no-return-assign": 0,
     "react/prefer-stateless-function": "warn",
     "react/self-closing-comp": [
       "warn",
@@ -41,13 +43,14 @@
     "jest/no-identical-title": "error",
     "jest/prefer-to-have-length": "warn",
     "jest/valid-expect": "error",
+    "react/destructuring-assignment": 0,
     "react/require-default-props": 0,
     "jsx-a11y/href-no-hash": "off",
     "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }],
     "react/jsx-boolean-value": ["warn", "never"],
-    "react/jsx-closing-bracket-location": ["warn", "after-props"],
+    "react/jsx-closing-bracket-location": 0,
     "react/jsx-curly-spacing": ["warn", "never"],
-    "react/jsx-filename-extension": ["warn", { "extensions": [".jsx"] }],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/jsx-first-prop-new-line": ["warn", "multiline"],
     "react/jsx-handler-names": [
       "warn",

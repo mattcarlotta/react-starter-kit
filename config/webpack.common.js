@@ -55,6 +55,7 @@ module.exports = {
       publicPath: commonPaths.outputPath,
     },
     open: true,
+    port: 3000,
   },
   resolve: {
     modules: ['src', 'node_modules'],
@@ -64,6 +65,7 @@ module.exports = {
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
       template: commonPaths.templatePath,
+      favicon: commonPaths.faviconPath,
     }),
   ],
 };

@@ -1,0 +1,53 @@
+@mixin anim($anim) {
+  webkit-animation: $anim;
+  animation: $anim;
+}
+@mixin b-c($color) {
+  background-color: $color;
+}
+@mixin b-s($shadows...) {
+  -moz-box-shadow: $shadows;
+  -webkit-box-shadow: $shadows;
+  box-shadow: $shadows;
+}
+@mixin c($color) {
+  color: $color;
+}
+@mixin f-f($family) {
+  font-family: $family;
+}
+@mixin f-s($size) {
+  font-size: $size;
+}
+@mixin f-w($weight) {
+  font-weight: $weight;
+}
+@mixin h($length) {
+  height: $length;
+}
+@mixin l-h($height) {
+  line-height: $height;
+}
+@mixin s($select) {
+  -webkit-user-select: $select;
+  -moz-user-select: $select;
+  -ms-user-select: $select;
+  user-select: $select;
+}
+@mixin trans($anim...) {
+  -o-transition: $anim;
+  -ms-transition: $anim;
+  -moz-transition: $anim;
+  -webkit-transition: $anim;
+  transition: $anim;
+}
+@mixin transY($scale) {
+  -o-transform: scaleY($scale);
+  -ms-transform: scaleY($scale);
+  -moz-transform: scaleY($scale);
+  -webkit-transform: scaleY($scale);
+  transform: scaleY($scale);
+}
+@mixin w($length) {
+  width: $length;
+}

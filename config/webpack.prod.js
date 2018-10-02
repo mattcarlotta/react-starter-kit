@@ -1,8 +1,24 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const commonPaths = require('./paths');
 
+const hashFilename = '[contenthash:8].css';
+
 module.exports = {
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true,
+      }),
+      new OptimizeCSSAssetsPlugin({
+        cssProcessorOptions: { map: { inline: false, annotation: true } },
+      }),
+    ],
+  },
   mode: 'production',
   output: {
     filename: `${commonPaths.jsFolder}/[name].[hash].js`,
@@ -34,8 +50,8 @@ module.exports = {
       root: commonPaths.root,
     }),
     new MiniCssExtractPlugin({
-      filename: `${commonPaths.cssFolder}/[name].css`,
-      chunkFilename: '[id].css',
+      filename: `${commonPaths.cssFolder}/[name].${hashFilename}`,
+      chunkFilename: `[id].${hashFilename}`,
     }),
   ],
   devtool: 'source-map',
