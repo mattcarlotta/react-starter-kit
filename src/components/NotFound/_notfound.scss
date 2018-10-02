@@ -1,0 +1,11 @@
+.notfoundContainer {
+  @extend %centered;
+  height: 100vh;
+  background-color: $navyblue;
+}
+
+.notfound {
+  color: $navyblue;
+  background-color: $navyblue;
+  padding: 100px;
+}

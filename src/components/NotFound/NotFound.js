@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import { notfound, notfoundContainer } from '../styles/index.css';
+import { notfound, notfoundContainer } from '../../styles/index.css';
 
 export default () => (
   <div className={notfoundContainer}>

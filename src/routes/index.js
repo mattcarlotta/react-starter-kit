@@ -2,8 +2,8 @@ import React from 'react';
 import { IndexRoute, Route } from 'react-router';
 
 import App from '../components/App';
-import Home from '../components/Home';
-import NotFound from '../components/NotFound';
+import Home from '../components/Home/Home';
+import NotFound from '../components/NotFound/NotFound';
 
 // CONFIG APP VIEWS
 const configureRoutes = () => {

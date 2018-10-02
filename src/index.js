@@ -5,7 +5,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import { browserHistory } from 'react-router';
 import configureStore from './store';
 import Root from './root';
-import './styles/index.css';
+// import './styles/index.css';
 
 const store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store);
@@ -24,7 +24,7 @@ render(Root);
 
 if (module.hot) {
   module.hot.accept('./root', () => {
-    const NextRoot = require('./root').default; // eslint-disable-line global-require
-    render(NextRoot);
+    // const Root = require('./root').default; // eslint-disable-line global-require
+    render(Root);
   });
 }
