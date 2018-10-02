@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { persistRedux } from '../actions';
 
-const Button = ({ persist, persistReduxState }) => (
+const ButtonWrapper = ({ persist, persistReduxState }) => (
   <div>
     <button type="button" onClick={persistReduxState}>
       Test Redux
@@ -12,12 +12,17 @@ const Button = ({ persist, persistReduxState }) => (
   </div>
 );
 
-export default connect(
+export const Button = connect(
   state => ({ persist: state.testing }),
   { persistReduxState: persistRedux },
-)(Button);
+)(ButtonWrapper);
 
-Button.propTypes = {
+// export default connect(
+//   state => ({ persist: state.testing }),
+//   { persistReduxState: persistRedux },
+// )(Button);
+
+ButtonWrapper.propTypes = {
   persistReduxState: PropTypes.func,
   persist: PropTypes.string,
 };

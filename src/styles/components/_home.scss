@@ -15,3 +15,7 @@
   @include anim(flipIn infinite 2s linear);
   height: 40vh;
 }
+
+.title {
+  @include c($white);
+}
