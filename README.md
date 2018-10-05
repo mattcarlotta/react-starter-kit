@@ -58,7 +58,7 @@ Note: A fullstack M.E.R.N boilerplate can be found on the <a href="https://githu
 └── webpack.config.js
 ```
 
-### Installation
+## Installation
 
 1 - Clone the boilerplate repo
 
@@ -74,7 +74,7 @@ To build and bundle your client resources for production, use `npm run build` wh
 
 Unit testing will watch all your changes in the test files as well as create coverage folder for you via `npm run test`.
 
-### Configuration
+## Configuration
 
 - Webpack config paths are based on the file structure in `config/paths.js` (modify the source and file names based upon your needs).
 - `client/config/webpack.common.js` common webpack config for both development and production environments.
@@ -86,7 +86,7 @@ Unit testing will watch all your changes in the test files as well as create cov
 - Prettier config `client/.prettierc`.
 - Browsers list config `client/.browserslistrc`.
 
-#### Packages Incorporated
+## Packages Incorporated
 
 - [Webpack 4](https://github.com/webpack/webpack)
 - [Babel 7](https://github.com/babel/babel)
