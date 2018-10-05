@@ -1,5 +1,3 @@
-const bcrypt = require("bcrypt-nodejs");
-
 module.exports = app => {
   const { badCredentials } = app.shared.authErrors;
   const bcrypt = app.get("bcrypt");

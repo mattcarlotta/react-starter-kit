@@ -7,9 +7,6 @@ client/src/styles/assets
 client/src/styles/styles.css
 client/node_modules
 
-#env
-*.env
-env/
 
 #Server files and folders
 uploads/
