@@ -17,9 +17,6 @@ scrap/
 prod.json
 flightplan.js
 
-# Config
-**/config
-
 # Logs
 logs
 *.log
