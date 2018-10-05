@@ -95,7 +95,7 @@ Unit testing will watch all your changes in the test files as well as create cov
 - Prettier config `client/.prettierc`.
 - Browsers list config `client/.browserslistrc`.
 
-#### Packages Incorporated
+### Packages Incorporated
 
 ## Client
 
