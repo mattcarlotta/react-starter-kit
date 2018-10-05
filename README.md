@@ -4,7 +4,7 @@ A fork from <a href="https://github.com/Kara8ass1337/webpack-react-learn">Webpac
 
 Note: This a M.E.R.N. (Mongo, Express, React, NodeJS) fullstack boilerplate!
 
-### Table of contents
+## Table of contents
 
 [Project structure](#project-structure)
 
@@ -14,7 +14,7 @@ Note: This a M.E.R.N. (Mongo, Express, React, NodeJS) fullstack boilerplate!
 
 [Packages Incorporated](#packages-incorporated)
 
-### Project structure
+## Project structure
 
 ```
 ├── client
@@ -67,7 +67,7 @@ Note: This a M.E.R.N. (Mongo, Express, React, NodeJS) fullstack boilerplate!
 └── app.js
 ```
 
-### Installation
+## Installation
 
 1 - Clone the boilerplate repo
 
@@ -79,11 +79,11 @@ Note: This a M.E.R.N. (Mongo, Express, React, NodeJS) fullstack boilerplate!
 
 3 - While at the app's `root` folder, start both servers using `npm run dev`.
 
-To build and bundle your client resources for production, use `npm run build` with inside the client's `root` folder.
+To build and bundle your client resources for production, use `npm run build` while inside the client's `root` folder.
 
 Unit testing will watch all your changes in the test files as well as create coverage folder for you via `npm run test`
 
-### Client Configuration
+## Client Configuration
 
 - Webpack config paths are based on the file structure in `config/paths.js` (modify the source and file names based upon your needs).
 - `client/config/webpack.common.js` common webpack config for both development and production environments.
