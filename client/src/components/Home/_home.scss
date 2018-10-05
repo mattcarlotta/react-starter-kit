@@ -1,0 +1,17 @@
+.app {
+  @extend %t-a-c;
+  height: 100vh;
+  color: $blue;
+  background-color: $black;
+}
+
+.logoContainer {
+  @extend %centered;
+  color: $warmgrey;
+  min-height: 100vh;
+}
+
+.logoStyle {
+  height: 20vh;
+  margin-bottom: 20px;
+}
