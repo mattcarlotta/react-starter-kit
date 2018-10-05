@@ -95,9 +95,9 @@ Unit testing will watch all your changes in the test files as well as create cov
 - Prettier config `client/.prettierc`.
 - Browsers list config `client/.browserslistrc`.
 
-### Packages Incorporated
+## Packages Incorporated
 
-## Client
+### Client
 
 - [Webpack 4](https://github.com/webpack/webpack)
 - [Babel 7](https://github.com/babel/babel)
@@ -127,7 +127,7 @@ Unit testing will watch all your changes in the test files as well as create cov
 - [Browsers List](https://github.com/browserslist/browserslist)
 - [Webpack Dev Server (Hot Loaded)](https://github.com/webpack/webpack-dev-server)
 
-## Server
+### Server
 
 - [Bcrypt](https://github.com/kelektiv/node.bcrypt.js)
 - [Bluebird](https://github.com/petkaantonov/bluebird)
