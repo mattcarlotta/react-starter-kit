@@ -4,8 +4,6 @@ A fork from <a href="https://github.com/Kara8ass1337/webpack-react-learn">Webpac
 
 Note: This a M.E.R.N. (Mongo, Express, React, NodeJS) fullstack boilerplate!
 
-<img src="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/fullstack/client/src/images/mernLogo.png" width="600px" alt="mernLogo.png"/>
-
 ### Table of contents
 
 [Project structure](#project-structure)
@@ -20,7 +18,7 @@ Note: This a M.E.R.N. (Mongo, Express, React, NodeJS) fullstack boilerplate!
 
 ```
 ├── client
-|   └── build
+|   ├── build
 |   |   ├── css
 |   |   |   ├── main.[contenthash:8].css
 |   |   |   └── main.[contenthash:8].css.map
@@ -74,7 +72,7 @@ Note: This a M.E.R.N. (Mongo, Express, React, NodeJS) fullstack boilerplate!
 1 - Clone the boilerplate repo
 
 ```
- git clone git@github.com:mattcarlotta/Webpack-React-Boilerplate.git/
+ git clone -b fullstack git@github.com:mattcarlotta/Webpack-React-Boilerplate.git/
 ```
 
 2 - `npm i && cd client && npm i` to install npm packages
