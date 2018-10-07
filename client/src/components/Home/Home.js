@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../../images/mernLogo.png';
 import { app, logoContainer, logoStyle, title } from './home.scss';
 
-const Home = () => (
+export default () => (
   <div className={app}>
     <div className={logoContainer}>
       <img className={logoStyle} src={logo} alt="" />
@@ -11,5 +11,3 @@ const Home = () => (
     </div>
   </div>
 );
-
-export default Home;
