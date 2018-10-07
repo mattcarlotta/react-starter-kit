@@ -11,6 +11,13 @@
     "seeds": "NODE_ENV=development node seeds.js",
     "precommit": "lint-staged"
   },
+  "lint-staged": {
+    "*.{js}": [
+      "prettier --write --single-quote",
+      "eslint --fix",
+      "git add"
+    ]
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -28,6 +35,7 @@
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
+    "eslint": "^5.6.1",
     "lint-staged": "^7.3.0",
     "nodemon": "^1.17.4",
     "prettier": "^1.14.3"
