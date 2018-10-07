@@ -2,8 +2,6 @@
 
 A fork from <a href="https://github.com/HashemKhalifa/webpack-react-boilerplate">Webpack React Boilerplate</a>. This is a highly opinionated boilerplate and may not be suitable for everyone.
 
-Note: A react-router v4 boilerplate can be found on the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/development">development</a> branch.
-
 Note: A fullstack M.E.R.N boilerplate can be found on the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/fullstack">fullstack</a> branch.
 
 ## Table of contents
@@ -104,10 +102,9 @@ Unit testing will watch all your changes in the test files as well as create cov
 - [Enzyme](http://airbnb.io/enzyme/)
 - [Eslint](https://github.com/eslint/eslint/)
 - [Prettier](https://github.com/prettier/prettier)
-- [Style Loader](https://github.com/webpack-contrib/style-loader)
 - [CSS Loader](https://github.com/webpack-contrib/css-loader)
 - [Sass Loader](https://github.com/webpack-contrib/sass-loader)
-- [Node Sass Chokidar](https://github.com/michaelwayman/node-sass-chokidar)
+- [Style Loader](https://github.com/webpack-contrib/style-loader)
 - [Mini CSS Extract Plugin](https://github.com/webpack-contrib/mini-css-extract-plugin)
 - [UglifyJS Webpack Plugin](https://www.npmjs.com/package/uglifyjs-webpack-plugin)
 - [Browsers list](https://github.com/browserslist/browserslist)
