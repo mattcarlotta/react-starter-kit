@@ -1,6 +1,6 @@
 ## Webpack FullStack Boilerplate
 
-A fork from <a href="https://github.com/Kara8ass1337/webpack-react-learn">Webpack React Learn</a>. This is a highly opinionated boilerplate and may not be suitable for everyone.
+A fork from <a href="https://github.com/HashemKhalifa/webpack-react-boilerplate">Webpack React Boilerplate</a>. This is a highly opinionated boilerplate and may not be suitable for everyone.
 
 Note: This a M.E.R.N. (Mongo, Express, React, NodeJS) fullstack boilerplate!
 
@@ -116,10 +116,9 @@ Unit testing will watch all your changes in the test files as well as create cov
 - [Enzyme](http://airbnb.io/enzyme/)
 - [Eslint](https://github.com/eslint/eslint/)
 - [Prettier](https://github.com/prettier/prettier)
-- [Style Loader](https://github.com/webpack-contrib/style-loader)
 - [CSS Loader](https://github.com/webpack-contrib/css-loader)
+- [Style Loader](https://github.com/webpack-contrib/style-loader)
 - [Sass Loader](https://github.com/webpack-contrib/sass-loader)
-- [Node Sass Chokidar](https://github.com/michaelwayman/node-sass-chokidar)
 - [Mini CSS Extract Plugin](https://github.com/webpack-contrib/mini-css-extract-plugin)
 - [Error Overlay Webpack Plugin](https://github.com/smooth-code/error-overlay-webpack-plugin)
 - [Friendly Errors Webpack Plugin](https://github.com/geowarin/friendly-errors-webpack-plugin)

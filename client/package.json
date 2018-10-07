@@ -4,10 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
-    "dev": "npm-run-all -p watch-css start",
-    "start": "cross-env NODE_ENV=development webpack-dev-server",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --open",
     "build": "cross-env NODE_ENV=production webpack",
     "format": "prettier --write 'packages/**/*.js'",
     "test": "jest --watchAll --coverage",

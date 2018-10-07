@@ -1,3 +1,8 @@
+@import '../../styles/colors';
+@import '../../styles/mixins';
+@import '../../styles/ext';
+@import '../../styles/anim';
+
 .notfoundContainer {
   @extend %centered;
   height: 100vh;
@@ -5,7 +10,7 @@
 }
 
 .notfound {
-  color: $navyblue;
+  color: $black;
   background-color: $white;
   padding: 100px;
 }

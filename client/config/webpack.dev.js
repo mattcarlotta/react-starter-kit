@@ -1,7 +1,5 @@
 const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
-const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
 const { outputPath } = require('./paths');
 
 module.exports = {
@@ -23,35 +21,18 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(css)$/,
+        test: /\.(css|scss)$/,
         use: [
           'style-loader',
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 1,
+              sourceMap: true,
               modules: true,
               localIdentName: '[local]___[hash:base64:5]',
             },
           },
-          {
-            loader: 'postcss-loader',
-            options: {
-              ident: 'postcss',
-              plugins: () => [
-                require('postcss-flexbugs-fixes'), // eslint-disable-line global-require
-                autoprefixer({
-                  browsers: [
-                    '>1%',
-                    'last 4 versions',
-                    'Firefox ESR',
-                    'not ie < 9',
-                  ],
-                  flexbox: 'no-2009',
-                }),
-              ],
-            },
-          },
+          'sass-loader',
         ],
       },
     ],
@@ -65,7 +46,6 @@ module.exports = {
       additionalFormatters: [],
       additionalTransformers: [],
     }),
-    new ErrorOverlayPlugin(),
     new webpack.HotModuleReplacementPlugin(),
   ],
   devtool: 'source-map',

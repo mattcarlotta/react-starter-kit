@@ -1,13 +1,10 @@
 const webpack = require('webpack');
-const convert = require('koa-connect');
-const history = require('connect-history-api-fallback');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {
   entryPath,
   imagesFolder,
   faviconPath,
   fontsFolder,
-  outputPath,
   templatePath,
 } = require('./paths');
 

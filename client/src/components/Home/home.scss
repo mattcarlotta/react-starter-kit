@@ -1,3 +1,13 @@
+@import '../../styles/colors';
+@import '../../styles/mixins';
+@import '../../styles/ext';
+@import '../../styles/anim';
+
+html,
+body {
+  @extend %m-0;
+}
+
 .app {
   @extend %t-a-c;
   height: 100vh;
