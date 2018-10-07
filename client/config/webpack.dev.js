@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
 const { outputPath } = require('./paths');
 
 module.exports = {
@@ -46,6 +47,7 @@ module.exports = {
       additionalFormatters: [],
       additionalTransformers: [],
     }),
+    new ErrorOverlayPlugin(),
     new webpack.HotModuleReplacementPlugin(),
   ],
   devtool: 'source-map',
