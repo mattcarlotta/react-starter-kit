@@ -66,7 +66,7 @@ Note: A fullstack M.E.R.N boilerplate can be found on the <a href="https://githu
 
 2 - `npm i` to install npm packages
 
-3 - While at the app's `root` folder, start `webpack-dev-server` using `npm run dev`.
+3 - While at the app's `root` folder, start `webpack-dev-server` using `npm start`.
 
 To build and bundle your client resources for production, use `npm run build` while inside the `root` folder.
 
