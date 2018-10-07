@@ -1,6 +1,6 @@
 ## Webpack React Boilerplate
 
-A fork from <a href="https://github.com/Kara8ass1337/webpack-react-learn">Webpack React Learn</a>. This is a highly opinionated boilerplate and may not be suitable for everyone.
+A fork from <a href="https://github.com/HashemKhalifa/webpack-react-boilerplate">Webpack React Boilerplate</a>. This is a highly opinionated boilerplate and may not be suitable for everyone.
 
 Note: A react-router v4 boilerplate can be found on the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/development">development</a> branch.
 
@@ -70,7 +70,7 @@ Note: A fullstack M.E.R.N boilerplate can be found on the <a href="https://githu
 
 3 - While at the app's `root` folder, start `webpack-dev-server` using `npm run dev`.
 
-To build and bundle your client resources for production, use `npm run build` while inside the client's `root` folder.
+To build and bundle your client resources for production, use `npm run build` while inside the `root` folder.
 
 Unit testing will watch all your changes in the test files as well as create coverage folder for you via `npm run test`.
 

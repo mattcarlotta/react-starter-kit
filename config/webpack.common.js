@@ -1,13 +1,10 @@
 const webpack = require('webpack');
-const convert = require('koa-connect');
-const history = require('connect-history-api-fallback');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {
   entryPath,
   imagesFolder,
   faviconPath,
   fontsFolder,
-  outputPath,
   templatePath,
 } = require('./paths');
 
@@ -52,17 +49,6 @@ module.exports = {
         ],
       },
     ],
-  },
-  serve: {
-    add: app => {
-      app.use(convert(history()));
-    },
-    content: entryPath,
-    dev: {
-      publicPath: outputPath,
-    },
-    open: true,
-    port: 3000,
   },
   resolve: {
     modules: ['src', 'node_modules'],
