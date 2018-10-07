@@ -8,15 +8,7 @@
     "server": "NODE_ENV=development nodemon app.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "seeds": "NODE_ENV=development node seeds.js",
-    "precommit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.{js}": [
-      "prettier --write --single-quote",
-      "eslint --fix",
-      "git add"
-    ]
+    "seeds": "NODE_ENV=development node seeds.js"
   },
   "author": "",
   "license": "ISC",
@@ -35,8 +27,6 @@
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
-    "eslint": "^5.6.1",
-    "lint-staged": "^7.3.0",
     "nodemon": "^1.17.4",
     "prettier": "^1.14.3"
   },
