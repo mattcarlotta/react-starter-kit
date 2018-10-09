@@ -48,7 +48,6 @@ module.exports = (app) => {
     parseStringToNum: str => parseInt(str, 10),
     sendError: (err, res, done) => {
       res.status(500).json({ err: err.toString() });
-      done();
     },
   };
 };

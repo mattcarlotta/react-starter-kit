@@ -9,6 +9,7 @@ import rootReducer from '../reducers';
 import routes from '../routes';
 
 const _bob = 'Wow';
+const _talyor = 'Snak';
 
 const configureMiddleware = reducer =>
   createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
