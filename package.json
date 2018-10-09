@@ -42,8 +42,8 @@
   "description": "",
   "husky": {
     "hooks": {
-      "pre-commit": "concurrently \"npm run precommit --prefix client\" \"lint-staged\"",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "pre-commit": "npm-run-all -s npm run precommit --prefix client lint-js",
+      "lint-js": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }
 }
