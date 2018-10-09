@@ -5,7 +5,6 @@ import App from '../components/App';
 import Home from '../components/Home/Home';
 import NotFound from '../components/NotFound/NotFound';
 
-// CONFIG APP VIEWS
 export default (
   <Fragment>
     <Route path="/" component={App}>

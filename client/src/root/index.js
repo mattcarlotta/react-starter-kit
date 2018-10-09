@@ -8,14 +8,10 @@ import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
 import routes from '../routes';
 
-/* eslint-disable no-underscore-dangle */
-const composeEnhancers = composeWithDevTools({
-  // Specify here name, actionsBlacklist, actionsCreators and other options
-});
-/* eslint-enable */
+const _bob = "Wow"
 
 const configureMiddleware = reducer =>
-  createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
+  createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
 
 const store = configureMiddleware(rootReducer);
 const history = syncHistoryWithStore(browserHistory, store);

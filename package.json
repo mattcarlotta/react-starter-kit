@@ -8,13 +8,13 @@
     "server": "NODE_ENV=development nodemon app.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "seeds": "NODE_ENV=development node seeds.js",
-    "precommit": "lint-staged"
+    "seeds": "NODE_ENV=development node seeds.js"
   },
   "lint-staged": {
     "*.js": [
       "prettier --write --single-quote",
-      "eslint --fix"
+      "eslint --fix",
+      "git add"
     ]
   },
   "author": "",
@@ -40,5 +40,11 @@
     "nodemon": "^1.17.4",
     "prettier": "^1.14.3"
   },
-  "description": ""
+  "description": "",
+  "husky": {
+    "hooks": {
+      "pre-commit": "start npm run precommit --prefix client && start lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
 }
