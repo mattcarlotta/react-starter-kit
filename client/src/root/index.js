@@ -8,7 +8,10 @@ import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
 import routes from '../routes';
 
-const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(thunk)),
+);
 const history = syncHistoryWithStore(browserHistory, store);
 
 export default () => (

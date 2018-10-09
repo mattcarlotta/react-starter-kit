@@ -1,6 +1,6 @@
 module.exports = {
-  extends: "airbnb-base",
+  extends: 'airbnb-base',
   rules: {
-    "no-plusplus": [2, { allowForLoopAfterthoughts: true }]
-  }
+    'no-plusplus': [2, { allowForLoopAfterthoughts: true }],
+  },
 };
