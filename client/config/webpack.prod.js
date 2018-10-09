@@ -24,6 +24,7 @@ module.exports = {
     filename: `${jsFolder}/[name].[hash].js`,
     path: outputPath,
     chunkFilename: '[name].[chunkhash].js',
+    publicPath: '/',
   },
   module: {
     rules: [
