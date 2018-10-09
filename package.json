@@ -13,8 +13,7 @@
   "lint-staged": {
     "*.js": [
       "prettier --write --single-quote",
-      "eslint --fix",
-      "git add"
+      "eslint --fix"
     ]
   },
   "author": "",
@@ -43,7 +42,7 @@
   "description": "",
   "husky": {
     "hooks": {
-      "pre-commit": "start npm run precommit --prefix client && start npm lint-staged",
+      "pre-commit": "concurrently \"npm run precommit --prefix client\" \"lint-staged\"",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }
