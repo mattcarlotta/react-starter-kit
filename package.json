@@ -8,7 +8,8 @@
     "server": "NODE_ENV=development nodemon app.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "seeds": "NODE_ENV=development node seeds.js"
+    "seeds": "NODE_ENV=development node seeds.js",
+    "lint": "lint-staged"
   },
   "lint-staged": {
     "*.js": [
