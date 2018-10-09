@@ -8,19 +8,11 @@ import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
 import routes from '../routes';
 
-const _bob = 'Wow';
-const _talyor = 'Snak';
-
-const configureMiddleware = reducer =>
-  createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
-
-const store = configureMiddleware(rootReducer);
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
 const history = syncHistoryWithStore(browserHistory, store);
 
-const App = () => (
+export default () => (
   <Provider store={store}>
     <Router history={history} routes={routes} />
   </Provider>
 );
-
-export default App;
