@@ -13,8 +13,7 @@
   "lint-staged": {
     "*.{js,jsx,css}": [
       "prettier --write --single-quote",
-      "eslint --fix",
-      "git add"
+      "eslint --fix"
     ]
   },
   "jest": {
