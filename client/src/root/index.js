@@ -8,8 +8,6 @@ import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
 import routes from '../routes';
 
-const _bob = "Wow"
-
 const configureMiddleware = reducer =>
   createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
 
