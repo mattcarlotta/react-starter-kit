@@ -42,7 +42,7 @@
   "description": "",
   "husky": {
     "hooks": {
-      "pre-commit": "npm-run-all -s npm run precommit --prefix client lint-staged"
+      "pre-commit": "lint-staged"
     }
   }
 }
