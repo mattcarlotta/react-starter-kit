@@ -10,7 +10,7 @@
     "lint-front": "npm run pre-commit --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "seeds": "NODE_ENV=development node seeds.js",
-    "lint": "npm run lint-front --silent || npm run pre-commit --silent",
+    "lint": "npm run lint-front --silent && npm run pre-commit --silent",
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
