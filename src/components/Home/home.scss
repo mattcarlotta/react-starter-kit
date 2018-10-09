@@ -1,4 +1,4 @@
-@import '../../styles/colors';
+@import '../../styles/vars';
 @import '../../styles/mixins';
 @import '../../styles/ext';
 @import '../../styles/anim';
@@ -17,6 +17,7 @@ body {
 
 .logoContainer {
   @extend %centered;
+  font-family: $rubik;
   color: $white;
   min-height: 100vh;
 }

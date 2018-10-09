@@ -1,4 +1,4 @@
-@import '../../styles/colors';
+@import '../../styles/vars';
 @import '../../styles/ext';
 
 .notfoundContainer {
@@ -10,5 +10,6 @@
 .notfound {
   color: $navyblue;
   background-color: $white;
+  font-family: $rubik;
   padding: 100px;
 }

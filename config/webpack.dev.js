@@ -8,6 +8,7 @@ module.exports = {
     filename: '[name].js',
     path: outputPath,
     chunkFilename: '[name].js',
+    publicPath: '/',
   },
   devServer: {
     host: 'localhost',
