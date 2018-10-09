@@ -7,18 +7,14 @@
     "start": "NODE_ENV=development webpack-dev-server --open",
     "build": "NODE_ENV=production webpack",
     "format": "prettier --write 'packages/**/*.js'",
-    "test": "jest --watchAll --coverage"
+    "test": "jest --watchAll --coverage",
+    "pre-commit": "lint-staged"
   },
   "lint-staged": {
     "*.{js,jsx,css}": [
       "prettier --write --single-quote",
       "eslint --fix"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "jest": {
     "testEnvironment": "jsdom",
