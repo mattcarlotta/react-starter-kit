@@ -5,7 +5,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import { browserHistory } from 'react-router';
 import configureStore from './store';
 import Root from './root';
-import './styles/fonts/fonts.scss';
+import './styles/statics/fonts.scss';
 
 const store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store);
