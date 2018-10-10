@@ -11,7 +11,7 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,jsx,css}": [
+    "*.{js,jsx,scss}": [
       "prettier --write --single-quote",
       "eslint --fix"
     ]
