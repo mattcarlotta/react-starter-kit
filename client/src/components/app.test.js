@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import App from '../../root';
+import App from './App';
 
 describe('<App />', () => {
   const wrap = mount(<App />);

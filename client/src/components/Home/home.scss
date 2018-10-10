@@ -1,12 +1,4 @@
-@import '../../styles/vars';
-@import '../../styles/mixins';
-@import '../../styles/ext';
-@import '../../styles/anim';
-
-html,
-body {
-  @extend %m-0;
-}
+@import '../../styles/styles';
 
 .app {
   @extend %t-a-c;
