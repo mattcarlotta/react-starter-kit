@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './root';
-import './styles/fonts/fonts.scss';
+import './styles/statics/fonts.scss';
 
 const render = () => {
   ReactDOM.render(<App />, document.getElementById('root'));
