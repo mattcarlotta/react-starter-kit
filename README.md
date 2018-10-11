@@ -79,9 +79,9 @@ Note: This a M.E.R.N. (Mongo, Express, React, NodeJS) fullstack boilerplate!
 
 3 - While at the app's `root` folder, start both servers using `npm run dev`.
 
-To build and bundle your client resources for production, use `npm run build` while inside the client's `root` folder.
+To build and bundle your client resources for production, use `npm run build` while inside the client's `root` folder. After you have built your React application, simply use `npm start` while at the application's `root` folder. You should now see your React application running on `http://localhost:5000`.
 
-Unit testing will watch all your changes in the test files as well as create coverage folder for you via `npm run test`
+Unit testing will watch all your changes in the test files as well as create coverage folder for you via `npm run test`, while inside the client's `root` folder.
 
 ## Client Configuration
 
