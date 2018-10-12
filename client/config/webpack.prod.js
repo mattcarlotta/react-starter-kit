@@ -2,7 +2,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const { cssFolder, jsFolder, outputPath, root } = require('./paths');
+const { cssFolder, globalCSS, jsFolder, outputPath, root } = require('./paths');
 
 const hashFilename = '[contenthash:8].css';
 
