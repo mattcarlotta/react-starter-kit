@@ -1,11 +1,12 @@
-const path = require('path');
+const resolve = require('path').resolve;
 
 module.exports = {
-  root: path.resolve(__dirname, '../'),
-  outputPath: path.resolve(__dirname, '../', 'build'),
-  entryPath: path.resolve(__dirname, '../', 'src/index.js'),
-  templatePath: path.resolve(__dirname, '../', 'public/index.html'),
-  faviconPath: path.resolve(__dirname, '../', 'public/favicon.ico'),
+  root: resolve(__dirname, '../'),
+  outputPath: resolve(__dirname, '../', 'build'),
+  entryPath: resolve(__dirname, '../', 'src/index.js'),
+  templatePath: resolve(__dirname, '../', 'public/index.html'),
+  faviconPath: resolve(__dirname, '../', 'public/favicon.ico'),
+  globalCSS: resolve(__dirname, '../', 'src/styles/globals'),
   imagesFolder: 'media',
   fontsFolder: 'assets',
   cssFolder: 'css',

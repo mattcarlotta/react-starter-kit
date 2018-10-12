@@ -29,7 +29,8 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(css|scss)$/,
+        test: /\.s?css$/,
+        exclude: [globalCSS],
         use: [
           MiniCssExtractPlugin.loader,
           {
@@ -40,6 +41,17 @@ module.exports = {
               camelCase: true,
               localIdentName: '[local]___[hash:base64:5]',
             },
+          },
+          'sass-loader',
+        ],
+      },
+      {
+        test: /\.s?css$/,
+        include: [globalCSS],
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
           },
           'sass-loader',
         ],

@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
-const { outputPath } = require('./paths');
+const { globalCSS, outputPath } = require('./paths');
 
 module.exports = {
   mode: 'development',
@@ -23,7 +23,8 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(css|scss)$/,
+        test: /\.s?css$/,
+        exclude: [globalCSS],
         use: [
           'style-loader',
           {
@@ -34,6 +35,15 @@ module.exports = {
               localIdentName: '[local]___[hash:base64:5]',
             },
           },
+          'sass-loader',
+        ],
+      },
+      {
+        test: /\.s?css$/,
+        include: [globalCSS],
+        use: [
+          'style-loader',
+          'css-loader',
           'sass-loader',
         ],
       },
