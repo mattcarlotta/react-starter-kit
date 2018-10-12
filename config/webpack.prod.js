@@ -2,7 +2,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const { cssFolder, jsFolder, outputPath, root } = require('./paths');
+const { cssFolder, globalCSS, jsFolder, outputPath, root } = require('./paths');
 
 const hashFilename = '[contenthash:8].css';
 
@@ -29,7 +29,8 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(css|scss)$/,
+        test: /\.s?css$/,
+        exclude: [globalCSS],
         use: [
           MiniCssExtractPlugin.loader,
           {
@@ -40,6 +41,17 @@ module.exports = {
               camelCase: true,
               localIdentName: '[local]___[hash:base64:5]',
             },
+          },
+          'sass-loader',
+        ],
+      },
+      {
+        test: /\.s?css$/,
+        include: [globalCSS],
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
           },
           'sass-loader',
         ],

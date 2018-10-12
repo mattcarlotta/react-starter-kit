@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
-const { outputPath } = require('./paths');
+const { globalCSS, outputPath } = require('./paths');
 
 module.exports = {
   mode: 'development',
@@ -22,7 +22,8 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(css|scss)$/,
+        test: /\.s?css$/,
+        exclude: [globalCSS],
         use: [
           'style-loader',
           {
@@ -35,6 +36,11 @@ module.exports = {
           },
           'sass-loader',
         ],
+      },
+      {
+        test: /\.s?css$/,
+        include: [globalCSS],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
     ],
   },
