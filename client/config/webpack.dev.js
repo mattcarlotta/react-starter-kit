@@ -41,18 +41,20 @@ module.exports = {
       {
         test: /\.s?css$/,
         include: [globalCSS],
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
-        ],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
     ],
   },
   plugins: [
     new FriendlyErrorsWebpackPlugin({
       compilationSuccessInfo: {
-        messages: ['Your application is running on http://localhost:3000'],
+        messages: [
+          `Your application is running on \x1b[1mhttp://localhost:3000\x1b[0m`,
+        ],
+        notes: [
+          `Note that the development build is not optimized.`,
+          `To create a production build, use \x1b[1m\x1b[32mnpm run build\x1b[0m.\n`,
+        ],
       },
       clearConsole: true,
       additionalFormatters: [],
