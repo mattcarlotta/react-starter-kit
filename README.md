@@ -4,7 +4,7 @@ A fork from <a href="https://github.com/HashemKhalifa/webpack-react-boilerplate"
 
 Note: A fullstack M.E.R.N boilerplate can be found on the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/fullstack">fullstack</a> branch.
 
-![LFJ4iEO.gif](https://i.imgur.com/LFJ4iEO.gif)
+![w8bgjLE.gif](https://i.imgur.com/w8bgjLE.gif)
 
 ## Table of contents
 
