@@ -1,4 +1,4 @@
-const webpack = require('webpack');
+const WebpackBar = require('webpackbar');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {
   entryPath,
@@ -55,7 +55,10 @@ module.exports = {
     extensions: ['*', '.js', '.jsx', '.css', '.scss'],
   },
   plugins: [
-    new webpack.ProgressPlugin(),
+    new WebpackBar({
+      minimal: false,
+      compiledIn: false,
+    }),
     new HtmlWebpackPlugin({
       template: templatePath,
       favicon: faviconPath,
