@@ -4,7 +4,7 @@ A fork from <a href="https://github.com/HashemKhalifa/webpack-react-boilerplate"
 
 Note: This a M.E.R.N. (Mongo, Express, React, NodeJS) fullstack boilerplate!
 
-![gYk7UsY.gif](https://i.imgur.com/gYk7UsY.gif)
+![Inv096o.gif](https://i.imgur.com/Inv096o.gif)
 
 ## Table of contents
 
