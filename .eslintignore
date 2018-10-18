@@ -1,5 +1,6 @@
 node_modules/
 */node_modules/
+client/build
 client/public
 client/coverage
 client/node_modules
