@@ -52,6 +52,11 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
+            options: {
+              sourceMap: true,
+              camelCase: true,
+              localIdentName: '[local]___[hash:base64:5]',
+            },
           },
           'sass-loader',
         ],
