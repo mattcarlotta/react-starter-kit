@@ -40,7 +40,18 @@ module.exports = {
       {
         test: /\.s?css$/,
         include: [globalCSS],
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+              camelCase: true,
+              localIdentName: '[local]___[hash:base64:5]',
+            },
+          },
+          'sass-loader',
+        ],
       },
     ],
   },
