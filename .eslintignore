@@ -1,6 +1,10 @@
 node_modules/
 */node_modules/
+client/
+*/client/
 client/build
+client/config
+client/src
 client/public
 client/coverage
 client/node_modules
