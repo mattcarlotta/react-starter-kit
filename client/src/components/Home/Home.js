@@ -7,6 +7,7 @@ export default () => (
     <div className={logoContainer}>
       <img className={logoStyle} src={logo} alt="" />
       {test}
+      {weow}
       <h1 className={title}>Webpack React Boilerplate</h1>
       <h1 className={title}>Edit ./components and save to reload.</h1>
     </div>
