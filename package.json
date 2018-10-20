@@ -10,7 +10,7 @@
     "test": "jest --watchAll --coverage"
   },
   "lint-staged": {
-    "*.{js,jsx,scss}": [
+    "*.{js,jsx}": [
       "prettier --write --single-quote",
       "eslint --fix",
       "git add"
