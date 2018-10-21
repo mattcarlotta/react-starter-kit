@@ -14,7 +14,7 @@
     "*.{js,jsx,scss}": [
       "prettier --write --single-quote",
       "eslint --fix",
-      "stylelint **/*.scss --syntax scss",
+      "stylelint **/*.scss",
       "git add"
     ]
   },

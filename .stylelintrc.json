@@ -9,7 +9,7 @@
     "selector-list-comma-newline-after": "always-multi-line",
     "rule-empty-line-before": [
       "always",
-      { "ignore": ["after-comment", "first-nested"] }
+      { "ignore": ["after-comment"] }
     ],
     "comment-empty-line-before": ["always", { "except": ["first-nested"] }],
     "block-opening-brace-space-before": "always",
