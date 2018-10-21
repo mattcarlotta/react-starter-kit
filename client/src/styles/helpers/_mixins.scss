@@ -1,5 +1,5 @@
 @mixin anim($anim) {
-  webkit-animation: $anim;
+  -webkit-animation: $anim;
   animation: $anim;
 }
 @mixin b-s($shadows...) {
