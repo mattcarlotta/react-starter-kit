@@ -7,12 +7,14 @@
     "start": "NODE_ENV=development webpack-dev-server",
     "build": "NODE_ENV=production webpack",
     "format": "prettier --write 'packages/**/*.js'",
-    "test": "jest --watchAll --coverage"
+    "test": "jest --watchAll --coverage",
+    "stylelint": "stylelint **/*.scss"
   },
   "lint-staged": {
-    "*.{js,jsx}": [
+    "*.{js,jsx,scss}": [
       "prettier --write --single-quote",
       "eslint --fix",
+      "stylelint **/*.scss --syntax scss",
       "git add"
     ]
   },
@@ -122,6 +124,9 @@
     "redux-devtools-extension": "^2.13.5",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.0",
+    "stylelint": "^9.6.0",
+    "stylelint-config-recommended": "^2.1.0",
+    "stylelint-scss": "^3.3.1",
     "uglifyjs-webpack-plugin": "^2.0.1",
     "webpack": "^4.20.2",
     "webpack-cli": "3.1.2",
