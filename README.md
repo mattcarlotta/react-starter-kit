@@ -81,7 +81,7 @@ Note: This a M.E.R.N. (Mongo, Express, React, NodeJS) fullstack boilerplate! A R
  git clone -b fullstack git@github.com:mattcarlotta/Webpack-React-Boilerplate.git/
 ```
 
-2 - `npm i && cd client && npm i` to install dependencies.
+2 - Run `npm i && cd client && npm i` to install dependencies.
 
 3 - Globally or locally install `nodemon` for handling and updating the application for file changes:
 
