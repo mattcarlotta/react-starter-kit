@@ -1,7 +1,7 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin').loader;
 const { inDevelopment, localIdentName, requiresSourceMap } = require('./envs');
 
-/* define a javascript rule */
+/* defines a javascript rule */
 exports.defineJSRule = ({ enforce, loader, options }) => ({
   enforce: enforce || 'post',
   test: /\.(js|jsx)$/,
@@ -10,7 +10,7 @@ exports.defineJSRule = ({ enforce, loader, options }) => ({
   options: options || {},
 });
 
-/* define a media (font/image) rule */
+/* defines a media (font/image) rule */
 exports.defineMediaRule = ({ test, outputPath }) => ({
   test,
   use: [
@@ -23,7 +23,7 @@ exports.defineMediaRule = ({ test, outputPath }) => ({
   ],
 });
 
-/* define a SCSS rule */
+/* defines a SCSS rule */
 exports.defineSCSSRule = ({ include, exclude, modules, sourceMap }) => ({
   test: /\.s?css$/,
   include,
