@@ -133,4 +133,4 @@ Unit testing will watch all your changes in the test files as well as create a c
 - [Error Overlay Webpack Plugin](https://github.com/smooth-code/error-overlay-webpack-plugin)
 - [UglifyJS Webpack Plugin](https://www.npmjs.com/package/uglifyjs-webpack-plugin)
 - [Browsers list](https://github.com/browserslist/browserslist)
-- [Webpack Dev Server](https://github.com/webpack/webpack-dev-server)
+- [Webpack Dev Server (Hot Loaded)](https://github.com/webpack/webpack-dev-server)
