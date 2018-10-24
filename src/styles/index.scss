@@ -1,3 +1,52 @@
+/*
+  // ============================================= //
+  // Application Shared SCSS                       //
+  // ============================================= //
+
+   These should be partial scss files that must
+   follow the naming convention (underscore, name,
+   extension): _example.scss
+
+   The idea is to contain each component within
+   its own folder containing, one JS file, one
+   stylesheet, and one test file.
+
+   Partial scss files allow you to share variables,
+   extensions, mixins, layouts, etc with any
+   component-level SCSS file.
+
+   Simply import this file from a within component
+   SCSSfile to utilize shared classes. See example
+   below.
+
+  // ============================================= //
+  // Example.scss                                  //
+  // ============================================= //
+   @import '/relative/path/to/styles/index'
+
+   exampleContainer {
+     text-align: center;
+     color: $blue;
+     font-family: $poppinslight;
+   }
+
+  // ============================================= //
+  // Example.js                                    //
+  // ============================================= //
+   import React from 'react';
+   import { exampleContainer } from './Example.scss';
+
+   const Example = () => (
+     <div className={exampleContainer}>
+       <h1>
+         I'm contained within the exampleContainer!
+       <h1>
+     </div>
+   )
+
+   export default Example;
+*/
+
 @import './variables/vars';
 @import './helpers/ext';
 @import './helpers/mixins';

@@ -1,19 +1,33 @@
 /*
-Static imports from assets, images or from the node_modules folder
+  // ============================================= //
+  // Global CSS/SCSS Imports                       //
+  // ============================================= //
 
-Please refrain from importing an asset within a partial SCSS file.
-This will cause pathing issues because the partial will be imported
-from the main index.scss file. For simplicity, import static fonts,
-images, and stylesheets from within in this file.
+    This file is for static imports from assets,
+    images or from the node_modules folder.
 
-local stylesheets: @import '../assets/path/to/stylesheet.(s)css'
-local fonts: src: url('../assets/fonts/font.ext') format('ext')
-local images: src: url('../../images/imageFile.ext');
-node_module: @import '~ModuleName/path/to/stylesheet.(s)css';
+    Please refrain from importing an asset within a
+    partial SCSS file. This will cause pathing
+    issues because the partial will be imported from
+    the main 'src/styles/index.scss' file. For
+    simplicity, import static fonts, images, and
+    stylesheets from within in this file.
 
-Component-level SCSS imports are similiar to the above as long as they
-contain relative pathing to the asset and are not partial SCSS files.
+    local stylesheets:
+    @import '../assets/path/to/stylesheet.(s)css'
 
+    local fonts:
+    src: url('../assets/fonts/font.ext') format('ext')
+
+    local images:
+    src: url('../../images/imageFile.ext');
+
+    node_module (must imported with a tilda (~)):
+    @import '~ModuleName/path/to/stylesheet.(s)css';
+
+    Component-level SCSS imports are similiar to the
+    above as long as they contain relative pathing
+    to the asset and are NOT partial SCSS files.
 */
 
 @font-face {
