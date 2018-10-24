@@ -4,6 +4,8 @@ A fork from <a href="https://github.com/HashemKhalifa/webpack-react-boilerplate"
 
 Note: This a M.E.R.N. (Mongo, Express, React, NodeJS) fullstack boilerplate!
 
+A React only boilerplate can be found on the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/master">master</a> branch.
+
 ![Inv096o.gif](https://i.imgur.com/Inv096o.gif)
 
 ## Table of contents
@@ -81,17 +83,17 @@ Note: This a M.E.R.N. (Mongo, Express, React, NodeJS) fullstack boilerplate!
 
 2 - `npm i && cd client && npm i` to install npm packages
 
-3 - While at the app's `root` folder, start both servers using `npm run dev`.
+3 - While at the application's `root` folder, start both servers by running `npm run dev`.
 
 ## Commands
 
-To prettify and lint your .js/.scss files, run `npm run lint`.
+To prettify and lint your .js/.scss files, run `npm run lint` while at the application's `root` folder.
 
-To build and bundle your client resources for staging, while inside the client's `root` folder, use `npm run staging` (staging utilizes source maps for errors).After you have built your React application for staging, use `npm start` while at the application's `root` folder. You should now see your React application running on `http://localhost:5000`.
+To build and bundle your client resources for staging, while inside the client's `root` folder, use `npm run staging` (staging utilizes source maps for errors). After you have built your React application for staging, use `npm start` while at the application's `root` folder. You should now see your React application running on `http://localhost:5000`.
 
 To build and bundle your client resources for production, while inside the client's `root` folder, use `npm run build` (source maps will be excluded). After you have built your React application for production, use `npm start` while at the application's `root` folder. You should now see your React application running on `http://localhost:5000`.
 
-Unit testing will watch all your changes in the test files as well as create coverage folder for you via `npm run test`, while inside the client's `root` folder.
+Unit testing will watch all your changes in the test files as well as create a coverage folder for you. While inside the client's `root` folder, run `npm run test`.
 
 ## Client Configuration
 

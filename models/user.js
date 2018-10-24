@@ -1,42 +1,58 @@
-module.exports = app => {
+module.exports = (app) => {
   const { badCredentials } = app.shared.authErrors;
-  const bcrypt = app.get("bcrypt");
-  const mongoose = app.get("mongoose");
+  const bcrypt = app.get('bcrypt');
+  const mongoose = app.get('mongoose');
 
   // Define user model
   const userSchema = new mongoose.Schema({
+    god: { type: Boolean, default: false },
     email: { type: String, unique: true, lowercase: true },
     username: { type: String, unique: true, lowercase: true },
-    password: String
+    password: String,
   });
 
-  // Generate a salt, password, then run callback
-  userSchema.methods.createPassword = async (password, next) => {
+  // generates a salted + hashed password: User.createPassword()
+  userSchema.statics.createPassword = async function createNewPassword(
+    password,
+  ) {
     try {
       const salt = await bcrypt.genSalt(12);
-      if (!salt) return next("Unable to generate password salt");
+      if (!salt) throw new Error('Unable to generate password salt!');
 
       const newPassword = await bcrypt.hash(password, salt, null);
-      if (!newPassword) return next("Unable to generate secure password");
+      if (!newPassword) throw new Error('Unable to generate a secure password!');
 
-      next(null, newPassword);
-    } catch (e) {
-      next(e);
+      return newPassword;
+    } catch (err) {
+      throw new Error(err);
     }
   };
 
-  // Set a compare password method on the model
-  userSchema.methods.comparePassword = async (incomingPassword, next) => {
+  // create new user: User.createUser()
+  userSchema.statics.createUser = async function newUser(user) {
+    if (!user) throw new Error('User required!');
+
+    try {
+      return await this.create(user);
+    } catch (err) {
+      throw new Error(err);
+    }
+  };
+
+  // compares a password to the password stored in the model: userIstance.comparePassword()
+  userSchema.methods.comparePassword = async function compare(
+    incomingPassword,
+  ) {
     try {
       const isMatch = await bcrypt.compare(incomingPassword, this.password);
-      if (!isMatch) return next(badCredentials, null);
+      if (!isMatch) throw new Error(badCredentials);
 
-      next(null, isMatch);
-    } catch (e) {
-      next(e);
+      return isMatch;
+    } catch (err) {
+      throw new Error(err);
     }
   };
 
   // Create model class
-  return mongoose.model("users", userSchema);
+  mongoose.model('users', userSchema);
 };
