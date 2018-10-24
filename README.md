@@ -18,7 +18,7 @@ Note: A fullstack M.E.R.N boilerplate can be found on the <a href="https://githu
 
 [Packages Incorporated](#packages-incorporated)
 
-## Project structure
+## Project Structure
 
 ```
 ├── build
