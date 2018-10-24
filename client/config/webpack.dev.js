@@ -1,76 +1,46 @@
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
-const { globalCSS, outputPath } = require('./paths');
+const { outputPath, publicPath } = require('./paths');
+const { PORT } = require('./envs');
 
+// =============================================================== //
+// DEVELOPMENT VARIABLES                                           //
+// =============================================================== //
+/* output file name */
+const filename = '[name].js';
+
+// =============================================================== //
+// DEVELOPMENT CONFIG                                              //
+// =============================================================== //
 module.exports = {
-  mode: 'development',
   output: {
-    filename: '[name].js',
+    filename,
     path: outputPath,
-    chunkFilename: '[name].js',
-    publicPath: '/',
+    chunkFilename: filename,
+    publicPath,
   },
   devServer: {
     host: 'localhost',
-    port: 3000,
+    port: PORT,
     quiet: true,
     historyApiFallback: true,
     inline: true,
     open: true,
   },
-  module: {
-    rules: [
-      {
-        test: /\.s?css$/,
-        exclude: [globalCSS],
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true,
-              modules: true,
-              camelCase: true,
-              localIdentName: '[local]___[hash:base64:5]',
-            },
-          },
-          'sass-loader',
-        ],
-      },
-      {
-        test: /\.s?css$/,
-        include: [globalCSS],
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true,
-              camelCase: true,
-              localIdentName: '[local]___[hash:base64:5]',
-            },
-          },
-          'sass-loader',
-        ],
-      },
-    ],
-  },
   plugins: [
     new FriendlyErrorsWebpackPlugin({
       compilationSuccessInfo: {
         messages: [
-          `Your application is running on \x1b[1mhttp://localhost:3000\x1b[0m`,
+          `Your application is running on \x1b[1mhttp://localhost:${PORT}\x1b[0m`,
         ],
         notes: [
           `Note that the development build is not optimized.`,
+          `To create a staging build, use \x1b[1m\x1b[32mnpm run staging\x1b[0m.`,
           `To create a production build, use \x1b[1m\x1b[32mnpm run build\x1b[0m.\n`,
         ],
       },
       clearConsole: true,
-      additionalFormatters: [],
-      additionalTransformers: [],
     }),
     new ErrorOverlayPlugin(),
   ],
-  devtool: 'source-map',
 };
