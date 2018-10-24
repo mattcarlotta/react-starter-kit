@@ -22,7 +22,7 @@
     local images:
     src: url('../../images/imageFile.ext');
 
-    node_module (must imported with a tilda (~)):
+    node_module (must be imported with a tilda (~)):
     @import '~ModuleName/path/to/stylesheet.(s)css';
 
     Component-level SCSS imports are similiar to the
