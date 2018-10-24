@@ -27,35 +27,35 @@ const eslintLoader = defineJSRule({
 /* handle React JS files */
 const babelLoader = defineJSRule({ loader: 'babel-loader' });
 
-/* image assets */
+/* handle image assets */
 const imageLoader = defineMediaRule({
   test: /\.(png|jpg|gif|svg)$/,
   outputPath: imagesFolder,
 });
 
-/* font assets */
+/* handle font assets */
 const fontLoader = defineMediaRule({
   test: /\.(woff2|ttf|woff|eot)$/,
   outputPath: fontsFolder,
 });
 
-/* SCSS imports that are component-level or partials */
+/* handles SCSS imports that are component-level or partials */
 const localSCSS = defineSCSSRule({
   include: [localCSS],
   exclude: [globalCSS],
   modules: true,
 });
 
-/* SCSS imports that are global */
+/* handles SCSS imports that are global only */
 const globalSCSS = defineSCSSRule({ include: [globalCSS] });
 
-/* source mapping */
+/* utilizes source mapping */
 const devtool = requiresSourceMap ? 'source-map' : '';
 
-/* current webpack envirnoment */
+/* current webpack environment */
 const mode = inDevelopment ? 'development' : 'production';
 
-/* resolve component/module imports with extensions */
+/* resolves component/module imports with extensions */
 const resolve = {
   modules: ['src', 'node_modules'],
   extensions: ['*', '.js', '.jsx', '.css', '.scss'],

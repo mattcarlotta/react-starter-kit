@@ -13,11 +13,11 @@ module.exports = {
   templatePath: resolve(__dirname, '../', 'public/index.html'),
   /* path to favicon.ico (build/favicon.ico) */
   faviconPath: resolve(__dirname, '../', 'public/favicon.ico'),
-  /* path to local styles */
+  /* path to local styles (/src) */
   localCSS: resolve(__dirname, '../', 'src'),
   /* path to the globals.scss file (src/styles/globals/globals.scss) */
   globalCSS: resolve(__dirname, '../', 'src/styles/globals'),
-  /* compiled images build path(build/media) */
+  /* compiled images build path (build/media) */
   imagesFolder: 'media',
   /* compiled fonts build path (build/assets) */
   fontsFolder: 'assets',
