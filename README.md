@@ -108,7 +108,7 @@ Unit testing will watch all your changes in the test files as well as create cov
 - `client/.eslintignore` eslint config for ignoring scss files
 - `client/.eslintrc` eslint config for linting js files
 - `client/.prettierc` prettier config
-- `client/.stylelintrc.json` stlyelint config for linting scss files
+- `client/.stylelintrc.json` stylelint config for linting scss files
 
 ## Packages Incorporated
 
