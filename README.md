@@ -8,7 +8,7 @@ Note: This a M.E.R.N. (Mongo, Express, React, NodeJS) fullstack boilerplate! A R
 
 ## Table of contents
 
-[Project structure](#project-structure)
+[Project Structure](#project-structure)
 
 [Installation](#installation)
 
@@ -18,7 +18,7 @@ Note: This a M.E.R.N. (Mongo, Express, React, NodeJS) fullstack boilerplate! A R
 
 [Packages Incorporated](#packages-incorporated)
 
-## Project structure
+## Project Structure
 
 ```
 ├── client
