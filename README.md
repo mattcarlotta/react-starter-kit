@@ -12,9 +12,9 @@ Note: A fullstack M.E.R.N boilerplate can be found on the <a href="https://githu
 
 [Installation](#installation)
 
-[Configuration](#configuration)
-
 [Commands](#commands)
+
+[Configuration](#configuration)
 
 [Packages Incorporated](#packages-incorporated)
 
