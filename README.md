@@ -64,13 +64,13 @@ Note: A fullstack M.E.R.N boilerplate can be found on the <a href="https://githu
 
 ## Installation
 
-1 - Clone the boilerplate repo
+1 - Clone the boilerplate repository.
 
 ```
  git clone -b master git@github.com:mattcarlotta/Webpack-React-Boilerplate.git
 ```
 
-2 - `npm i` to install npm packages
+2 - `npm i` to install dependencies.
 
 3 - While at the app's `root` folder, start `webpack-dev-server` using `npm run dev`.
 
