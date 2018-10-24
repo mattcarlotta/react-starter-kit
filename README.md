@@ -103,20 +103,20 @@ Unit testing will watch all your changes in the test files as well as create a c
 
 ## Client Configuration
 
-- `client/config/envs.js` webpack environment variables
-- `client/config/paths.js` webpack config folder paths
-- `client/config/rules.js` webpack rules functions
+- `client/config/envs.js` webpack environment variables.
+- `client/config/paths.js` webpack config folder paths.
+- `client/config/rules.js` webpack rules functions.
 - `client/config/webpack.common.js` common webpack config for both development and production environments.
 - `client/config/webpack.dev.js` webpack config for development environment only.
 - `client/config/webpack.prod.js` webpack config for production environment only.
 - `client/webpack.config.js` main webpack config that merges common and an environment based config
 - `client/src/setupTest.js` enzyme test setup for your React components.
-- `client/.babelrc` babel config for react js files
-- `client/.browserslistrc` browsers list config
-- `client/.eslintignore` eslint config for ignoring scss files
-- `client/.eslintrc` eslint config for linting js files
-- `client/.prettierc` prettier config
-- `client/.stylelintrc.json` stylelint config for linting scss files
+- `client/.babelrc` babel config for react js files.
+- `client/.browserslistrc` browsers list config.
+- `client/.eslintignore` eslint config for ignoring scss files.
+- `client/.eslintrc` eslint config for linting js files.
+- `client/.prettierc` prettier config.
+- `client/.stylelintrc.json` stylelint config for linting scss files.
 
 ## Packages Incorporated
 
