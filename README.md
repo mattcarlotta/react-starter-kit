@@ -70,9 +70,9 @@ Note: A fullstack M.E.R.N boilerplate can be found on the <a href="https://githu
  git clone -b master git@github.com:mattcarlotta/Webpack-React-Boilerplate.git
 ```
 
-2 - `npm i` to install dependencies.
+2 - Run `npm i` to install dependencies.
 
-3 - While at the app's `root` folder, start `webpack-dev-server` using `npm run dev`.
+3 - While at the application's `root` folder, start the `webpack-dev-server` by running `npm run dev`.
 
 ## Commands
 

@@ -7,14 +7,14 @@
     images or from the node_modules folder.
 
     Please refrain from importing an asset within a
-    partial SCSS file. This will cause pathing
-    issues because the partial will be imported from
-    the main 'src/styles/index.scss' file. For
+    partial scss file. This will cause pathing
+    issues because the partial will is then imported
+    from the main 'src/styles/index.scss' file. For
     simplicity, import static fonts, images, and
     stylesheets from within in this file.
 
     local stylesheets:
-    @import '../assets/path/to/stylesheet.(s)css'
+    @import '../assets/styles/stylesheet.(s)css'
 
     local fonts:
     src: url('../assets/fonts/font.ext') format('ext')
@@ -22,12 +22,13 @@
     local images:
     src: url('../../images/imageFile.ext');
 
-    node_module (must be imported with a tilda (~)):
+    node_modules (must be imported with a tilda (~)):
     @import '~ModuleName/path/to/stylesheet.(s)css';
 
-    Component-level SCSS imports are similiar to the
-    above as long as they contain relative pathing
-    to the asset and are NOT partial SCSS files.
+    Component-level scss imports are similiar to the
+    above examples as long as they contain relative
+    pathing to the asset and are NOT partial scss
+    files.
 */
 
 @font-face {

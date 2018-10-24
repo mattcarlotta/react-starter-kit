@@ -11,7 +11,7 @@ const { PORT } = require('./envs');
 /* output file name */
 const filename = '[name].js';
 
-/* compile output */
+/* webpack compile output options */
 const output = {
   filename,
   path: outputPath,
@@ -19,7 +19,7 @@ const output = {
   publicPath,
 };
 
-/* dev server options */
+/* webpack dev server options */
 const devServer = {
   /* where to host */
   host: 'localhost',
@@ -31,14 +31,15 @@ const devServer = {
   historyApiFallback: true,
   /* shows on-screen errors before reloading */
   inline: true,
-  /* allows files to be replaced, without refreshing the browser */
+  /* allows files to be replaced without refreshing the browser */
   hot: true,
   /* opens the default browser on load */
   open: true,
 };
 
-/* dev server options */
+/* webpack dev server options */
 const plugins = [
+  /* in console error */
   new FriendlyErrorsWebpackPlugin({
     compilationSuccessInfo: {
       messages: [
@@ -52,7 +53,9 @@ const plugins = [
     },
     clearConsole: true,
   }),
+  /* in browser error overlay */
   new ErrorOverlayPlugin(),
+  /* hot-module plugin to update files without refreshing the page */
   new HotModuleReplacementPlugin(),
 ];
 

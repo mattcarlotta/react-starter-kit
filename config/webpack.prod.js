@@ -22,19 +22,21 @@ const cssProcessorOptions = requiresSourceMap
   ? { cssProcessorOptions: { map: { inline: false, annotation: true } } }
   : {};
 
-/* uglify and compile JS; compile and optimize SCSS to CSS */
+/* webpack compiler optimizations */
 const optimization = {
   minimizer: [
+    /* uglify and compile JS */
     new UglifyJsPlugin({
       cache: true,
       parallel: true,
       sourceMap: requiresSourceMap,
     }),
+    /* compile and optimize SCSS to CSS */
     new OptimizeCSSAssetsPlugin(cssProcessorOptions),
   ],
 };
 
-/* build output */
+/* webpack build output */
 const output = {
   filename: `${jsFolder}/[name].[hash].js`,
   path: outputPath,
@@ -44,7 +46,7 @@ const output = {
 
 /* webpack plugins */
 const plugins = [
-  /* removes build folder for each new compile session */
+  /* removes old build folder for each new compile */
   new CleanWebpackPlugin([outputPath.split('/').pop()], {
     root,
   }),
