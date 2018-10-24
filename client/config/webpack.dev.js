@@ -1,4 +1,3 @@
-const webpack = require('webpack');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
 const { globalCSS, outputPath } = require('./paths');
@@ -16,7 +15,6 @@ module.exports = {
     port: 3000,
     quiet: true,
     historyApiFallback: true,
-    hot: true,
     inline: true,
     open: true,
   },
@@ -73,7 +71,6 @@ module.exports = {
       additionalTransformers: [],
     }),
     new ErrorOverlayPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
   ],
   devtool: 'source-map',
 };

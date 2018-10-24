@@ -1,6 +1,24 @@
+/*
+Static imports from assets, images or from the node_modules folder
+
+Please refrain from importing an asset within a partial SCSS file.
+This will cause pathing issues because the partial will be imported
+from the main index.scss file. For simplicity, import static fonts,
+images, and stylesheets from within in this file.
+
+local stylesheets: @import '../assets/path/to/stylesheet.(s)css'
+local fonts: src: url('../assets/fonts/font.ext') format('ext')
+local images: src: url('../../images/imageFile.ext');
+node_module: @import '~ModuleName/path/to/stylesheet.(s)css';
+
+Component-level SCSS imports are similiar to the above as long as they
+contain relative pathing to the asset and are not partial SCSS files.
+
+*/
+
 @font-face {
-  font-family: 'Rubik';
+  font-family: 'Poppins Light';
   font-style: normal;
-  font-weight: 300;
-  src: url('../assets/fonts/Rubik.ttf') format('truetype');
+  font-weight: normal;
+  src: url('../assets/fonts/Poppins-Light.ttf') format('truetype');
 }

@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "NODE_ENV=production node app.js",
     "server": "NODE_ENV=development nodemon app.js",
-    "client": "npm run start --prefix client",
+    "client": "npm run dev --prefix client",
     "lint-front": "npm run pre-commit --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "seeds": "NODE_ENV=development node seeds.js",

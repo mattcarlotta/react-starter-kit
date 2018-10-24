@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=development webpack-dev-server",
+    "dev": "NODE_ENV=development webpack-dev-server",
     "build": "NODE_ENV=production webpack",
-    "format": "prettier --write 'packages/**/*.js'",
+    "staging": "NODE_ENV=staging webpack",
     "test": "jest --watchAll --coverage",
-    "pre-commit": "lint-staged",
-    "stylelint": "stylelint **/*.scss"
+    "format": "prettier --write 'src/**/*.js'",
+    "lintjs": "eslint 'src/**/*.js' --fix",
+    "lintstyles": "stylelint **/*.scss",
+    "pre-commit": "lint-staged"
   },
   "lint-staged": {
     "*.{js,jsx,scss}": [

@@ -1,7 +1,7 @@
 @import '../../styles/index';
 
 .app {
-  @extend %t-a-c;
+  text-align: center;
   height: 100vh;
   color: $blue;
   background-color: $black;
@@ -9,7 +9,6 @@
 
 .logoContainer {
   @extend %centered;
-  font-family: $rubik;
   color: $warmgrey;
   min-height: 100vh;
 }

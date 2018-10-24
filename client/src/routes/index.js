@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { IndexRoute, Route } from 'react-router';
 
 import App from '../components/App';
@@ -6,11 +6,8 @@ import Home from '../components/Home/Home';
 import NotFound from '../components/NotFound/NotFound';
 
 export default (
-  <Fragment>
-    <Route path="/" component={App}>
-      <IndexRoute component={Home} />
-      <Route path="*" component={NotFound} />
-    </Route>
+  <Route path="/" component={App}>
+    <IndexRoute component={Home} />
     <Route path="*" component={NotFound} />
-  </Fragment>
+  </Route>
 );
