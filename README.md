@@ -95,7 +95,7 @@ Unit testing will watch all your changes in the test files as well as create cov
 
 ## Client Configuration
 
-- `clientconfig/envs.js` webpack environment variables
+- `client/config/envs.js` webpack environment variables
 - `client/config/paths.js` webpack config folder paths
 - `client/config/rules.js` webpack rules functions
 - `client/config/webpack.common.js` common webpack config for both development and production environments.
