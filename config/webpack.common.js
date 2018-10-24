@@ -49,11 +49,38 @@ const localSCSS = defineSCSSRule({
 /* SCSS imports that are global */
 const globalSCSS = defineSCSSRule({ include: [globalCSS] });
 
+/* source mapping */
+const devtool = requiresSourceMap ? 'source-map' : '';
+
+/* current webpack envirnoment */
+const mode = inDevelopment ? 'development' : 'production';
+
+/* resolve component/module imports with extensions */
+const resolve = {
+  modules: ['src', 'node_modules'],
+  extensions: ['*', '.js', '.jsx', '.css', '.scss'],
+};
+
+/* webpack plugins */
+const plugins = [
+  /* shows a compilation bar instead of the default compile message */
+  new WebpackBar({
+    minimal: false,
+    compiledIn: false,
+  }),
+  /* simplifies creation of HTML files to serve your webpack bundles */
+  new HtmlWebpackPlugin({
+    template: templatePath,
+    favicon: faviconPath,
+  }),
+];
+
 // =============================================================== //
 // COMMON OPTIONS                                                  //
 // =============================================================== //
 module.exports = {
-  mode: inDevelopment ? 'development' : 'production',
+  devtool,
+  mode,
   entry: entryPath,
   module: {
     rules: [
@@ -65,19 +92,6 @@ module.exports = {
       globalSCSS,
     ],
   },
-  resolve: {
-    modules: ['src', 'node_modules'],
-    extensions: ['*', '.js', '.jsx', '.css', '.scss'],
-  },
-  plugins: [
-    new WebpackBar({
-      minimal: false,
-      compiledIn: false,
-    }),
-    new HtmlWebpackPlugin({
-      template: templatePath,
-      favicon: faviconPath,
-    }),
-  ],
-  devtool: requiresSourceMap ? 'source-map' : '',
+  resolve,
+  plugins,
 };

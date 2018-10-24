@@ -16,38 +16,50 @@ const { requiresSourceMap } = require('./envs');
 // =============================================================== //
 /* hashing file names for compiled CSS */
 const hashFilename = '[contenthash:8].css';
+
 /* determines whether or not CSS sourcemaps are needed */
 const cssProcessorOptions = requiresSourceMap
   ? { cssProcessorOptions: { map: { inline: false, annotation: true } } }
   : {};
 
+/* uglify and compile JS; compile and optimize SCSS to CSS */
+const optimization = {
+  minimizer: [
+    new UglifyJsPlugin({
+      cache: true,
+      parallel: true,
+      sourceMap: requiresSourceMap,
+    }),
+    new OptimizeCSSAssetsPlugin(cssProcessorOptions),
+  ],
+};
+
+/* build output */
+const output = {
+  filename: `${jsFolder}/[name].[hash].js`,
+  path: outputPath,
+  chunkFilename: '[name].[chunkhash].js',
+  publicPath,
+};
+
+/* webpack plugins */
+const plugins = [
+  /* removes build folder for each new compile session */
+  new CleanWebpackPlugin([outputPath.split('/').pop()], {
+    root,
+  }),
+  /* compiles SCSS to a single CSS file */
+  new MiniCssExtractPlugin({
+    filename: `${cssFolder}/[name].${hashFilename}`,
+    chunkFilename: `[id].${hashFilename}`,
+  }),
+];
+
 // =============================================================== //
 // PRODUCTION/STAGING CONFIG                                       //
 // =============================================================== //
 module.exports = {
-  optimization: {
-    minimizer: [
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: requiresSourceMap,
-      }),
-      new OptimizeCSSAssetsPlugin(cssProcessorOptions),
-    ],
-  },
-  output: {
-    filename: `${jsFolder}/[name].[hash].js`,
-    path: outputPath,
-    chunkFilename: '[name].[chunkhash].js',
-    publicPath,
-  },
-  plugins: [
-    new CleanWebpackPlugin([outputPath.split('/').pop()], {
-      root,
-    }),
-    new MiniCssExtractPlugin({
-      filename: `${cssFolder}/[name].${hashFilename}`,
-      chunkFilename: `[id].${hashFilename}`,
-    }),
-  ],
+  optimization,
+  output,
+  plugins,
 };
