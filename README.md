@@ -12,6 +12,8 @@ Note: This a M.E.R.N. (Mongo, Express, React, NodeJS) fullstack boilerplate!
 
 [Installation](#installation)
 
+[Commands](#commands)
+
 [Client Configuration](#client-configuration)
 
 [Packages Incorporated](#packages-incorporated)
@@ -81,23 +83,29 @@ Note: This a M.E.R.N. (Mongo, Express, React, NodeJS) fullstack boilerplate!
 
 3 - While at the app's `root` folder, start both servers using `npm run dev`.
 
-To build and bundle your client resources for staging, use `npm run staging` while inside the `root` folder (staging utilizes source maps for errors).After you have built your React application for staging, simply use `npm start` while at the application's `root` folder. You should now see your React application running on `http://localhost:5000`.
+## Commands
 
-To build and bundle your client resources for production, use `npm run build` while inside the client's `root` folder (source maps will be excluded). After you have built your React application for production, simply use `npm start` while at the application's `root` folder. You should now see your React application running on `http://localhost:5000`.
+To prettify and lint your .js/.scss files, run `npm run lint`.
+
+To build and bundle your client resources for staging, while inside the client's `root` folder, use `npm run staging` (staging utilizes source maps for errors).After you have built your React application for staging, use `npm start` while at the application's `root` folder. You should now see your React application running on `http://localhost:5000`.
+
+To build and bundle your client resources for production, while inside the client's `root` folder, use `npm run build` (source maps will be excluded). After you have built your React application for production, use `npm start` while at the application's `root` folder. You should now see your React application running on `http://localhost:5000`.
 
 Unit testing will watch all your changes in the test files as well as create coverage folder for you via `npm run test`, while inside the client's `root` folder.
 
 ## Client Configuration
 
-- Webpack config paths are based on the file structure in `config/paths.js` (modify the source and file names based upon your needs).
+- `clientconfig/envs.js` webpack environment variables
+- `client/config/paths.js` webpack config folder paths
+- `client/config/rules.js` webpack rules functions
 - `client/config/webpack.common.js` common webpack config for both development and production environments.
 - `client/config/webpack.dev.js` webpack config for development environment only.
 - `client/config/webpack.prod.js` webpack config for production environment only.
-- `client/webpack.config.js` main webpack config that merges common and environments based upon ENV.
-- Enzyme config `client/src/setupTest.js` enzyme test setup for your React components.
-- Babel config `client/.babelrc`.
-- Prettier config `client/.prettierc`.
-- Browsers list config `client/.browserslistrc`.
+- `client/webpack.config.js` main webpack config that merges common and an environment based config
+- `client/src/setupTest.js` enzyme test setup for your React components.
+- `client/.babelrc` babel config for react js files
+- `client/.prettierc` prettier config
+- `client/.browserslistrc` browsers list config
 
 ## Packages Incorporated
 
