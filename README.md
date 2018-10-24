@@ -104,8 +104,11 @@ Unit testing will watch all your changes in the test files as well as create cov
 - `client/webpack.config.js` main webpack config that merges common and an environment based config
 - `client/src/setupTest.js` enzyme test setup for your React components.
 - `client/.babelrc` babel config for react js files
-- `client/.prettierc` prettier config
 - `client/.browserslistrc` browsers list config
+- `client/.eslintignore` eslint config for ignoring scss files
+- `client/.eslintrc` eslint config for linting js files
+- `client/.prettierc` prettier config
+- `client/.stylelintrc.json` stlyelint config for linting scss files
 
 ## Packages Incorporated
 
