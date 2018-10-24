@@ -14,6 +14,8 @@ Note: A fullstack M.E.R.N boilerplate can be found on the <a href="https://githu
 
 [Configuration](#configuration)
 
+[Commands](#commands)
+
 [Packages Incorporated](#packages-incorporated)
 
 ## Project structure
@@ -70,11 +72,19 @@ Note: A fullstack M.E.R.N boilerplate can be found on the <a href="https://githu
 
 3 - While at the app's `root` folder, start `webpack-dev-server` using `npm run dev`.
 
+## Commands
+
+To lint your .js files, run `npm run lintjs`.
+
+To prettify your .js files, run `npm run format`.
+
+To lint your .scss files, run `npm run lintstyles`.
+
 To build and bundle your client resources for staging, use `npm run staging` while inside the `root` folder (staging utilizes source maps for errors).
 
 To build and bundle your client resources for production, use `npm run build` while inside the `root` folder (source maps will be excluded).
 
-Unit testing will watch all your changes in the test files as well as create coverage folder for you via `npm run test`.
+Unit testing will watch all your changes in the test files as well as create a coverage folder for you via `npm run test`.
 
 ## Configuration
 
