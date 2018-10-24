@@ -8,7 +8,7 @@ Note: A fullstack M.E.R.N boilerplate can be found on the <a href="https://githu
 
 ## Table of contents
 
-[Project structure](#project-structure)
+[Project Structure](#project-structure)
 
 [Installation](#installation)
 
