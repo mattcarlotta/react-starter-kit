@@ -68,9 +68,10 @@ Note: A fullstack M.E.R.N boilerplate can be found on the <a href="https://githu
 
 2 - `npm i` to install npm packages
 
-3 - While at the app's `root` folder, start `webpack-dev-server` using `npm start`.
+3 - While at the app's `root` folder, start `webpack-dev-server` using `npm run dev`.
 
-To build and bundle your client resources for production, use `npm run build` while inside the `root` folder.
+To build and bundle your client resources for staging, use `npm run staging` while inside the `root` folder (staging utilizes source maps for errors).
+To build and bundle your client resources for production, use `npm run build` while inside the `root` folder (source maps will be excluded).
 
 Unit testing will watch all your changes in the test files as well as create coverage folder for you via `npm run test`.
 
@@ -90,7 +91,6 @@ Unit testing will watch all your changes in the test files as well as create cov
 
 - [Webpack 4](https://github.com/webpack/webpack)
 - [Babel 7](https://github.com/babel/babel)
-- [React Hot Loader 4.3.11](https://github.com/gaearon/react-hot-loader)
 - [React 16.5.2](https://github.com/facebook/react)
 - [React Router 3.2.1](https://github.com/ReactTraining/react-router/releases/tag/v3.2.1)
 - [Redux 4.0.0](https://github.com/reduxjs/redux)
@@ -98,6 +98,8 @@ Unit testing will watch all your changes in the test files as well as create cov
 - [Redux Form 7.4.2](https://redux-form.com/)
 - [Redux DevTools Extension 2.13.5](https://github.com/zalmoxisus/redux-devtools-extension)
 - [React Router Redux 4.0.8](https://github.com/reactjs/react-router-redux)
+- [Stylized Components 3.4.9](https://github.com/styled-components/styled-components)
+- [Stylized Theming 2.2.0](https://github.com/styled-components/styled-theming)
 - [Axios 0.18.0](https://github.com/axios/axios)
 - [Lodash](https://github.com/lodash/lodash)
 - [Jest](https://github.com/facebook/jest)
@@ -112,6 +114,7 @@ Unit testing will watch all your changes in the test files as well as create cov
 - [Sass Loader](https://github.com/webpack-contrib/sass-loader)
 - [Style Loader](https://github.com/webpack-contrib/style-loader)
 - [Mini CSS Extract Plugin](https://github.com/webpack-contrib/mini-css-extract-plugin)
+- [Error Overlay Webpack Plugin](https://github.com/smooth-code/error-overlay-webpack-plugin)
 - [UglifyJS Webpack Plugin](https://www.npmjs.com/package/uglifyjs-webpack-plugin)
 - [Browsers list](https://github.com/browserslist/browserslist)
 - [Webpack Dev Server](https://github.com/webpack/webpack-dev-server)

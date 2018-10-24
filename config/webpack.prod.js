@@ -2,66 +2,44 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const { cssFolder, globalCSS, jsFolder, outputPath, root } = require('./paths');
+const {
+  cssFolder,
+  jsFolder,
+  outputPath,
+  publicPath,
+  root,
+} = require('./paths');
+const { requiresSourceMap } = require('./envs');
 
+// =============================================================== //
+// PRODUCTION/STAGING VARIABLES                                    //
+// =============================================================== //
+/* hashing file names for compiled CSS */
 const hashFilename = '[contenthash:8].css';
+/* determines whether or not CSS sourcemaps are needed */
+const cssProcessorOptions = requiresSourceMap
+  ? { cssProcessorOptions: { map: { inline: false, annotation: true } } }
+  : {};
 
+// =============================================================== //
+// PRODUCTION/STAGING CONFIG                                       //
+// =============================================================== //
 module.exports = {
   optimization: {
     minimizer: [
       new UglifyJsPlugin({
         cache: true,
         parallel: true,
-        sourceMap: true,
+        sourceMap: requiresSourceMap,
       }),
-      new OptimizeCSSAssetsPlugin({
-        cssProcessorOptions: { map: { inline: false, annotation: true } },
-      }),
+      new OptimizeCSSAssetsPlugin(cssProcessorOptions),
     ],
   },
-  mode: 'production',
   output: {
     filename: `${jsFolder}/[name].[hash].js`,
     path: outputPath,
     chunkFilename: '[name].[chunkhash].js',
-    publicPath: '/',
-  },
-  module: {
-    rules: [
-      {
-        test: /\.s?css$/,
-        exclude: [globalCSS],
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true,
-              modules: true,
-              camelCase: true,
-              localIdentName: '[local]___[hash:base64:5]',
-            },
-          },
-          'sass-loader',
-        ],
-      },
-      {
-        test: /\.s?css$/,
-        include: [globalCSS],
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true,
-              camelCase: true,
-              localIdentName: '[local]___[hash:base64:5]',
-            },
-          },
-          'sass-loader',
-        ],
-      },
-    ],
+    publicPath,
   },
   plugins: [
     new CleanWebpackPlugin([outputPath.split('/').pop()], {
@@ -72,5 +50,4 @@ module.exports = {
       chunkFilename: `[id].${hashFilename}`,
     }),
   ],
-  devtool: 'source-map',
 };

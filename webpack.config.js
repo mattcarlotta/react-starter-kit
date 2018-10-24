@@ -4,6 +4,7 @@ const common = require('./config/webpack.common');
 const envs = {
   development: 'dev',
   production: 'prod',
+  staging: 'prod',
 };
 /* eslint-disable global-require,import/no-dynamic-require */
 const env = envs[process.env.NODE_ENV || 'development'];
