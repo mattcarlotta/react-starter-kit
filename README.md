@@ -34,7 +34,9 @@ Note: A fullstack M.E.R.N boilerplate can be found on the <a href="https://githu
 |   └── index.html
 |
 ├── config
+|   ├── envs.js
 |   ├── paths.js
+|   ├── rules.js
 |   ├── webpack.common.js
 |   ├── webpack.dev.js
 |   └── webpack.prod.js
