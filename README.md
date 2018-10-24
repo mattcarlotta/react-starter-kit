@@ -35,7 +35,9 @@ Note: This a M.E.R.N. (Mongo, Express, React, NodeJS) fullstack boilerplate! A R
 |   |   └── index.html
 |   |
 |   ├── config
+|   |   ├── envs.js
 |   |   ├── paths.js
+|   |   ├── rules.js
 |   |   ├── webpack.common.js
 |   |   ├── webpack.dev.js
 |   |   └── webpack.prod.js
