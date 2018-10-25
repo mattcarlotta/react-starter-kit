@@ -35,6 +35,8 @@ const devServer = {
   hot: true,
   /* opens the default browser on load */
   open: true,
+  /* enable gzip compression for everything served */
+  compress: true,
 };
 
 /* webpack dev server options */
