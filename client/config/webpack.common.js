@@ -15,39 +15,37 @@ const { inDevelopment, requiresSourceMap } = require('./envs');
 // =============================================================== //
 // COMMON RULES                                                    //
 // =============================================================== //
-/* lints JS files on compilation */
-const eslintLoader = defineJSRule({
-  enforce: 'pre',
-  loader: 'eslint-loader',
-  options: {
-    emitWarning: inDevelopment,
-  },
-});
-
-/* handle React JS files */
-const babelLoader = defineJSRule({ loader: 'babel-loader' });
-
-/* handle image assets */
-const imageLoader = defineMediaRule({
-  test: /\.(png|jpg|gif|svg)$/,
-  outputPath: imagesFolder,
-});
-
-/* handle font assets */
-const fontLoader = defineMediaRule({
-  test: /\.(woff2|ttf|woff|eot)$/,
-  outputPath: fontsFolder,
-});
-
-/* handles SCSS imports that are component-level or partials */
-const localSCSS = defineSCSSRule({
-  include: [localCSS],
-  exclude: [globalCSS],
-  modules: true,
-});
-
-/* handles SCSS imports that are global only */
-const globalSCSS = defineSCSSRule({ include: [globalCSS] });
+/* webpack module rules */
+const rules = [
+  /* lints JS files on compilation */
+  defineJSRule({
+    enforce: 'pre',
+    loader: 'eslint-loader',
+    options: {
+      emitWarning: inDevelopment,
+    },
+  }),
+  /* handle React JS files */
+  defineJSRule({ loader: 'babel-loader' }),
+  /* handle image assets */
+  defineMediaRule({
+    test: /\.(png|jpg|gif|svg)$/,
+    outputPath: imagesFolder,
+  }),
+  /* handle font assets */
+  defineMediaRule({
+    test: /\.(woff2|ttf|woff|eot)$/,
+    outputPath: fontsFolder,
+  }),
+  /* handles SCSS imports that are component-level or partials */
+  defineSCSSRule({
+    include: [localCSS],
+    exclude: [globalCSS],
+    modules: true,
+  }),
+  /* handles SCSS imports that are global only */
+  defineSCSSRule({ include: [globalCSS] }),
+];
 
 /* utilizes source mapping */
 const devtool = requiresSourceMap ? 'source-map' : '';
@@ -55,7 +53,7 @@ const devtool = requiresSourceMap ? 'source-map' : '';
 /* current webpack environment */
 const mode = inDevelopment ? 'development' : 'production';
 
-/* resolves component/module imports with extensions */
+/* webpack resolves component/module imports with extensions */
 const resolve = {
   modules: ['src', 'node_modules'],
   extensions: ['*', '.js', '.jsx', '.css', '.scss'],
@@ -82,16 +80,7 @@ module.exports = {
   devtool,
   mode,
   entry: entryPath,
-  module: {
-    rules: [
-      eslintLoader,
-      babelLoader,
-      imageLoader,
-      fontLoader,
-      localSCSS,
-      globalSCSS,
-    ],
-  },
+  module: { rules },
   resolve,
   plugins,
 };
