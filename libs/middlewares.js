@@ -39,7 +39,6 @@ if (env !== 'development') {
 module.exports = (app) => {
   // / CONFIGS ///
   app.set('env', env); // sets current env mode (development, production or test)
-  app.set('host', config[env].host); // sets localhost or remote host
   app.set('database', config[env].database); // sets database name
   app.set('port', config[env].port); // current listening port
   app.set('portal', config[env].portal); // sets current front-end url
