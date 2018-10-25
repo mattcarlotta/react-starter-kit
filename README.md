@@ -124,9 +124,9 @@ Unit testing will watch all your changes in the test files as well as create a c
 
 - [Webpack 4](https://github.com/webpack/webpack)
 - [Babel 7](https://github.com/babel/babel)
-- [React 16.5.2](https://github.com/facebook/react)
+- [React 16.6.0](https://github.com/facebook/react)
 - [React Router 3.2.1](https://github.com/ReactTraining/react-router/releases/tag/v3.2.1)
-- [Redux 4.0.0](https://github.com/reduxjs/redux)
+- [Redux 4.0.1](https://github.com/reduxjs/redux)
 - [Redux Thunk 2.3.0](https://github.com/reduxjs/redux-thunk)
 - [Redux Form 7.4.2](https://redux-form.com/)
 - [Redux DevTools Extension 2.13.5](https://github.com/zalmoxisus/redux-devtools-extension)
