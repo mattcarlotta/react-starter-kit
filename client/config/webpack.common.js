@@ -26,7 +26,13 @@ const rules = [
     },
   }),
   /* handle React JS files */
-  defineJSRule({ loader: 'babel-loader' }),
+  defineJSRule({
+    loader: 'babel-loader',
+    options: {
+      cacheDirectory: inDevelopment,
+      cacheCompression: false,
+    },
+  }),
   /* handle image assets */
   defineMediaRule({
     test: /\.(png|jpg|gif|svg)$/,
@@ -48,7 +54,7 @@ const rules = [
 ];
 
 /* utilizes source mapping */
-const devtool = requiresSourceMap ? 'source-map' : '';
+const devtool = requiresSourceMap ? 'source-map' : false;
 
 /* current webpack environment */
 const mode = inDevelopment ? 'development' : 'production';

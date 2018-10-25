@@ -2,7 +2,7 @@ const HotModuleReplacementPlugin = require('webpack')
   .HotModuleReplacementPlugin;
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
-const { outputPath, publicPath } = require('./paths');
+const { outputPath, publicFolder, publicPath } = require('./paths');
 const { PORT } = require('./envs');
 
 // =============================================================== //
@@ -37,6 +37,16 @@ const devServer = {
   open: true,
   /* enable gzip compression for everything served */
   compress: true,
+  /* disable polling (continuous checking of other files to see what state they are in) */
+  watchOptions: {
+    poll: false,
+  },
+  /* keep stats to minimal (only outputs for errors or new compilations) */
+  stats: 'minimal',
+  /* static files and folders to be served (default: public) */
+  contentBase: publicFolder,
+  /* watches changes in files/folders specified in contentBase */
+  watchContentBase: true,
 };
 
 /* webpack dev server options */

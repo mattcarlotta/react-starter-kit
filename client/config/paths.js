@@ -7,7 +7,9 @@ module.exports = {
   publicPath: '/',
   /* compiled build output path (/build) */
   outputPath: resolve(__dirname, '../', 'build'),
-  /* entry point to the application index (src/index.js) */
+  /* path to public folder (./public) */
+  publicFolder: resolve(__dirname, 'public'),
+  /* entry point to the application index (./src/index.js) */
   entryPath: resolve(__dirname, '../', 'src/index.js'),
   /* path to index.html (build/index.html) */
   templatePath: resolve(__dirname, '../', 'public/index.html'),
