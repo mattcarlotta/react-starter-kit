@@ -8,7 +8,7 @@
 
     Please refrain from importing an asset within a
     partial scss file. This will cause pathing
-    issues because the partial will is then imported
+    issues because the partial is then imported
     from the main 'src/styles/index.scss' file. For
     simplicity, import static fonts, images, and
     stylesheets from within in this file.
