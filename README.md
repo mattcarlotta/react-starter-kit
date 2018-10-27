@@ -2,7 +2,7 @@
 
 A fork from <a href="https://github.com/HashemKhalifa/webpack-react-boilerplate">Webpack React Boilerplate</a>. This is a highly opinionated boilerplate and may not be suitable for everyone.
 
-Note: This a M.E.R.N. (Mongo, Express, React, NodeJS) fullstack boilerplate! A React only boilerplate can be found on the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/master">master</a> branch.
+Note: This a M.E.R.N. (Mongo, Express, React, NodeJS) fullstack boilerplate! A React only boilerplate can be found on the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/master">master</a> branch or a React Hot Loaded boilerplate can be found on the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/hotloaded">hotloaded</a>branch.
 
 ![Inv096o.gif](https://i.imgur.com/Inv096o.gif)
 
