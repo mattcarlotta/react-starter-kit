@@ -1,6 +1,6 @@
 ## Webpack FullStack Boilerplate
 
-![y0ygI4P.png](https://i.imgur.com/y0ygI4P.png)
+![GeDi0yY.png](https://i.imgur.com/GeDi0yY.png)
 
 Note: This a M.E.R.N. (Mongo, Express, React, NodeJS) fullstack boilerplate! A React only boilerplate can be found on the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/master">master</a> branch or a React Hot Loaded boilerplate can be found on the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/hotloaded">hotloaded</a> branch.
 
