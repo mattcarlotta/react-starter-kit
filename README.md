@@ -55,7 +55,7 @@ Note: This a M.E.R.N. (Mongo, Express, React, NodeJS) fullstack boilerplate! A R
 |   |   ├── routes
 |   |   ├── store
 |   |   ├── styles
-|   |   ├── test
+|   |   ├── tests
 |   |   ├── types
 |   |   ├── index.js
 |   |   └── setupTests.js
@@ -131,7 +131,7 @@ Unit testing will watch all your changes in the test files as well as create a c
 - [Redux Form 7.4.2](https://redux-form.com/)
 - [Redux DevTools Extension 2.13.5](https://github.com/zalmoxisus/redux-devtools-extension)
 - [React Router Redux 4.0.8](https://github.com/reactjs/react-router-redux)
-- [Stylized Components 3.4.9](https://github.com/styled-components/styled-components)
+- [Stylized Components 4.0.3](https://github.com/styled-components/styled-components)
 - [Stylized Theming 2.2.0](https://github.com/styled-components/styled-theming)
 - [Axios 0.18.0](https://github.com/axios/axios)
 - [Lodash](https://github.com/lodash/lodash)
