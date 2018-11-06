@@ -19,6 +19,11 @@
       "eslint --fix"
     ]
   },
+  "nodemonConfig": {
+    "ignore": [
+      "client"
+    ]
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -27,21 +32,21 @@
     "body-parser": "^1.15.2",
     "concurrently": "^3.5.0",
     "consign": "^0.1.6",
-    "cors": "^2.8.4",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "moment": "^2.22.2",
-    "mongoose": "^5.3.6",
+    "mongoose": "^5.3.9",
     "morgan": "^1.7.0",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
-    "eslint": "^5.7.0",
+    "eslint": "^5.8.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
-    "husky": "^1.1.2",
+    "husky": "^1.1.3",
     "lint-staged": "^7.3.0",
-    "nodemon": "^1.17.4",
+    "nodemon": "^1.18.6",
     "prettier": "^1.14.3"
   },
   "description": "",
