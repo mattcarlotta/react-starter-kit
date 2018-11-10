@@ -65,10 +65,11 @@ Note: This a M.E.R.N. (Mongo, Express, React, NodeJS) fullstack boilerplate! A R
 ├── controllers
 ├── database
 ├── env
-├── libs
+├── middlewares
 ├── models
 ├── routes
 ├── services
+├── server
 ├── shared
 └── app.js
 ```
