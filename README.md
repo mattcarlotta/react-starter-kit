@@ -68,8 +68,8 @@ Note: This a M.E.R.N. (Mongo, Express, React, NodeJS) fullstack boilerplate! A R
 ├── middlewares
 ├── models
 ├── routes
-├── services
 ├── server
+├── services
 ├── shared
 └── app.js
 ```
