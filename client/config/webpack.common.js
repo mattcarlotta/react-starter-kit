@@ -54,7 +54,7 @@ const rules = [
 ];
 
 /* utilizes source mapping */
-const devtool = requiresSourceMap ? 'source-map' : false;
+const devtool = requiresSourceMap ? 'cheap-module-source-map' : false;
 
 /* current webpack environment */
 const mode = inDevelopment ? 'development' : 'production';
@@ -69,6 +69,7 @@ const resolve = {
 const plugins = [
   /* shows a compilation bar instead of the default compile message */
   new WebpackBar({
+    color: '#268bd2',
     minimal: false,
     compiledIn: false,
   }),
