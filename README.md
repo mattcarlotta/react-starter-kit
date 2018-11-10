@@ -4,8 +4,6 @@
 
 Note: A React Hot Loaded boilerplate can be found on the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/hotloaded">hotloaded</a> branch or a fullstack M.E.R.N boilerplate can be found on the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/fullstack">fullstack</a> branch.
 
-![w1vE424.gif](https://i.imgur.com/w1vE424.gif)
-
 ## Table of contents
 
 [Project Structure](#project-structure)
