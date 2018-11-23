@@ -77,7 +77,7 @@ Note: This a M.E.R.N. (Mongo, Express, React, NodeJS) fullstack boilerplate! A R
 1 - Clone the boilerplate `fullstack` repository.
 
 ```
- git clone -b fullstack git@github.com:mattcarlotta/Webpack-React-Boilerplate.git/
+ git clone -b fullstack git@github.com:mattcarlotta/Webpack-React-Boilerplate.git
 ```
 
 2 - Run `npm i && cd client && npm i` to install dependencies.
