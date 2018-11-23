@@ -1,6 +1,6 @@
 ## Webpack React Boilerplate
 
-![6MYGpHl.png](https://i.imgur.com/6MYGpHl.png)
+![QzLuKvk.gif](https://i.imgur.com/QzLuKvk.gif)
 
 Note: A React Hot Loaded boilerplate can be found on the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/hotloaded">hotloaded</a> branch or a fullstack M.E.R.N boilerplate can be found on the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/fullstack">fullstack</a> branch.
 
