@@ -84,21 +84,21 @@ Note: This a M.E.R.N. (Mongo, Express, React, NodeJS) fullstack boilerplate! A R
 
 3 - Globally or locally install `nodemon` for handling and updating the application for file changes:
 
-Locally (while at the application's root folder): `npm i -D nodemon`
+Locally (while at the application's root directory): `npm i -D nodemon`
 
 Globally: `sudo npm i -g nodemon`
 
-4 - While at the application's root folder, start both servers by running `npm run dev`.
+4 - While at the application's root directory, start both servers by running `npm run dev`.
 
 ## Commands
 
-To prettify and lint your .js/.scss files, run `npm run lint` while at the application's `root` folder.
+To prettify and lint your .js/.scss files, run `npm run lint` while at the application's root directory.
 
-To build and bundle your client resources for staging, while inside the client's `root` folder, use `npm run staging` (staging utilizes source maps for errors). After you have built your React application for staging, use `npm start` while at the application's `root` folder. You should now see your React application running on `http://localhost:5000`.
+To run your tests, while inside the client's root directory, run `npm run test`. Testing will watch all your changes in the `.test.js` files as well as create a `coverage` folder. To view the current coverage report, navigate to `coverage/Icov-report/src` and open `index.html` in a browser.
 
-To build and bundle your client resources for production, while inside the client's `root` folder, use `npm run build` (source maps will be excluded). After you have built your React application for production, use `npm start` while at the application's `root` folder. You should now see your React application running on `http://localhost:5000`.
+To build and bundle your client resources for staging, while inside the client's root directory, use `npm run staging` (staging utilizes source maps for errors). After you have built your React application for staging, use `npm start` while at the application's root directory. You should now see your React application running on `http://localhost:5000`.
 
-Unit testing will watch all your changes in the test files as well as create a coverage folder for you. While inside the client's `root` folder, run `npm run test`.
+To build and bundle your client resources for production, while inside the client's root directory, use `npm run build` (source maps will be excluded). After you have built your React application for production, use `npm start` while at the application's root directory. You should now see your React application running on `http://localhost:5000`.
 
 ## Client Configuration
 
