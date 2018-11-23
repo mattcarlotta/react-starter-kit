@@ -70,7 +70,7 @@ Note: A React Hot Loaded boilerplate can be found on the <a href="https://github
 
 2 - Run `npm i` to install dependencies.
 
-3 - While at the application's `root` folder, start the `webpack-dev-server` by running `npm run dev`.
+3 - While at the application's root directory, start the `webpack-dev-server` by running `npm run dev`.
 
 ## Commands
 
@@ -80,11 +80,11 @@ To prettify your .js files, run `npm run format`.
 
 To lint your .scss files, run `npm run lintstyles`.
 
-To build and bundle your client resources for staging, use `npm run staging` while inside the `root` folder (staging utilizes source maps for errors).
+To run your tests, while inside the client's root directory, run `npm run test`. Testing will watch all your changes in the `.test.js` files as well as create a `coverage` folder. To view the current coverage report, navigate to `coverage/Icov-report/src` and open `index.html` in a browser.
 
-To build and bundle your client resources for production, use `npm run build` while inside the `root` folder (source maps will be excluded).
+To build and bundle your client resources for staging, use `npm run staging` while inside the root directory (staging utilizes source maps for errors).
 
-Unit testing will watch all your changes in the test files as well as create a coverage folder for you via `npm run test`.
+To build and bundle your client resources for production, use `npm run build` while inside the root directory (source maps will be excluded).
 
 ## Configuration
 
@@ -108,12 +108,13 @@ Unit testing will watch all your changes in the test files as well as create a c
 - [Webpack 4](https://github.com/webpack/webpack)
 - [Babel 7](https://github.com/babel/babel)
 - [React 16.6.0](https://github.com/facebook/react)
-- [React Router 3.2.1](https://github.com/ReactTraining/react-router/releases/tag/v3.2.1)
+- [React Router DOM 4.3.1](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
 - [Redux 4.0.1](https://github.com/reduxjs/redux)
 - [Redux Thunk 2.3.0](https://github.com/reduxjs/redux-thunk)
 - [Redux Form 7.4.2](https://redux-form.com/)
 - [Redux DevTools Extension 2.13.5](https://github.com/zalmoxisus/redux-devtools-extension)
-- [React Router Redux 4.0.8](https://github.com/reactjs/react-router-redux)
+- [Connected React Router 5.0.1](https://github.com/supasate/connected-react-router)
+- [History 4.7.2](https://github.com/ReactTraining/history)
 - [Stylized Components 4.0.3](https://github.com/styled-components/styled-components)
 - [Stylized Theming 2.2.0](https://github.com/styled-components/styled-theming)
 - [Axios 0.18.0](https://github.com/axios/axios)
@@ -127,10 +128,11 @@ Unit testing will watch all your changes in the test files as well as create a c
 - [Stylelint-Config-Recommended](https://github.com/stylelint/stylelint-config-recommended)
 - [Prettier](https://github.com/prettier/prettier)
 - [CSS Loader](https://github.com/webpack-contrib/css-loader)
-- [Sass Loader](https://github.com/webpack-contrib/sass-loader)
 - [Style Loader](https://github.com/webpack-contrib/style-loader)
+- [Sass Loader](https://github.com/webpack-contrib/sass-loader)
 - [Mini CSS Extract Plugin](https://github.com/webpack-contrib/mini-css-extract-plugin)
 - [Error Overlay Webpack Plugin](https://github.com/smooth-code/error-overlay-webpack-plugin)
+- [Friendly Errors Webpack Plugin](https://github.com/geowarin/friendly-errors-webpack-plugin)
 - [UglifyJS Webpack Plugin](https://www.npmjs.com/package/uglifyjs-webpack-plugin)
-- [Browsers list](https://github.com/browserslist/browserslist)
+- [Browsers List](https://github.com/browserslist/browserslist)
 - [Webpack Dev Server (Hot Loaded)](https://github.com/webpack/webpack-dev-server)
