@@ -3,8 +3,7 @@
 
 #Client files and folders
 client/build
-client/src/styles/assets
-client/src/styles/styles.css
+client/coverage
 client/node_modules
 
 
