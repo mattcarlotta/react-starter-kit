@@ -84,21 +84,21 @@ Note: This a M.E.R.N. (Mongo, Express, React, NodeJS) fullstack boilerplate! A R
 
 3 - Globally or locally install `nodemon` for handling and updating the application for file changes:
 
-Locally (while at the application's `root` folder): `npm i -D nodemon`
+Locally (while at the application's root directory): `npm i -D nodemon`
 
 Globally: `sudo npm i -g nodemon`
 
-4 - While at the application's `root` folder, start both servers by running `npm run dev`.
+4 - While at the application's root directory, start both servers by running `npm run dev`.
 
 ## Commands
 
-To prettify and lint your .js/.scss files, run `npm run lint` while at the application's `root` folder.
+To prettify and lint your .js/.scss files, run `npm run lint` while at the application's root directory.
 
-To build and bundle your client resources for staging, while inside the client's `root` folder, use `npm run staging` (staging utilizes source maps for errors). After you have built your React application for staging, use `npm start` while at the application's `root` folder. You should now see your React application running on `http://localhost:5000`.
+To run your tests, while inside the client's root directory, run `npm run test`. Testing will watch all your changes in the `.test.js` files as well as create a `coverage` folder. To view the current coverage report, navigate to `coverage/Icov-report/src` and open `index.html` in a browser.
 
-To build and bundle your client resources for production, while inside the client's `root` folder, use `npm run build` (source maps will be excluded). After you have built your React application for production, use `npm start` while at the application's `root` folder. You should now see your React application running on `http://localhost:5000`.
+To build and bundle your client resources for staging, while inside the client's root directory, use `npm run staging` (staging utilizes source maps for errors). After you have built your React application for staging, use `npm start` while at the application's root directory. You should now see your React application running on `http://localhost:5000`.
 
-Unit testing will watch all your changes in the test files as well as create a coverage folder for you. While inside the client's `root` folder, run `npm run test`.
+To build and bundle your client resources for production, while inside the client's root directory, use `npm run build` (source maps will be excluded). After you have built your React application for production, use `npm start` while at the application's root directory. You should now see your React application running on `http://localhost:5000`.
 
 ## Client Configuration
 
@@ -124,12 +124,13 @@ Unit testing will watch all your changes in the test files as well as create a c
 - [Webpack 4](https://github.com/webpack/webpack)
 - [Babel 7](https://github.com/babel/babel)
 - [React 16.6.0](https://github.com/facebook/react)
-- [React Router 3.2.1](https://github.com/ReactTraining/react-router/releases/tag/v3.2.1)
+- [React Router DOM 4.3.1](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
 - [Redux 4.0.1](https://github.com/reduxjs/redux)
 - [Redux Thunk 2.3.0](https://github.com/reduxjs/redux-thunk)
 - [Redux Form 7.4.2](https://redux-form.com/)
 - [Redux DevTools Extension 2.13.5](https://github.com/zalmoxisus/redux-devtools-extension)
-- [React Router Redux 4.0.8](https://github.com/reactjs/react-router-redux)
+- [Connected React Router 5.0.1](https://github.com/supasate/connected-react-router)
+- [History 4.7.2](https://github.com/ReactTraining/history)
 - [Stylized Components 4.0.3](https://github.com/styled-components/styled-components)
 - [Stylized Theming 2.2.0](https://github.com/styled-components/styled-theming)
 - [Axios 0.18.0](https://github.com/axios/axios)

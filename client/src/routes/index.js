@@ -1,13 +1,14 @@
 import React from 'react';
-import { IndexRoute, Route } from 'react-router';
+import { Route, Switch } from 'react-router-dom';
 
-import App from '../components/App';
 import Home from '../components/Home/Home';
 import NotFound from '../components/NotFound/NotFound';
 
-export default (
-  <Route path="/" component={App}>
-    <IndexRoute component={Home} />
-    <Route path="*" component={NotFound} />
-  </Route>
+export default () => (
+  <div>
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route component={NotFound} />
+    </Switch>
+  </div>
 );
