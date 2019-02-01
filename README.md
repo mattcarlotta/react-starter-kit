@@ -119,21 +119,23 @@ To build and bundle your client resources for production, while inside the clien
 
 ## Packages Incorporated
 
+These packages are updated by an automated script that can be found <a href="https://github.com/mattcarlotta/UpdateBoilerplate">here</a>. To see the latest package versions, please check out the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/fullstack/package.json">package.json</a>. If you run into any issues, please fill out an issue report <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/issues">here</a>.
+
 ### Client
 
-- [Webpack 4](https://github.com/webpack/webpack)
-- [Babel 7](https://github.com/babel/babel)
-- [React 16.6.0](https://github.com/facebook/react)
-- [React Router DOM 4.3.1](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
-- [Redux 4.0.1](https://github.com/reduxjs/redux)
-- [Redux Thunk 2.3.0](https://github.com/reduxjs/redux-thunk)
-- [Redux Form 7.4.2](https://redux-form.com/)
-- [Redux DevTools Extension 2.13.5](https://github.com/zalmoxisus/redux-devtools-extension)
-- [Connected React Router 5.0.1](https://github.com/supasate/connected-react-router)
-- [History 4.7.2](https://github.com/ReactTraining/history)
-- [Stylized Components 4.0.3](https://github.com/styled-components/styled-components)
-- [Stylized Theming 2.2.0](https://github.com/styled-components/styled-theming)
-- [Axios 0.18.0](https://github.com/axios/axios)
+- [Webpack](https://github.com/webpack/webpack)
+- [Babel](https://github.com/babel/babel)
+- [React](https://github.com/facebook/react)
+- [React Router Dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
+- [Redux](https://github.com/reduxjs/redux)
+- [Redux Thunk](https://github.com/reduxjs/redux-thunk)
+- [Redux Form](https://redux-form.com/)
+- [Redux DevTools Extension](https://github.com/zalmoxisus/redux-devtools-extension)
+- [Connected React Router](https://github.com/supasate/connected-react-router)
+- [History](https://github.com/ReactTraining/history)
+- [Stylized Components](https://github.com/styled-components/styled-components)
+- [Stylized Theming](https://github.com/styled-components/styled-theming)
+- [Axios](https://github.com/axios/axios)
 - [Lodash](https://github.com/lodash/lodash)
 - [Jest](https://github.com/facebook/jest)
 - [Enzyme](http://airbnb.io/enzyme/)
