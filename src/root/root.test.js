@@ -1,8 +1,8 @@
-import { setup } from '../../tests/utils';
-import Home from './Home.js';
+import { setupMount } from '../tests/utils';
+import App from './root.js';
 
-describe('Home', () => {
-  const wrapper = setup(Home);
+describe('App', () => {
+  const wrapper = setupMount(App);
 
   it('renders without errors', () => {
     const homeComponent = wrapper.find('.app');

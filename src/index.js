@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './root';
+import App from './root/root.js';
 import './styles/globals/globals.scss';
 
 const render = () => {
@@ -10,7 +10,7 @@ const render = () => {
 render();
 
 if (module.hot) {
-  module.hot.accept('./root', () => {
+  module.hot.accept('./root/root.js', () => {
     render();
   });
 }

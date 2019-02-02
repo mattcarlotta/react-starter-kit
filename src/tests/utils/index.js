@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import checkPropTypes from 'check-prop-types';
 
 /**
@@ -17,13 +17,18 @@ export const setup = (Component, props = {}, state = null) => {
 };
 
 /**
- * Return ShallowWrapper containing node(s) with the given data-test val.
- * @param {ShallowWrapper} wrapper - Enzyme shallow wrapper to search within.
- * @param {string} val - Value of data-test attribute for search.
- * @returns {ShallowWrapper}
+ * Factory function to create a MountedWrapper for a component
+ * @function setupMount
+ * @param {node} Component - Component to be shallowed
+ * @param {object} props - Component props specific to this setup.
+ * @param {object} state - initial state for setup.
+ * @returns {MountedWrapper}
  */
-export const findByTestAttr = (wrapper, val) =>
-  wrapper.find(`[data-test="${val}"]`);
+export const setupMount = (Component, props = {}, state = null) => {
+  const wrapper = mount(<Component {...props} />);
+  if (state) wrapper.setState(state);
+  return wrapper;
+};
 
 /**
  * Component PropType error checking

@@ -3,7 +3,7 @@ import logo from '../../images/logo.svg';
 import { app, logoContainer, logoStyle, title } from './Home.scss';
 
 export default () => (
-  <div data-test="home-component" className={app}>
+  <div className={app}>
     <div className={logoContainer}>
       <img className={logoStyle} src={logo} alt="" />
       <h1 className={title}>Webpack React Boilerplate</h1>
