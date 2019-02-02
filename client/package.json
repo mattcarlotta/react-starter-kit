@@ -7,7 +7,7 @@
     "dev": "NODE_ENV=development webpack-dev-server",
     "build": "NODE_ENV=production webpack",
     "staging": "NODE_ENV=staging webpack",
-    "test": "jest --watchAll --coverage --verbose",
+    "test": "jest --watchAll",
     "format": "prettier --write 'src/**/*.js'",
     "lintjs": "eslint 'src/**/*.js' --fix",
     "lintstyles": "stylelint **/*.scss",
@@ -22,21 +22,23 @@
     ]
   },
   "jest": {
+    "verbose": true,
     "testEnvironment": "jsdom",
     "moduleDirectories": [
       "src",
       "node_modules"
     ],
     "moduleNameMapper": {
-      "\\.(jpg|gif|png|ttf|eot|svg)$": "<rootDir>/src/tests/__mocks__/fileMock.js",
+      "\\.(jpg|png|gif|ttf|eot|svg)$": "<rootDir>/src/tests/__mocks__/fileMock.js",
       "\\.(css|scss)$": "identity-obj-proxy"
     },
     "transform": {
       "^.+\\.(js|jsx)$": "babel-jest",
-      "\\.(jpg|gif|png|ttf|eot|svg)$": "<rootDir>/src/tests/__mocks__/fileMock.js",
       ".+\\.(css|styl|less|sass|scss)$": "<rootDir>/node_modules/jest-css-modules-transform"
     },
-    "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js",
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupTests.js"
+    ],
     "moduleFileExtensions": [
       "css",
       "scss",

@@ -1,11 +1,11 @@
-import { setup, findByTestAttr } from '../../tests/utils';
+import { setup } from '../../tests/utils';
 import Home from './Home.js';
 
-describe('Home component', () => {
+describe('Home', () => {
   const wrapper = setup(Home);
 
   it('renders without errors', () => {
-    const homeComponent = findByTestAttr(wrapper, 'home-component');
+    const homeComponent = wrapper.find('.app');
     expect(homeComponent).toHaveLength(1);
   });
 });
