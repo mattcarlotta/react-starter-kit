@@ -13,10 +13,11 @@
     "lintstyles": "stylelint **/*.scss"
   },
   "lint-staged": {
-    "*.{js,jsx,scss}": [
+    "*.{js,jsx,scss,json}": [
       "prettier --write --single-quote",
       "eslint --fix",
       "stylelint **/*.scss",
+      "jest /src",
       "git add"
     ]
   },
