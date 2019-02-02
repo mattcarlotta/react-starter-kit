@@ -23,6 +23,7 @@
   },
   "jest": {
     "verbose": true,
+    "collectCoverage": true,
     "testEnvironment": "jsdom",
     "moduleDirectories": [
       "src",
