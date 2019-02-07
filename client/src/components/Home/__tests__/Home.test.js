@@ -1,8 +1,7 @@
-import { setup } from '../../tests/utils';
-import Home from './Home.js';
+import Home from '../Home.js';
 
 describe('Home', () => {
-  const wrapper = setup(Home);
+  const wrapper = shallow(<Home />);
 
   it('renders without errors', () => {
     const homeComponent = wrapper.find('.app');

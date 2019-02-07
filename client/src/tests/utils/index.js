@@ -1,31 +1,29 @@
-import React from 'react';
 import { shallow, mount } from 'enzyme';
 import checkPropTypes from 'check-prop-types';
 
 /**
- * Factory function to create a ShallowWrapper for the Home component
- * @function setup
+ * Factory function to create a ShallowWrapper for a component
+ * @function shallowWrap
  * @param {node} Component - Component to be shallowed
- * @param {object} props - Component props specific to this setup.
  * @param {object} state - initial state for setup.
  * @returns {ShallowWrapper}
  */
-export const setup = (Component, props = {}, state = null) => {
-  const wrapper = shallow(<Component {...props} />);
+export const shallowWrap = (Component, state = null) => {
+  const wrapper = shallow(Component);
   if (state) wrapper.setState(state);
   return wrapper;
 };
 
 /**
  * Factory function to create a MountedWrapper for a component
- * @function setupMount
+ * @function mountWrap
  * @param {node} Component - Component to be shallowed
  * @param {object} props - Component props specific to this setup.
  * @param {object} state - initial state for setup.
  * @returns {MountedWrapper}
  */
-export const setupMount = (Component, props = {}, state = null) => {
-  const wrapper = mount(<Component {...props} />);
+export const mountWrap = (Component, state = null) => {
+  const wrapper = mount(Component);
   if (state) wrapper.setState(state);
   return wrapper;
 };

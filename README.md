@@ -94,7 +94,7 @@ Globally: `sudo npm i -g nodemon`
 
 To prettify and lint your .js/.scss files, run `npm run lint` while at the application's root directory.
 
-To run your tests, while inside the client's root directory, run `npm run test`. Testing will watch all your changes in the `.test.js` files as well as create a `coverage` folder. To view the current coverage report, navigate to `coverage/Icov-report/src` and open `index.html` in a browser.
+To run your tests, while inside the client's root directory, run `npm run test`. Testing will watch all your changes in the `.test.js` files as well as create a `coverage` folder. To view the current coverage report, navigate to `coverage/Icov-report/src` and open `index.html` in a browser. Please note that `*.test.js` files will be ignored by ESlint. To find out why, please see <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/fullstack/client/src/setupTests.js">setupTest.js</a> for more information.
 
 To build and bundle your client resources for staging, while inside the client's root directory, use `npm run staging` (staging utilizes source maps for errors). After you have built your React application for staging, use `npm start` while at the application's root directory. You should now see your React application running on `http://localhost:5000`.
 
