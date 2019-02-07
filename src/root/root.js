@@ -11,7 +11,7 @@ import Routes from '../routes/routes.js';
 const history = createBrowserHistory();
 const middlewares = applyMiddleware(thunk, routerMiddleware(history));
 
-const store = createStore(
+export const store = createStore(
   createRootReducer(history),
   composeWithDevTools(middlewares),
 );

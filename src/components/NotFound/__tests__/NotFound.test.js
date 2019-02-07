@@ -1,8 +1,7 @@
-import { setup } from '../../tests/utils';
-import NotFound from './NotFound.js';
+import NotFound from '../NotFound.js';
 
 describe('NotFound', () => {
-  const wrapper = setup(NotFound);
+  const wrapper = shallow(<NotFound />);
 
   it('renders without errors', () => {
     const notFoundComponent = wrapper.find('.notfoundContainer');

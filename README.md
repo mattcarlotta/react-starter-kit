@@ -80,7 +80,7 @@ To prettify your .js files, run `npm run format`.
 
 To lint your .scss files, run `npm run lintstyles`.
 
-To run your tests, while inside the client's root directory, run `npm run test`. Testing will watch all your changes in the `.test.js` files as well as create a `coverage` folder. To view the current coverage report, navigate to `coverage/Icov-report/src` and open `index.html` in a browser.
+To run your tests, while inside the client's root directory, run `npm run test`. Testing will watch all your changes in the `.test.js` files as well as create a `coverage` folder. To view the current coverage report, navigate to `coverage/Icov-report/src` and open `index.html` in a browser. Please note that `*.test.js` files will be ignored by ESlint. To find out why, please see <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/master/src/setupTests.js">setupTest.js</a> for more information.
 
 To build and bundle your client resources for staging, use `npm run staging` while inside the root directory (staging utilizes source maps for errors).
 
