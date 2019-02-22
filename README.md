@@ -12,7 +12,7 @@ Note: This a SSR (Server Side Rendering) boilerplate! A React only boilerplate c
 
 [Commands](#commands)
 
-[Configuration](#client-configuration)
+[Configuration](#configuration)
 
 [Packages Incorporated](#packages-incorporated)
 
