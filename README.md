@@ -1,6 +1,6 @@
 ## Webpack SSR Boilerplate
 
-![cvU2GRX.png](https://i.imgur.com/cvU2GRX.png)
+![xpBX8vy.png](https://i.imgur.com/xpBX8vy.png)
 
 Note: This a SSR (Server Side Rendering) boilerplate! A React only boilerplate can be found on the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/master">master</a> branch or a React Hot Loaded boilerplate can be found on the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/hotloaded">hotloaded</a> branch, or a fullstack M.E.R.N boilerplate can be found on the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/fullstack">fullstack</a> branch.
 
@@ -70,13 +70,7 @@ Note: This a SSR (Server Side Rendering) boilerplate! A React only boilerplate c
 
 2 - Run `npm install` to install dependencies.
 
-3 - Globally or locally install `nodemon` for handling and updating the application for file changes:
-
-Locally (while at the application's root directory): `npm i -D nodemon`
-
-Globally: `sudo npm i -g nodemon`
-
-4 - While at the application's root directory, start both servers by running `npm run dev`.
+3 - While at the application's root directory, start both servers by running `npm run dev`.
 
 ## Commands
 
@@ -110,14 +104,19 @@ These packages are updated by an automated script that can be found <a href="htt
 
 - [Webpack](https://github.com/webpack/webpack)
 - [Babel](https://github.com/babel/babel)
+- [Express](https://github.com/expressjs/express)
 - [React](https://github.com/facebook/react)
+- [React Loadable](https://github.com/jamiebuilds/react-loadable)
+- [React Helmet](https://github.com/nfl/react-helmet)
 - [React Router Dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
+- [React Router Config](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config)
 - [React Hot Loader](https://github.com/gaearon/react-hot-loader)
 - [Redux](https://github.com/reduxjs/redux)
 - [Redux Thunk](https://github.com/reduxjs/redux-thunk)
 - [Redux DevTools Extension](https://github.com/zalmoxisus/redux-devtools-extension)
 - [Connected React Router](https://github.com/supasate/connected-react-router)
 - [History](https://github.com/ReactTraining/history)
+- [PropTypes](https://github.com/facebook/prop-types)
 - [Axios](https://github.com/axios/axios)
 - [Lodash](https://github.com/lodash/lodash)
 - [Jest](https://github.com/facebook/jest)
@@ -133,4 +132,7 @@ These packages are updated by an automated script that can be found <a href="htt
 - [Sass Loader](https://github.com/webpack-contrib/sass-loader)
 - [Mini CSS Extract Plugin](https://github.com/webpack-contrib/mini-css-extract-plugin)
 - [Friendly Errors Webpack Plugin](https://github.com/geowarin/friendly-errors-webpack-plugin)
-- [UglifyJS Webpack Plugin](https://www.npmjs.com/package/uglifyjs-webpack-plugin)
+- [Morgan](https://github.com/expressjs/morgan)
+- [Webpackbar](https://www.npmjs.com/package/webpackbar)
+- [Webpack Dev Middleware](https://github.com/webpack/webpack-dev-middleware)
+- [Webpack Hot Middleware](https://github.com/webpack-contrib/webpack-hot-middleware)
