@@ -1,6 +1,5 @@
 /* eslint-disable */
 import React from "react";
-import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { renderRoutes } from "react-router-config";
 import { hot } from "react-hot-loader";
