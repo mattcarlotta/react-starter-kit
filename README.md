@@ -1,8 +1,8 @@
-## Webpack FullStack Boilerplate
+## Webpack SSR Boilerplate
 
 ![cvU2GRX.png](https://i.imgur.com/cvU2GRX.png)
 
-Note: This a M.E.R.N. (Mongo, Express, React, NodeJS) fullstack boilerplate! A React only boilerplate can be found on the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/master">master</a> branch or a React Hot Loaded boilerplate can be found on the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/hotloaded">hotloaded</a> branch.
+Note: This a SSR (Server Side Rendering) boilerplate! A React only boilerplate can be found on the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/master">master</a> branch or a React Hot Loaded boilerplate can be found on the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/hotloaded">hotloaded</a> branch, or a fullstack M.E.R.N boilerplate can be found on the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/fullstack">fullstack</a> branch.
 
 ## Table of contents
 
@@ -12,75 +12,68 @@ Note: This a M.E.R.N. (Mongo, Express, React, NodeJS) fullstack boilerplate! A R
 
 [Commands](#commands)
 
-[Client Configuration](#client-configuration)
+[Configuration](#client-configuration)
 
 [Packages Incorporated](#packages-incorporated)
 
 ## Project Structure
 
 ```
-├── client
-|   ├── build
-|   |   ├── css
-|   |   |   ├── main.[contenthash:8].css
-|   |   |   └── main.[contenthash:8].css.map
-|   |   ├── js
-|   |   |   ├── main.[hash].js
-|   |   |   └── main.[hash].js.map
-|   |   ├── media
-|   |   |   └── [hash].[ext]
-|   |   ├── favicon.ico
-|   |   └── index.html
-|   |
-|   ├── config
-|   |   ├── envs.js
-|   |   ├── paths.js
-|   |   ├── rules.js
-|   |   ├── webpack.common.js
-|   |   ├── webpack.dev.js
-|   |   └── webpack.prod.js
-|   |
-|   ├── public
-|   |   ├── favicon.ico
-|   |   └── index.html
-|   |
-|   ├── src
-|   |   ├── components
-|   |   ├── containers
-|   |   ├── images
-|   |   ├── reducers
-|   |   ├── root
-|   |   ├── routes
-|   |   ├── store
-|   |   ├── styles
-|   |   ├── tests
-|   |   ├── types
-|   |   ├── index.js
-|   |   └── setupTests.js
-|   |
-|   └── webpack.config.js
+├── coverage
+|   ├── Icov-report
+|   ├── clover.xml
+|   ├── coverage-final.json
+|   └── Icov.info
 |
-├── controllers
-├── database
-├── env
-├── middlewares
-├── models
-├── routes
-├── server
-├── services
-├── shared
-└── app.js
+├── public
+|   ├── assets
+|   ├── favicon.ico
+|   ├── loadable-assets.json
+|   └── webpack-assets.json
+|
+├── src
+|   ├── actions
+|   ├── components
+|   ├── containers
+|   ├── reducers
+|   ├── routes
+|   ├── store
+|   ├── styles
+|   ├── tests
+|   ├── types
+|   ├── utils
+|   |   ├── renderHtml.js
+|   |   └── tests.js
+|   ├── client.js
+|   └── server.js
+|
+├── tools
+|   ├── jest
+|   |   ├── assetMock.js
+|   |   ├── setup.js
+|   |   └── styleMock.js
+|   |
+|   └── webpack
+|       ├── config.babel.js
+|       ├── entry.js
+|       ├── envs.js
+|       ├── hooks.js
+|       ├── paths.js
+|       ├── plugins.js
+|       └── rules.js
+├── index.js
+└──  postcss.config.js
 ```
 
 ## Installation
 
-1 - Clone the boilerplate `fullstack` repository.
+1 - Clone the boilerplate `ssr` repository.
 
 ```
- git clone -b fullstack git@github.com:mattcarlotta/Webpack-React-Boilerplate.git
+ git clone -b ssr git@github.com:mattcarlotta/Webpack-React-Boilerplate.git
 ```
 
-2 - Run `npm i && cd client && npm i` to install dependencies.
+2 - Run `npm install` to install dependencies.
 
 3 - Globally or locally install `nodemon` for handling and updating the application for file changes:
 
@@ -92,49 +85,44 @@ Globally: `sudo npm i -g nodemon`
 
 ## Commands
 
-To prettify and lint your .js/.scss files, run `npm run lint` while at the application's root directory.
+To lint your .js/.scss files, run `npm run lint` while at the application's root directory.
 
-To run your tests, while inside the client's root directory, run `npm run test`. Testing will watch all your changes in the `.test.js` files as well as create a `coverage` folder. To view the current coverage report, navigate to `coverage/Icov-report/src` and open `index.html` in a browser. Please note that `*.test.js` files will be ignored by ESlint. To find out why, please see <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/fullstack/client/src/setupTests.js">setupTest.js</a> for more information.
+To run your tests, while inside the client's root directory, run `npm run test` or `npm run test:watch`. Testing will watch all your changes in the `.test.js` files as well as create a `coverage` folder. To view the current coverage report, navigate to `coverage/Icov-report/src` and open `index.html` in a browser.
 
-To build and bundle your client resources for staging, while inside the client's root directory, use `npm run staging` (staging utilizes source maps for errors). After you have built your React application for staging, use `npm start` while at the application's root directory. You should now see your React application running on `http://localhost:5000`.
+To build and bundle your client resources for production, while inside the client's root directory, use `npm run build` (source maps will be excluded). After you have built your React application for production, use `npm start` while at the application's root directory. You should now see your React application running on `http://localhost:3000`.
 
-To build and bundle your client resources for production, while inside the client's root directory, use `npm run build` (source maps will be excluded). After you have built your React application for production, use `npm start` while at the application's root directory. You should now see your React application running on `http://localhost:5000`.
+## Configuration
 
-## Client Configuration
-
-- `client/config/envs.js` webpack environment variables.
-- `client/config/paths.js` webpack config folder paths.
-- `client/config/rules.js` webpack rules functions.
-- `client/config/webpack.common.js` common webpack config for both development and production environments.
-- `client/config/webpack.dev.js` webpack config for development environment only.
-- `client/config/webpack.prod.js` webpack config for production environment only.
-- `client/webpack.config.js` main webpack config that merges common and an environment based config
-- `client/src/setupTest.js` enzyme test setup for your React components.
-- `client/.babelrc` babel config for react js files.
-- `client/.browserslistrc` browsers list config.
-- `client/.eslintignore` eslint config for ignoring scss files.
-- `client/.eslintrc` eslint config for linting js files.
-- `client/.prettierc` prettier config.
-- `client/.stylelintrc.json` stylelint config for linting scss files.
+- `public/assets` contains compiled, production build .CSS, .MAP, .JS, and .GZ files.
+- `public/loadable-assets.json` contains development file chunks.
+- `public/webpack-assets.json` contains production file chunks.
+- `public/assets` contains compiled, production build .CSS, .MAP, .JS, and .GZ files.
+- `src/client.js` client-side setup.
+- `src/server.js` express server that serves the client.
+- `tools/webpack/config.babel.js` webpack config for both development and production environments.
+- `tools/webpack/entry.js` webpack entry variables.
+- `tools/webpack/envs.js` webpack environment variables.
+- `tools/webpack/hooks.js` webpack hooks for handling SASS/CSS and media imports.
+- `tools/webpack/paths.js` webpack config folder paths.
+- `tools/webpack/plugins.js` webpack plugins required for development or production.
+- `tools/webpack/rules.js` webpack rules testing.
+- `utils/renderHtml.js` factory function to rewrite client-side DOM structure.
+- `utils/tests.js` test setup for Jest and Enzyme (see notes in file for important information).
 
 ## Packages Incorporated
 
-These packages are updated by an automated script that can be found <a href="https://github.com/mattcarlotta/UpdateBoilerplate">here</a>. To see the latest package versions, please check out the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/fullstack/package.json">package.json</a>. If you run into any issues, please fill out an issue report <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/issues">here</a>.
-
-### Client
+These packages are updated by an automated script that can be found <a href="https://github.com/mattcarlotta/UpdateBoilerplate">here</a>. To see the latest package versions, please check out the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/ssr/package.json">package.json</a>. If you run into any issues, please fill out an issue report <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/issues">here</a>.
 
 - [Webpack](https://github.com/webpack/webpack)
 - [Babel](https://github.com/babel/babel)
 - [React](https://github.com/facebook/react)
 - [React Router Dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
+- [React Hot Loader](https://github.com/gaearon/react-hot-loader)
 - [Redux](https://github.com/reduxjs/redux)
 - [Redux Thunk](https://github.com/reduxjs/redux-thunk)
-- [Redux Form](https://redux-form.com/)
 - [Redux DevTools Extension](https://github.com/zalmoxisus/redux-devtools-extension)
 - [Connected React Router](https://github.com/supasate/connected-react-router)
 - [History](https://github.com/ReactTraining/history)
-- [Stylized Components](https://github.com/styled-components/styled-components)
-- [Stylized Theming](https://github.com/styled-components/styled-theming)
 - [Axios](https://github.com/axios/axios)
 - [Lodash](https://github.com/lodash/lodash)
 - [Jest](https://github.com/facebook/jest)
@@ -149,24 +137,5 @@ These packages are updated by an automated script that can be found <a href="htt
 - [Style Loader](https://github.com/webpack-contrib/style-loader)
 - [Sass Loader](https://github.com/webpack-contrib/sass-loader)
 - [Mini CSS Extract Plugin](https://github.com/webpack-contrib/mini-css-extract-plugin)
-- [Error Overlay Webpack Plugin](https://github.com/smooth-code/error-overlay-webpack-plugin)
 - [Friendly Errors Webpack Plugin](https://github.com/geowarin/friendly-errors-webpack-plugin)
 - [UglifyJS Webpack Plugin](https://www.npmjs.com/package/uglifyjs-webpack-plugin)
-- [Browsers List](https://github.com/browserslist/browserslist)
-- [Webpack Dev Server (Hot Loaded)](https://github.com/webpack/webpack-dev-server)
-
-### Server
-
-- [Bcrypt](https://github.com/kelektiv/node.bcrypt.js)
-- [Bluebird](https://github.com/petkaantonov/bluebird)
-- [Body Parser](https://github.com/expressjs/body-parser)
-- [Concurrently](https://github.com/kimmobrunfeldt/concurrently)
-- [Consign](https://github.com/jarradseers/consign)
-- [CORS](https://github.com/expressjs/cors)
-- [Express](http://expressjs.com/)
-- [Moment](http://momentjs.com/)
-- [Mongoose](https://mongoosejs.com/)
-- [Morgan](https://github.com/expressjs/morgan)
-- [Passport](http://www.passportjs.org/)
-- [Passport Local](https://github.com/jaredhanson/passport-local)
-- [Prettier](https://github.com/prettier/prettier)

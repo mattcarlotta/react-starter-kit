@@ -1,0 +1,21 @@
+@import "../../styles/styles";
+
+.homeContainer {
+  text-align: center;
+  height: 100%;
+}
+
+.logoContainer {
+  @extend %centered;
+
+  color: $lightblue;
+  min-height: 100vh;
+}
+
+.logoStyle {
+  margin-bottom: 20px;
+}
+
+.textInfo {
+  margin: 5px;
+}
