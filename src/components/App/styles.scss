@@ -1,6 +1,9 @@
-@import "../../styles/styles";
+@import "../../styles/styles.scss";
 
 .app {
+  min-height: 100vh;
   background-color: $deepsea;
-  font-family: "Helvetica-Light", Helvetica, Arial, sans-serif;
+  font-family: "Muli Light", "Helvetica-Light", Helvetica, Arial, sans-serif;
+  letter-spacing: 1px;
+  color: $lightblue;
 }

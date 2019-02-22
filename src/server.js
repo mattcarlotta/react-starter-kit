@@ -1,5 +1,3 @@
-/* @flow */
-
 import { resolve } from "path";
 import morgan from "morgan";
 import express from "express";
@@ -46,7 +44,7 @@ if (!__DEV__) {
   app.use(express.static(resolve(cwd(), "public")));
 } else {
   const webpack = require("webpack");
-  const webpackConfig = require("../tools/webpack/webpack.config");
+  const webpackConfig = require("../tools/webpack/webpack.babel");
   const compiler = webpack(webpackConfig);
   const webpackDevMiddleware = require("webpack-dev-middleware");
   const webpackHotMiddleware = require("webpack-hot-middleware");
@@ -80,7 +78,7 @@ app.get("*", (req, res) => {
   const store = configureStore(history);
 
   // The method for loading data from server-side
-  const loadBranchData = (): Promise<any> => {
+  const loadBranchData = () => {
     const branch = matchRoutes(routes, req.path);
 
     const promises = branch.map(({ route, match }) => {

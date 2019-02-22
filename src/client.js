@@ -1,17 +1,17 @@
-/* @flow */
+import React from "react";
+import { hydrate } from "react-dom";
+import { createBrowserHistory } from "history";
+import { AppContainer } from "react-hot-loader";
+import { Provider } from "react-redux";
+import { ConnectedRouter } from "connected-react-router";
+import { renderRoutes } from "react-router-config";
+import Loadable from "react-loadable";
 
-import React from 'react';
-import { hydrate } from 'react-dom';
-import { createBrowserHistory } from 'history';
-import { AppContainer } from 'react-hot-loader';
-import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'connected-react-router';
-import { BrowserRouter } from 'react-router-dom';
-import { renderRoutes } from 'react-router-config';
-import Loadable from 'react-loadable';
+import configureStore from "./store/configureStore";
+import routes from "./routes";
 
-import configureStore from './store/configureStore';
-import routes from './routes';
+import "normalize.css/normalize.css"; // eslint-disable-line import/first
+import "./styles/globals/globals.scss";
 
 const history = createBrowserHistory();
 // Get the initial state from server-side rendering
@@ -23,12 +23,11 @@ const render = Routes => {
     <AppContainer>
       <Provider store={store}>
         <ConnectedRouter history={history}>
-          <BrowserRouter>{renderRoutes(Routes)}</BrowserRouter>
+          {renderRoutes(Routes)}
         </ConnectedRouter>
       </Provider>
     </AppContainer>,
-    // $FlowFixMe: isn't an issue
-    document.getElementById('root')
+    document.getElementById("root")
   );
 };
 
@@ -37,9 +36,9 @@ Loadable.preloadReady().then(() => render(routes));
 
 if (module.hot) {
   // Enable webpack hot module replacement for routes
-  module.hot.accept('./routes', () => {
+  module.hot.accept("./routes", () => {
     try {
-      const nextRoutes = require('./routes').default;
+      const nextRoutes = require("./routes").default;
 
       render(nextRoutes);
     } catch (error) {

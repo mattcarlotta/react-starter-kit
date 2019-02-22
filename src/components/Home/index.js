@@ -1,9 +1,7 @@
-/* @flow */
-
-import Loadable from 'react-loadable';
-import Loading from '../Loading';
+import Loadable from "react-loadable";
+import Loading from "../Loading";
 
 export default Loadable({
-  loader: () => import('./Home'),
+  loader: () => import("./Home"),
   loading: Loading
 });

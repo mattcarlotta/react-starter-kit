@@ -1,14 +1,11 @@
-/* @flow */
+import React from "react";
+import PropTypes from "prop-types";
+import ErrorDisplay from "../ErrorDisplay";
+import styles from "./styles.scss";
 
-import React from 'react';
-import ErrorDisplay from '../ErrorDisplay';
-import styles from './styles.scss';
-
-import type { LoadingProps } from '../../types';
-
-export default ({ pastDelay, error }: LoadingProps) => {
+const Loading = ({ pastDelay, error }) => {
   if (error)
-    return <ErrorDisplay error={new Error('Failed to load component')} />;
+    return <ErrorDisplay error={new Error("Failed to load component")} />;
 
   if (pastDelay)
     return (
@@ -19,3 +16,10 @@ export default ({ pastDelay, error }: LoadingProps) => {
 
   return null;
 };
+
+Loading.propTypes = {
+  pastDelay: PropTypes.bool,
+  error: PropTypes.string
+};
+
+export default Loading;

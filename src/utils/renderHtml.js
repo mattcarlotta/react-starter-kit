@@ -1,16 +1,11 @@
 /* eslint-disable lodash/prefer-lodash-method */
 
-import serialize from 'serialize-javascript';
-import { minify } from 'html-minifier';
+import serialize from "serialize-javascript";
+import { minify } from "html-minifier";
 
-export default (
-  head: Object,
-  assets: Array,
-  htmlContent: string,
-  initialState: Object
-): string => {
-  const styles = assets.filter(file => file.endsWith('.css'));
-  const scripts = assets.filter(file => file.endsWith('.js'));
+export default (head, assets, htmlContent, initialState) => {
+  const styles = assets.filter(file => file.endsWith(".css"));
+  const scripts = assets.filter(file => file.endsWith(".js"));
 
   const html = `
     <!doctype html>
@@ -36,7 +31,7 @@ export default (
             file =>
               `<link href="${file}" media="screen, projection" rel="stylesheet" type="text/css">`
           )
-          .join('\n')}
+          .join("\n")}
       </head>
       <body>
         <!-- Insert the router, which passed from server-side -->
@@ -50,7 +45,7 @@ export default (
         </script>
 
         <!-- Insert bundled scripts into <script> tag -->
-        ${scripts.map(file => `<script src="${file}"></script>`).join('\n')}
+        ${scripts.map(file => `<script src="${file}"></script>`).join("\n")}
 
         ${head.script.toString()}
       </body>

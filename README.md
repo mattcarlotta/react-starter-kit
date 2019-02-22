@@ -34,6 +34,12 @@ Note: This a SSR (Server Side Rendering) boilerplate! A React only boilerplate c
 |   ├── routes
 |   ├── store
 |   ├── styles
+|   |   ├── assets
+|   |   ├── extensions
+|   |   ├── globals
+|   |   ├── variables
+|   |   └── styles.js
+|   |
 |   ├── types
 |   ├── utils
 |   |   ├── renderHtml.js
@@ -45,8 +51,7 @@ Note: This a SSR (Server Side Rendering) boilerplate! A React only boilerplate c
 ├── tools
 |   ├── jest
 |   |   ├── assetMock.js
-|   |   ├── setup.js
-|   |   └── styleMock.js
+|   |   └── setup.js
 |   |
 |   └── webpack
 |       ├── entry.js
@@ -55,10 +60,10 @@ Note: This a SSR (Server Side Rendering) boilerplate! A React only boilerplate c
 |       ├── paths.js
 |       ├── plugins.js
 |       ├── rules.js
-|       └── webpack.config.js
+|       └── webpack.babel.js
 |
 ├── index.js
-└──  postcss.config.js
+└── postcss.config.js
 ```
 
 ## Installation
@@ -89,15 +94,20 @@ To build and bundle your client resources for production, while inside the clien
 - `public/assets` contains compiled, production build .CSS, .MAP, .JS, and .GZ files.
 - `src/client.js` client-side setup.
 - `src/server.js` express server that serves the client.
+- `src/styles/assets` media assets imports.
+- `src/styles/extensions` partial shared extensions.
+- `src/styles/globals` global asset imports (see notes in `global.scss` for important information).
+- `src/styles/variables` partial shared variables.
+- `src/styles/styles.scss` indexed partial files for easier sharing (see notes in `styles.scss` for important information).
 - `tools/webpack/entry.js` webpack entry variables.
 - `tools/webpack/envs.js` webpack environment variables.
 - `tools/webpack/hooks.js` webpack hooks for handling SASS/CSS and media imports.
 - `tools/webpack/paths.js` webpack config folder paths.
 - `tools/webpack/plugins.js` webpack plugins required for development or production.
 - `tools/webpack/rules.js` webpack rules testing.
-- `tools/webpack/webpack.config.js` webpack config for both development and production environments.
+- `tools/webpack/webpack.babel.js` webpack config for both development and production environments (must be `.babel.js` to accept ES6 `import/export`).
 - `utils/renderHtml.js` factory function to rewrite client-side DOM structure.
-- `utils/tests.js` test setup for Jest and Enzyme (see notes in file for important information).
+- `utils/tests.js` test setup for Jest and Enzyme (see notes in `tests.js` for important information).
 
 ## Packages Incorporated
 

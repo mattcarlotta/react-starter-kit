@@ -1,12 +1,15 @@
-/* @flow */
+import React from "react";
+import PropTypes from "prop-types";
+import styles from "./styles.scss";
 
-import React from 'react';
-import styles from './styles.scss';
-
-type Props = { error: Object };
-
-export default ({ error }: Props) => (
+const ErrorDisplay = ({ error }) => (
   <div className={styles.Error}>
     <p>Oops! {error.message}</p>
   </div>
 );
+
+ErrorDisplay.propTypes = {
+  error: PropTypes.string.isRequired
+};
+
+export default ErrorDisplay;
