@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
@@ -25,12 +26,5 @@ export const App = ({ route: { routes } }) => (
   </div>
 );
 
-App.propTypes = {
-  route: PropTypes.shapeOf({
-    component: PropTypes.node,
-    loadData: PropTypes.func,
-    path: PropTypes.string
-  })
-};
-
 export default hot(module)(App);
+/* eslint-enable */
