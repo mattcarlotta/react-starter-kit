@@ -39,6 +39,7 @@ Note: This a SSR (Server Side Rendering) boilerplate! A React only boilerplate c
 |   ├── utils
 |   |   ├── renderHtml.js
 |   |   └── tests.js
+|   |
 |   ├── client.js
 |   └── server.js
 |
@@ -56,6 +57,7 @@ Note: This a SSR (Server Side Rendering) boilerplate! A React only boilerplate c
 |       ├── plugins.js
 |       ├── rules.js
 |       └── webpack.config.js
+|
 ├── index.js
 └──  postcss.config.js
 ```
