@@ -1,6 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
-import logo from "./assets/landingLogoSSR.png";
+import logo from "../../styles/assets/images/landingLogoSSR.png";
 import { homeContainer, logoContainer, logoStyle, textInfo } from "./Home.scss";
 
 export default () => (

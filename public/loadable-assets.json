@@ -5721,28 +5721,28 @@
       "publicPath": "/assets/main.js.map"
     }
   ],
-  "./assets/landingLogoSSR.png": [
+  "../../styles/assets/images/landingLogoSSR.png": [
     {
-      "id": "./src/components/Home/assets/landingLogoSSR.png",
-      "name": "./src/components/Home/assets/landingLogoSSR.png",
+      "id": "./src/styles/assets/images/landingLogoSSR.png",
+      "name": "./src/styles/assets/images/landingLogoSSR.png",
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "./src/components/Home/assets/landingLogoSSR.png",
-      "name": "./src/components/Home/assets/landingLogoSSR.png",
+      "id": "./src/styles/assets/images/landingLogoSSR.png",
+      "name": "./src/styles/assets/images/landingLogoSSR.png",
       "file": "main.js",
       "publicPath": "/assets/main.js"
     },
     {
-      "id": "./src/components/Home/assets/landingLogoSSR.png",
-      "name": "./src/components/Home/assets/landingLogoSSR.png",
+      "id": "./src/styles/assets/images/landingLogoSSR.png",
+      "name": "./src/styles/assets/images/landingLogoSSR.png",
       "file": "main.css.map",
       "publicPath": "/assets/main.css.map"
     },
     {
-      "id": "./src/components/Home/assets/landingLogoSSR.png",
-      "name": "./src/components/Home/assets/landingLogoSSR.png",
+      "id": "./src/styles/assets/images/landingLogoSSR.png",
+      "name": "./src/styles/assets/images/landingLogoSSR.png",
       "file": "main.js.map",
       "publicPath": "/assets/main.js.map"
     }
