@@ -1,6 +1,6 @@
 ## Webpack SSR Boilerplate
 
-![50dvHuX.png](https://i.imgur.com/50dvHuX.png)
+![7Rb8RR9.png](https://i.imgur.com/7Rb8RR9.png)
 
 Note: This a SSR (Server Side Rendering) boilerplate! A React only boilerplate can be found on the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/master">master</a> branch or a React Hot Loaded boilerplate can be found on the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/hotloaded">hotloaded</a> branch, or a fullstack M.E.R.N boilerplate can be found on the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/fullstack">fullstack</a> branch.
 
