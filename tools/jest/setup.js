@@ -9,9 +9,10 @@ global.fetch = require("jest-fetch-mock");
 /*
 THE BELOW ARE ACCESSIBLE AND PREDEFINED FOR ALL *.TEST.JS FILES
 WARNING: Due to the below being accessible to the global DOM,
-         all *.test.js files will be ignored by ESLint. Otherwise,
+         all *.test.js files will custom rules for ESLint. Otherwise,
          ESLint will throw errors that the functions are undefined
-        because they are not explictly imported!
+         because they are not explictly imported! See "overrides"
+         under "eslintConfig" in the package.json for more information.
 */
 const exposedProperties = ["window", "navigator", "document"];
 const { document } = new JSDOM("").window;

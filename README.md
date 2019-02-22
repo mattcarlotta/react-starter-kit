@@ -99,6 +99,8 @@ To build and bundle your client resources for production, while inside the clien
 - `src/styles/globals` global asset imports (see notes in `global.scss` for important information).
 - `src/styles/variables` partial shared variables.
 - `src/styles/styles.scss` indexed partial files for easier sharing (see notes in `styles.scss` for important information).
+- `tools/jest/assetMock.js` jest mocks for media imports.
+- `tools/jest/setup.js` jest test setup environment (see notes in `setup.js` for important information).
 - `tools/webpack/entry.js` webpack entry variables.
 - `tools/webpack/envs.js` webpack environment variables.
 - `tools/webpack/hooks.js` webpack hooks for handling SASS/CSS and media imports.
