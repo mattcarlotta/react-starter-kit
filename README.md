@@ -19,11 +19,6 @@ Note: This a SSR (Server Side Rendering) boilerplate! A React only boilerplate c
 ## Project Structure
 
 ```
-├── coverage
-|   ├── Icov-report
-|   ├── clover.xml
-|   ├── coverage-final.json
-|   └── Icov.info
 |
 ├── public
 |   ├── assets
