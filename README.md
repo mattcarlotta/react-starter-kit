@@ -34,7 +34,6 @@ Note: This a SSR (Server Side Rendering) boilerplate! A React only boilerplate c
 |   ├── routes
 |   ├── store
 |   ├── styles
-|   ├── tests
 |   ├── types
 |   ├── utils
 |   |   ├── renderHtml.js
