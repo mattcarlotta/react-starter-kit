@@ -1,26 +1,26 @@
 {
-  "./_hide": [
+  "./_an-object": [
     {
-      "id": "./node_modules/core-js/modules/_hide.js",
-      "name": "./node_modules/core-js/modules/_hide.js",
+      "id": "./node_modules/core-js/modules/_an-object.js",
+      "name": "./node_modules/core-js/modules/_an-object.js",
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "./node_modules/core-js/modules/_hide.js",
-      "name": "./node_modules/core-js/modules/_hide.js",
+      "id": "./node_modules/core-js/modules/_an-object.js",
+      "name": "./node_modules/core-js/modules/_an-object.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
     },
     {
-      "id": "./node_modules/core-js/modules/_hide.js",
-      "name": "./node_modules/core-js/modules/_hide.js",
+      "id": "./node_modules/core-js/modules/_an-object.js",
+      "name": "./node_modules/core-js/modules/_an-object.js",
       "file": "main.css.map",
       "publicPath": "/assets/main.css.map"
     },
     {
-      "id": "./node_modules/core-js/modules/_hide.js",
-      "name": "./node_modules/core-js/modules/_hide.js",
+      "id": "./node_modules/core-js/modules/_an-object.js",
+      "name": "./node_modules/core-js/modules/_an-object.js",
       "file": "main.js.map",
       "publicPath": "/assets/main.js.map"
     }
@@ -3099,28 +3099,28 @@
       "publicPath": "/assets/main.js.map"
     }
   ],
-  "webpack-hot-middleware/client?reload=true&overlay=true": [
+  "./_hide": [
     {
-      "id": "./node_modules/webpack-hot-middleware/client.js?reload=true&overlay=true",
-      "name": "./node_modules/webpack-hot-middleware/client.js?reload=true&overlay=true",
+      "id": "./node_modules/core-js/modules/_hide.js",
+      "name": "./node_modules/core-js/modules/_hide.js",
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "./node_modules/webpack-hot-middleware/client.js?reload=true&overlay=true",
-      "name": "./node_modules/webpack-hot-middleware/client.js?reload=true&overlay=true",
+      "id": "./node_modules/core-js/modules/_hide.js",
+      "name": "./node_modules/core-js/modules/_hide.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
     },
     {
-      "id": "./node_modules/webpack-hot-middleware/client.js?reload=true&overlay=true",
-      "name": "./node_modules/webpack-hot-middleware/client.js?reload=true&overlay=true",
+      "id": "./node_modules/core-js/modules/_hide.js",
+      "name": "./node_modules/core-js/modules/_hide.js",
       "file": "main.css.map",
       "publicPath": "/assets/main.css.map"
     },
     {
-      "id": "./node_modules/webpack-hot-middleware/client.js?reload=true&overlay=true",
-      "name": "./node_modules/webpack-hot-middleware/client.js?reload=true&overlay=true",
+      "id": "./node_modules/core-js/modules/_hide.js",
+      "name": "./node_modules/core-js/modules/_hide.js",
       "file": "main.js.map",
       "publicPath": "/assets/main.js.map"
     }
@@ -3151,28 +3151,28 @@
       "publicPath": "/assets/main.js.map"
     }
   ],
-  "./_an-object": [
+  "webpack-hot-middleware/client?reload=true&overlay=true": [
     {
-      "id": "./node_modules/core-js/modules/_an-object.js",
-      "name": "./node_modules/core-js/modules/_an-object.js",
+      "id": "./node_modules/webpack-hot-middleware/client.js?reload=true&overlay=true",
+      "name": "./node_modules/webpack-hot-middleware/client.js?reload=true&overlay=true",
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "./node_modules/core-js/modules/_an-object.js",
-      "name": "./node_modules/core-js/modules/_an-object.js",
+      "id": "./node_modules/webpack-hot-middleware/client.js?reload=true&overlay=true",
+      "name": "./node_modules/webpack-hot-middleware/client.js?reload=true&overlay=true",
       "file": "main.js",
       "publicPath": "/assets/main.js"
     },
     {
-      "id": "./node_modules/core-js/modules/_an-object.js",
-      "name": "./node_modules/core-js/modules/_an-object.js",
+      "id": "./node_modules/webpack-hot-middleware/client.js?reload=true&overlay=true",
+      "name": "./node_modules/webpack-hot-middleware/client.js?reload=true&overlay=true",
       "file": "main.css.map",
       "publicPath": "/assets/main.css.map"
     },
     {
-      "id": "./node_modules/core-js/modules/_an-object.js",
-      "name": "./node_modules/core-js/modules/_an-object.js",
+      "id": "./node_modules/webpack-hot-middleware/client.js?reload=true&overlay=true",
+      "name": "./node_modules/webpack-hot-middleware/client.js?reload=true&overlay=true",
       "file": "main.js.map",
       "publicPath": "/assets/main.js.map"
     }
@@ -4685,6 +4685,84 @@
       "publicPath": "/assets/main.js.map"
     }
   ],
+  "core-js/modules/es6.regexp.to-string": [
+    {
+      "id": "./node_modules/core-js/modules/es6.regexp.to-string.js",
+      "name": "./node_modules/core-js/modules/es6.regexp.to-string.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/core-js/modules/es6.regexp.to-string.js",
+      "name": "./node_modules/core-js/modules/es6.regexp.to-string.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/es6.regexp.to-string.js",
+      "name": "./node_modules/core-js/modules/es6.regexp.to-string.js",
+      "file": "main.css.map",
+      "publicPath": "/assets/main.css.map"
+    },
+    {
+      "id": "./node_modules/core-js/modules/es6.regexp.to-string.js",
+      "name": "./node_modules/core-js/modules/es6.regexp.to-string.js",
+      "file": "main.js.map",
+      "publicPath": "/assets/main.js.map"
+    }
+  ],
+  "./es6.regexp.flags": [
+    {
+      "id": "./node_modules/core-js/modules/es6.regexp.flags.js",
+      "name": "./node_modules/core-js/modules/es6.regexp.flags.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/core-js/modules/es6.regexp.flags.js",
+      "name": "./node_modules/core-js/modules/es6.regexp.flags.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/es6.regexp.flags.js",
+      "name": "./node_modules/core-js/modules/es6.regexp.flags.js",
+      "file": "main.css.map",
+      "publicPath": "/assets/main.css.map"
+    },
+    {
+      "id": "./node_modules/core-js/modules/es6.regexp.flags.js",
+      "name": "./node_modules/core-js/modules/es6.regexp.flags.js",
+      "file": "main.js.map",
+      "publicPath": "/assets/main.js.map"
+    }
+  ],
+  "./_flags": [
+    {
+      "id": "./node_modules/core-js/modules/_flags.js",
+      "name": "./node_modules/core-js/modules/_flags.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_flags.js",
+      "name": "./node_modules/core-js/modules/_flags.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_flags.js",
+      "name": "./node_modules/core-js/modules/_flags.js",
+      "file": "main.css.map",
+      "publicPath": "/assets/main.css.map"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_flags.js",
+      "name": "./node_modules/core-js/modules/_flags.js",
+      "file": "main.js.map",
+      "publicPath": "/assets/main.js.map"
+    }
+  ],
   "../ErrorDisplay": [
     {
       "id": "./src/components/ErrorDisplay/index.js",
@@ -5643,28 +5721,28 @@
       "publicPath": "/assets/main.js.map"
     }
   ],
-  "./assets/mernLogoSSR3.png": [
+  "./assets/landingLogoSSR.png": [
     {
-      "id": "./src/components/Home/assets/mernLogoSSR3.png",
-      "name": "./src/components/Home/assets/mernLogoSSR3.png",
+      "id": "./src/components/Home/assets/landingLogoSSR.png",
+      "name": "./src/components/Home/assets/landingLogoSSR.png",
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "./src/components/Home/assets/mernLogoSSR3.png",
-      "name": "./src/components/Home/assets/mernLogoSSR3.png",
+      "id": "./src/components/Home/assets/landingLogoSSR.png",
+      "name": "./src/components/Home/assets/landingLogoSSR.png",
       "file": "main.js",
       "publicPath": "/assets/main.js"
     },
     {
-      "id": "./src/components/Home/assets/mernLogoSSR3.png",
-      "name": "./src/components/Home/assets/mernLogoSSR3.png",
+      "id": "./src/components/Home/assets/landingLogoSSR.png",
+      "name": "./src/components/Home/assets/landingLogoSSR.png",
       "file": "main.css.map",
       "publicPath": "/assets/main.css.map"
     },
     {
-      "id": "./src/components/Home/assets/mernLogoSSR3.png",
-      "name": "./src/components/Home/assets/mernLogoSSR3.png",
+      "id": "./src/components/Home/assets/landingLogoSSR.png",
+      "name": "./src/components/Home/assets/landingLogoSSR.png",
       "file": "main.js.map",
       "publicPath": "/assets/main.js.map"
     }

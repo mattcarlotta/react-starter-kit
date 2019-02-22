@@ -4,7 +4,7 @@ import ErrorDisplay from "../ErrorDisplay";
 import styles from "./styles.scss";
 
 const Loading = ({ pastDelay, error }) => {
-  if (error) return <ErrorDisplay error="Failed to load component" />;
+  if (error) return <ErrorDisplay error={err.toString()} />;
 
   if (pastDelay)
     return (

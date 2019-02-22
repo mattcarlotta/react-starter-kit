@@ -1,7 +1,7 @@
-import React from 'react';
-import Helmet from 'react-helmet';
-import logo from './assets/mernLogoSSR3.png';
-import { homeContainer, logoContainer, logoStyle, textInfo } from './Home.scss';
+import React from "react";
+import Helmet from "react-helmet";
+import logo from "./assets/landingLogoSSR.png";
+import { homeContainer, logoContainer, logoStyle, textInfo } from "./Home.scss";
 
 export default () => (
   <div className={homeContainer}>
