@@ -76,7 +76,7 @@ Note: This a SSR (Server Side Rendering) boilerplate! A React only boilerplate c
 
 2 - Run `npm install` to install dependencies.
 
-3 - While at the application's root directory, start both servers by running `npm run dev`.
+3 - While at the application's root directory, start the server by running `npm run dev`.
 
 ## Commands
 
