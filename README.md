@@ -49,13 +49,13 @@ Note: This a SSR (Server Side Rendering) boilerplate! A React only boilerplate c
 |   |   └── styleMock.js
 |   |
 |   └── webpack
-|       ├── config.babel.js
 |       ├── entry.js
 |       ├── envs.js
 |       ├── hooks.js
 |       ├── paths.js
 |       ├── plugins.js
-|       └── rules.js
+|       ├── rules.js
+|       └── webpack.config.js
 ├── index.js
 └──  postcss.config.js
 ```
@@ -88,13 +88,13 @@ To build and bundle your client resources for production, while inside the clien
 - `public/assets` contains compiled, production build .CSS, .MAP, .JS, and .GZ files.
 - `src/client.js` client-side setup.
 - `src/server.js` express server that serves the client.
-- `tools/webpack/config.babel.js` webpack config for both development and production environments.
 - `tools/webpack/entry.js` webpack entry variables.
 - `tools/webpack/envs.js` webpack environment variables.
 - `tools/webpack/hooks.js` webpack hooks for handling SASS/CSS and media imports.
 - `tools/webpack/paths.js` webpack config folder paths.
 - `tools/webpack/plugins.js` webpack plugins required for development or production.
 - `tools/webpack/rules.js` webpack rules testing.
+- `tools/webpack/webpack.config.js` webpack config for both development and production environments.
 - `utils/renderHtml.js` factory function to rewrite client-side DOM structure.
 - `utils/tests.js` test setup for Jest and Enzyme (see notes in file for important information).
 

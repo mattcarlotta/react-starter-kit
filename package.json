@@ -51,13 +51,13 @@
       }
     },
     "build": {
-      "command": "webpack --progress --hide-modules --config ./tools/webpack/config.babel.js",
+      "command": "webpack --progress --hide-modules --config ./tools/webpack/webpack.config.js",
       "env": {
         "NODE_ENV": "production"
       }
     },
     "analyze": {
-      "command": "webpack -p --progress --hide-modules --config ./tools/webpack/config.babel.js",
+      "command": "webpack -p --progress --hide-modules --config ./tools/webpack/webpack.config.js",
       "env": {
         "NODE_ENV": "analyze"
       }
@@ -151,7 +151,7 @@
     "settings": {
       "import/resolver": {
         "webpack": {
-          "config": "./tools/webpack/config.babel.js"
+          "config": "./tools/webpack/webpack.config.js"
         }
       }
     },
