@@ -115,7 +115,7 @@ To see more script commands, please check out the <a href="https://github.com/ma
 - `src/styles/variables` partial shared variables.
 - `src/styles/styles.scss` indexed partial files for easier sharing (see notes in <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/ssr/src/styles/styles.scss#L1-L39">styles.scss</a> for important information).
 - `src/utils/client/renderApp.js` client-side React setup.
-- `src/utils/client/tests.js` custom functions tests to leverage `mount`, `shallow`, and `checkProps` (see notes in <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/ssr/src/utils/client/tests.js">tests.js</a> for utilization).
+- `src/utils/client/tests.js` custom functions tests to leverage `mount`, `shallow`, and `checkPropsTypes` (see notes in <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/ssr/src/utils/client/tests.js">tests.js</a> for utilization).
 - `src/utils/client/middlewares.js` express middlewares.
 - `src/utils/server/renderHtml.js` factory function to rewrite client-side DOM structure.
 - `src/utils/server/serveProdAssets.js` serves compiled webpack production assets.
