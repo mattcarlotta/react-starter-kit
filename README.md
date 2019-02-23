@@ -109,11 +109,11 @@ To build and bundle your client resources for production, while inside the clien
 - `src/server.js` express server.
 - `src/styles/assets` media assets imports.
 - `src/styles/extensions` partial shared extensions.
-- `src/styles/globals` global asset imports (see notes in `global.scss` for important information).
+- `src/styles/globals` global asset imports (see notes in <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/ssr/src/styles/globals/globals.scss">global.scss</a> for important information).
 - `src/styles/variables` partial shared variables.
-- `src/styles/styles.scss` indexed partial files for easier sharing (see notes in `styles.scss` for important information).
+- `src/styles/styles.scss` indexed partial files for easier sharing (see notes in <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/ssr/src/styles/styles.scss">styles.scss</a> for important information).
 - `src/utils/client/renderApp.js` client-side React setup.
-- `src/utils/client/tests.js` custom functions tests to leverage `mount`, `shallow`, and `checkProps` (see notes in `tests.js` for utilization).
+- `src/utils/client/tests.js` custom functions tests to leverage `mount`, `shallow`, and `checkProps` (see notes in <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/ssr/src/utils/client/tests.js">tests.js</a> for utilization).
 - `src/utils/client/middlewares.js` express middlewares.
 - `src/utils/server/renderHtml.js` factory function to rewrite client-side DOM structure.
 - `src/utils/server/serveProdAssets.js` serves compiled webpack production assets.
@@ -121,13 +121,13 @@ To build and bundle your client resources for production, while inside the clien
 - `src/utils/server/setupDevServer.js` webpack setup for client-side compilation and hot module replacement.
 - `src/utils/server/startServer.js` starts express server.
 - `tools/jest/assetMock.js` jest mocks for media imports.
-- `tools/jest/setup.js` jest test setup environment (see notes in `setup.js` for important information).
+- `tools/jest/setup.js` jest test setup environment (see notes in <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/ssr/tools/jest/setup.js">setup.js</a> for important information).
 - `tools/webpack/entry.js` webpack entry variables.
 - `tools/webpack/hooks.js` webpack hooks for handling SASS/CSS and media imports.
 - `tools/webpack/paths.js` webpack config folder paths.
 - `tools/webpack/plugins.js` webpack plugins required for development or production.
 - `tools/webpack/rules.js` webpack rules testing.
-- `tools/webpack/webpack.babel.js` webpack config for both development and production environments (must be `.babel.js` to accept ES6 `import/export`).t.
+- `tools/webpack/webpack.babel.js` webpack config for both development and production environments (must be `.babel.js` to accept ES6 `import/export`).
 
 ## Packages Incorporated
 
