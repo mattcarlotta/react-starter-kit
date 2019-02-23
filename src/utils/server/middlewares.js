@@ -12,14 +12,9 @@ const { cwd } = process;
 //= =============================================================================//
 
 export default app => {
-  // Use helmet to secure Express with various HTTP headers
-  app.use(helmet());
-  // Prevent HTTP parameter pollution
-  app.use(hpp());
-  // Compress all requests
-  app.use(compression());
-  // XHR requests logger
-  app.use(morgan("tiny"));
-  // Serves favicon
-  app.use(favicon(resolve(cwd(), "public", "favicon.ico")));
+  app.use(helmet()); // uses helmet to secure Express with various HTTP headers
+  app.use(hpp()); // prevents HTTP parameter pollution
+  app.use(compression()); // compresses all requests
+  app.use(morgan("tiny")); // logs XHR requests
+  app.use(favicon(resolve(cwd(), "public", "favicon.ico"))); // serves favicon
 };

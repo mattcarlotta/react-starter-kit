@@ -7,5 +7,4 @@ import "./styles/globals/globals.scss";
 // CLIENT-SIDE RENDERING SETUP                                                    /
 //= =============================================================================//
 
-// react-loadable preloaded routes
-Loadable.preloadReady().then(() => render(routes));
+Loadable.preloadReady().then(() => render(routes)); // react-loadable preloaded routes

@@ -3,6 +3,10 @@ import openBrowser from "react-dev-utils/openBrowser";
 import chalk from "chalk";
 import { HOST, PORT } from "../../../envs/envs";
 
+//= =============================================================================//
+// STARTS EXPRESS SERVER                                                          /
+//= =============================================================================//
+
 export default app => {
   Loadable.preloadAll().then(() => {
     app.listen(PORT, HOST, err => {

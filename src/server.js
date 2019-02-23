@@ -6,24 +6,20 @@ import serveReact from "./utils/server/serveReact";
 import startServer from "./utils/server/startServer";
 import { inDevelopment } from "../envs/envs";
 
+const app = express();
+
 //= =============================================================================//
 // SERVER-SIDE RENDERING SETUP                                                    /
 //= =============================================================================//
 
-const app = express();
+middlewares(app); // express middlewares
 
-// express middlewares
-middlewares(app);
-
-// serves production assets or set up a dev server
 if (!inDevelopment) {
-  serveProdAssets(app);
+  serveProdAssets(app); // serves production assets
 } else {
-  setupDevServer(app);
+  setupDevServer(app); // set up a dev server
 }
 
-// handles server-side routing
-serveReact(app);
+serveReact(app); // handles server-side routing
 
-// starts express server
-startServer(app);
+startServer(app); // starts express server
