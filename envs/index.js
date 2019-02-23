@@ -3,8 +3,8 @@ const env = process.env.NODE_ENV;
 //= =============================================================================//
 // ENV SETUP FOR WEBPACK DEVELOPMENT & PRODUCTION CONFIGS                        /
 //= =============================================================================//
-
 module.exports = {
+  definedGlobals: true,
   /* working in development ENV */
   inDevelopment: env === "development",
   /* hased name gives to images or fonts */

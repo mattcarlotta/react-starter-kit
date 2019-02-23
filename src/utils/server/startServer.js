@@ -1,7 +1,7 @@
 import Loadable from "react-loadable";
 import openBrowser from "react-dev-utils/openBrowser";
 import chalk from "chalk";
-import { HOST, PORT } from "../../../envs/envs";
+import { HOST, PORT } from "../../../envs";
 
 //= =============================================================================//
 // STARTS EXPRESS SERVER                                                          /

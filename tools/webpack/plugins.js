@@ -13,7 +13,7 @@ import FriendlyErrorsWebpackPlugin from "friendly-errors-webpack-plugin";
 import WebpackBar from "webpackbar";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import { ReactLoadablePlugin } from "react-loadable/webpack";
-import { inDevelopment, nodeENV } from "../../envs/envs";
+import { inDevelopment, nodeENV } from "../../envs";
 import paths from "./paths";
 
 //= =============================================================================//

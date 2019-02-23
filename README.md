@@ -22,7 +22,7 @@ Note: This a SSR (Server Side Rendering) boilerplate! A React only boilerplate c
 
 ```
 ├── envs
-|   └── envs.js
+|   └── index.js
 |
 ├── public
 |   ├── assets
@@ -102,7 +102,7 @@ To see more script commands, please check out the <a href="https://github.com/ma
 
 ## Configuration
 
-- `envs/envs.js` node and webpack environment variables.
+- `envs/index.js` node and webpack environment variables.
 - `public/assets` contains compiled, production build `.css`, `.map`, `.js`, and `.gz` files.
 - `public/loadable-assets.json` contains development file chunks.
 - `public/webpack-assets.json` contains production file chunks.

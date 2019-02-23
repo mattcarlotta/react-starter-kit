@@ -4,7 +4,7 @@ import {
   inDevelopment,
   localIdentName,
   useCSSModules
-} from "../../envs/envs";
+} from "../../envs";
 import { srcDirectory } from "./paths";
 
 //= =============================================================================//

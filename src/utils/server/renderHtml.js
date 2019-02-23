@@ -1,7 +1,7 @@
 /* eslint-disable lodash/prefer-lodash-method */
 import serialize from "serialize-javascript";
 import { minify } from "html-minifier";
-import { inDevelopment } from "../../../envs/envs";
+import { inDevelopment } from "../../../envs";
 
 //= =============================================================================//
 // SERVER-SIDE FUNCTION TO CREATE CLIENT-SIDE HTML                                /

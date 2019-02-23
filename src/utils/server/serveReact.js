@@ -12,7 +12,7 @@ import chalk from "chalk";
 import renderHtml from "./renderHtml";
 import configureStore from "../../store/configureStore";
 import routes from "../../routes";
-import { inDevelopment } from "../../../envs/envs";
+import { inDevelopment } from "../../../envs";
 
 //= =============================================================================//
 // SERVER-SIDE ROUTING TO HANDLE ASSET CHUNKING AND DISPERSAL                     /

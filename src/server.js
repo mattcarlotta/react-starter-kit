@@ -4,7 +4,7 @@ import setupDevServer from "./utils/server/setupDevServer";
 import serveProdAssets from "./utils/server/serveProdAssets";
 import serveReact from "./utils/server/serveReact";
 import startServer from "./utils/server/startServer";
-import { inDevelopment } from "../envs/envs";
+import { inDevelopment } from "../envs";
 
 const app = express();
 

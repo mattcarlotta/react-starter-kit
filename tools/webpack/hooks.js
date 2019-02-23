@@ -7,7 +7,7 @@ const {
   hashedMediaName,
   inDevelopment,
   localIdentName
-} = require("../../envs/envs");
+} = require("../../envs");
 
 //= =============================================================================//
 // HOOKS FOR WEBPACK DEVELOPMENT & PRODUCTION CONFIGS                            /
