@@ -94,11 +94,11 @@ Note: This a SSR (Server Side Rendering) boilerplate! A React only boilerplate c
 
 To lint your .js/.scss files, run `npm run lint` while at the application's root directory.
 
-To run your tests, while inside the client's root directory, run `npm run test` or `npm run test:watch`. Testing will watch all your changes in the `.test.js` files as well as create a `coverage` folder. To view the current coverage report, navigate to `coverage/Icov-report/src` and open `index.html` in a browser.
+To run your tests, while inside the client's root directory, run `npm run test` to run tests create a `coverage` folder. Or run `npm run test:watch` to watch all your changes in the `.test.js` files. To view the current coverage report, navigate to `coverage/Icov-report/src` and open `index.html` in a browser.
 
 To build and bundle your client resources for production, while inside the client's root directory, use `npm run build` (source maps will be excluded). After you have built your React application for production, use `npm start` while at the application's root directory. You should now see your React application running on `http://localhost:3000`.
 
-To see more script commands, please check out the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/ssr/package.json">package.json</a>
+To see more script commands, please check out the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/b799752d789526a0eac8b5b8a477843f6382fa92/package.json#L18-L33">package.json</a>.
 
 ## Configuration
 
@@ -111,9 +111,9 @@ To see more script commands, please check out the <a href="https://github.com/ma
 - `src/server.js` express server.
 - `src/styles/assets` media assets imports.
 - `src/styles/extensions` partial shared extensions.
-- `src/styles/globals` global asset imports (see notes in <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/ssr/src/styles/globals/globals.scss">global.scss</a> for important information).
+- `src/styles/globals` global asset imports (see notes in <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/ssr/src/styles/globals/globals.scss#L1-L25">global.scss</a> for important information).
 - `src/styles/variables` partial shared variables.
-- `src/styles/styles.scss` indexed partial files for easier sharing (see notes in <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/ssr/src/styles/styles.scss">styles.scss</a> for important information).
+- `src/styles/styles.scss` indexed partial files for easier sharing (see notes in <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/ssr/src/styles/styles.scss#L1-L39">styles.scss</a> for important information).
 - `src/utils/client/renderApp.js` client-side React setup.
 - `src/utils/client/tests.js` custom functions tests to leverage `mount`, `shallow`, and `checkProps` (see notes in <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/ssr/src/utils/client/tests.js">tests.js</a> for utilization).
 - `src/utils/client/middlewares.js` express middlewares.
@@ -123,7 +123,7 @@ To see more script commands, please check out the <a href="https://github.com/ma
 - `src/utils/server/setupDevServer.js` webpack setup for client-side compilation and hot module replacement.
 - `src/utils/server/startServer.js` starts express server.
 - `tools/jest/assetMock.js` jest mocks for media imports.
-- `tools/jest/setup.js` jest test setup environment (see notes in <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/ssr/tools/jest/setup.js">setup.js</a> for important information).
+- `tools/jest/setup.js` jest test setup environment (see notes in <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/ssr/tools/jest/setup.js#L17-L25">setup.js</a> for important information).
 - `tools/webpack/entry.js` webpack entry variables.
 - `tools/webpack/hooks.js` webpack hooks for handling SASS/CSS and media imports.
 - `tools/webpack/paths.js` webpack config folder paths.
@@ -133,7 +133,7 @@ To see more script commands, please check out the <a href="https://github.com/ma
 
 ## Packages Incorporated
 
-These packages are updated by an automated script that can be found <a href="https://github.com/mattcarlotta/UpdateBoilerplate">here</a>. To see the latest package versions, please check out the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/ssr/package.json">package.json</a>. If you run into any issues, please fill out an issue report <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/issues">here</a>.
+These packages are updated by an automated script that can be found <a href="https://github.com/mattcarlotta/UpdateBoilerplate">here</a>. To see the latest package versions, please check out the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/ssr/package.json#L282-L387">package.json</a>. If you run into any issues, please fill out an issue report <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/issues">here</a>.
 
 - [Webpack](https://github.com/webpack/webpack)
 - [Babel](https://github.com/babel/babel)
