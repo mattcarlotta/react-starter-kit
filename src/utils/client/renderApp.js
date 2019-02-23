@@ -1,13 +1,12 @@
 import React from "react";
 import { hydrate } from "react-dom";
 import { createBrowserHistory } from "history";
-import { AppContainer, setConfig } from "react-hot-loader";
+import { AppContainer } from "react-hot-loader";
 import { Provider } from "react-redux";
 import { ConnectedRouter } from "connected-react-router";
 import { renderRoutes } from "react-router-config";
 import configureStore from "../../store/configureStore";
 
-setConfig({ pureSFC: true });
 const history = createBrowserHistory();
 // Get the initial state from server-side rendering
 const initialState = window.__INITIAL_STATE__;
