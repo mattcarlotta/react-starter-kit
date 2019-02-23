@@ -12,6 +12,7 @@ import chalk from "chalk";
 import renderHtml from "./renderHtml";
 import configureStore from "../../store/configureStore";
 import routes from "../../routes";
+import { inDevelopment } from "../../../envs/envs";
 
 export default app => {
   app.get("*", (req, res) => {
@@ -81,7 +82,7 @@ export default app => {
           // we put these files into assets with publicPath
           .concat(["/assets/main.css", "/assets/main.js"]);
 
-        if (!__DEV__) {
+        if (!inDevelopment) {
           // $FlowFixMe: isn't an issue
           const webpackManifest = require("../../../public/webpack-assets.json");
           assets = bundles

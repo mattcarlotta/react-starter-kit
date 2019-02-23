@@ -6,19 +6,19 @@ const env = process.env.NODE_ENV;
 
 module.exports = {
   /* working in development ENV */
-  inDevelopment: env === 'development',
+  inDevelopment: env === "development",
   /* hased name gives to images or fonts */
-  hashedMediaName: '[name].[hash:8].[ext]',
-  /*
-    how the CSS class names will be defined in the DOM:
-    local = supplied class name
-    hash:base64:5 = hashed string limited to 5 characters
-  */
-  localIdentName: '[name]__[local]--[hash:base64:5]',
+  hashedMediaName: "[name].[hash:8].[ext]",
+  /* current host */
+  HOST: process.env.NODE_HOST || "localhost",
+  /* how the CSS class names will be declared in the DOM */
+  localIdentName: "[name]__[local]--[hash:base64:5]",
   /* current envirnoment */
-  nodeENV: env || 'development',
+  nodeENV: env || "development",
+  /* current express port */
+  PORT: process.env.PORT,
   /* enable/disable webpack-hot-middleware overlay */
   showErrorOverlay: true,
   /* enable/disable css module imports */
-  useCSSModules: true,
+  useCSSModules: true
 };

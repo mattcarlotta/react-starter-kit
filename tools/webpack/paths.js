@@ -1,4 +1,4 @@
-const { resolve } = require('path');
+const { resolve } = require("path");
 
 const { cwd } = process;
 
@@ -10,11 +10,11 @@ module.exports = {
   /* current working directory */
   currentDirectory: resolve(cwd()),
   /* public assets directory */
-  publicAssets: resolve(cwd(), 'public/assets'),
+  publicAssets: resolve(cwd(), "public/assets"),
   /* loadable assets manifest */
-  loadableAssets: 'public/loadable-assets.json',
+  loadableAssets: "public/loadable-assets.json",
   /* project source directory */
-  srcDirectory: resolve(cwd(), 'src'),
+  srcDirectory: resolve(cwd(), "src"),
   /* webpack assets manifest  */
-  webpackAssets: resolve(cwd(), 'public/webpack-assets.json'),
+  webpackAssets: resolve(cwd(), "public/webpack-assets.json")
 };

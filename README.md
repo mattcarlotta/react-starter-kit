@@ -21,6 +21,8 @@ Note: This a SSR (Server Side Rendering) boilerplate! A React only boilerplate c
 ## Project Structure
 
 ```
+├── envs
+|   └── envs.js
 |
 ├── public
 |   ├── assets
@@ -65,7 +67,6 @@ Note: This a SSR (Server Side Rendering) boilerplate! A React only boilerplate c
 |   |
 |   └── webpack
 |       ├── entry.js
-|       ├── envs.js
 |       ├── hooks.js
 |       ├── paths.js
 |       ├── plugins.js
@@ -98,6 +99,7 @@ To build and bundle your client resources for production, while inside the clien
 
 ## Configuration
 
+- `envs/envs.js` node and webpack environment variables.
 - `public/assets` contains compiled, production build `.css`, `.map`, `.js`, and `.gz` files.
 - `public/loadable-assets.json` contains development file chunks.
 - `public/webpack-assets.json` contains production file chunks.
@@ -109,22 +111,21 @@ To build and bundle your client resources for production, while inside the clien
 - `src/styles/globals` global asset imports (see notes in `global.scss` for important information).
 - `src/styles/variables` partial shared variables.
 - `src/styles/styles.scss` indexed partial files for easier sharing (see notes in `styles.scss` for important information).
+- `src/utils/client/renderApp.js` client-side React setup.
+- `src/utils/client/tests.js` custom functions tests to leverage `mount`, `shallow`, and `checkProps` (see notes in `tests.js` for utilization).
+- `src/utils/client/middlewares.js` express middlewares.
+- `src/utils/server/renderHtml.js` factory function to rewrite client-side DOM structure.
+- `src/utils/server/serveProdAssets.js` serves compiled webpack production assets.
+- `src/utils/server/serveReact.js` server side rendering setup to serve React to the client-side.
+- `src/utils/server/setupDevServer.js` webpack setup for client-side compilation and hot module replacemen
 - `tools/jest/assetMock.js` jest mocks for media imports.
 - `tools/jest/setup.js` jest test setup environment (see notes in `setup.js` for important information).
 - `tools/webpack/entry.js` webpack entry variables.
-- `tools/webpack/envs.js` webpack environment variables.
 - `tools/webpack/hooks.js` webpack hooks for handling SASS/CSS and media imports.
 - `tools/webpack/paths.js` webpack config folder paths.
 - `tools/webpack/plugins.js` webpack plugins required for development or production.
 - `tools/webpack/rules.js` webpack rules testing.
-- `tools/webpack/webpack.babel.js` webpack config for both development and production environments (must be `.babel.js` to accept ES6 `import/export`).
-- `utils/client/renderApp.js` client-side React setup.
-- `utils/client/tests.js` custom functions tests to leverage `mount`, `shallow`, and `checkProps` (see notes in `tests.js` for utilization).
-- `utils/client/middlewares.js` express middlewares.
-- `utils/server/renderHtml.js` factory function to rewrite client-side DOM structure.
-- `utils/server/serveProdAssets.js` serves compiled webpack production assets.
-- `utils/server/serveReact.js` server side rendering setup to serve React to the client-side.
-- `utils/server/setupDevServer.js` webpack setup for client-side compilation and hot module replacement.
+- `tools/webpack/webpack.babel.js` webpack config for both development and production environments (must be `.babel.js` to accept ES6 `import/export`).t.
 
 ## Packages Incorporated
 

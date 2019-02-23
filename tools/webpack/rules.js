@@ -1,11 +1,11 @@
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import {
   hashedMediaName,
   inDevelopment,
   localIdentName,
-  useCSSModules,
-} from './envs';
-import { srcDirectory } from './paths';
+  useCSSModules
+} from "../../envs/envs";
+import { srcDirectory } from "./paths";
 
 //= =============================================================================//
 // RULES SETUP FOR WEBPACK DEVELOPMENT & PRODUCTION CONFIGS                      /
@@ -15,62 +15,62 @@ export default [
   {
     test: /\.jsx?$/,
     exclude: /node_modules/,
-    loader: 'babel',
-    options: { cacheDirectory: inDevelopment },
+    loader: "babel",
+    options: { cacheDirectory: inDevelopment }
   },
   {
     test: /\.css$/,
     use: [
-      'css-hot',
+      "css-hot",
       MiniCssExtractPlugin.loader,
       {
-        loader: 'css',
+        loader: "css",
         options: {
           importLoaders: 1,
           modules: useCSSModules,
           localIdentName,
           context: srcDirectory,
-          sourceMap: true,
-        },
+          sourceMap: true
+        }
       },
-      { loader: 'postcss', options: { sourceMap: true } },
-    ],
+      { loader: "postcss", options: { sourceMap: true } }
+    ]
   },
   {
     test: /\.(scss|sass)$/,
     use: [
-      'css-hot',
+      "css-hot",
       MiniCssExtractPlugin.loader,
       {
-        loader: 'css',
+        loader: "css",
         options: {
           importLoaders: 2,
           modules: useCSSModules,
           localIdentName,
           context: srcDirectory,
-          sourceMap: true,
-        },
+          sourceMap: true
+        }
       },
-      { loader: 'postcss', options: { sourceMap: true } },
+      { loader: "postcss", options: { sourceMap: true } },
       {
-        loader: 'sass',
+        loader: "sass",
         options: {
-          outputStyle: 'expanded',
+          outputStyle: "expanded",
           sourceMap: true,
-          sourceMapContents: !inDevelopment,
-        },
-      },
-    ],
+          sourceMapContents: !inDevelopment
+        }
+      }
+    ]
   },
   {
     test: /\.(woff2?|ttf|eot|svg)$/,
-    loader: 'url',
-    options: { limit: 10240, name: hashedMediaName },
+    loader: "url",
+    options: { limit: 10240, name: hashedMediaName }
   },
   {
     test: /\.(gif|png|jpe?g|webp)$/,
     // Any image below or equal to 10K will be converted to inline base64 instead
-    loader: 'url',
-    options: { limit: 10240, name: hashedMediaName },
-  },
+    loader: "url",
+    options: { limit: 10240, name: hashedMediaName }
+  }
 ];

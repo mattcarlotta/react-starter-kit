@@ -1,5 +1,4 @@
 import {
-  DefinePlugin,
   EnvironmentPlugin,
   HashedModuleIdsPlugin,
   HotModuleReplacementPlugin
@@ -14,7 +13,7 @@ import FriendlyErrorsWebpackPlugin from "friendly-errors-webpack-plugin";
 import WebpackBar from "webpackbar";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import { ReactLoadablePlugin } from "react-loadable/webpack";
-import { inDevelopment, nodeENV } from "./envs";
+import { inDevelopment, nodeENV } from "../../envs/envs";
 import paths from "./paths";
 
 //= =============================================================================//
@@ -41,12 +40,6 @@ export default () => {
     }),
     // Setup enviorment variables for client
     new EnvironmentPlugin({ NODE_ENV: JSON.stringify(nodeENV) }),
-    // Setup global variables for client
-    new DefinePlugin({
-      __CLIENT__: true,
-      __SERVER__: false,
-      __DEV__: inDevelopment
-    }),
     // Displays compilation bar
     new WebpackBar({
       color: "#268bd2",

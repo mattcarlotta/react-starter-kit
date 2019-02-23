@@ -6,16 +6,15 @@ import middlewares from "./utils/server/middlewares";
 import setupDevServer from "./utils/server/setupDevServer";
 import serveProdAssets from "./utils/server/serveProdAssets";
 import serveReact from "./utils/server/serveReact";
+import { HOST, inDevelopment, PORT } from "../envs/envs";
 
-const port = process.env.PORT;
-const host = process.env.NODE_HOST || "localhost";
 const app = express();
 
 // express middlewares
 middlewares(app);
 
 // express will serve production assets or set up a dev server
-if (!__DEV__) {
+if (!inDevelopment) {
   serveProdAssets(app);
 } else {
   setupDevServer(app);
@@ -26,9 +25,9 @@ serveReact(app);
 
 // start express server
 Loadable.preloadAll().then(() => {
-  app.listen(port, host, err => {
+  app.listen(PORT, HOST, err => {
     if (!err) {
-      const url = `http://${host}:${port}`;
+      const url = `http://${HOST}:${PORT}`;
       openBrowser(url);
     } else {
       console.error(chalk.red(err));

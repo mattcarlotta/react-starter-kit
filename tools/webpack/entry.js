@@ -1,13 +1,14 @@
-import { inDevelopment, showErrorOverlay } from './envs';
+import { inDevelopment, showErrorOverlay } from "../../envs/envs";
 
 //= =============================================================================//
 // ENTRY SETUP FOR DEVELOPMENT & PRODUCTION                                      /
 //= =============================================================================//
+
 export default () => {
   // Development
   const entry = [
     `webpack-hot-middleware/client?reload=true&overlay=${showErrorOverlay}`,
-    './src/client.js',
+    "./src/client.js"
   ];
 
   // Prodcution

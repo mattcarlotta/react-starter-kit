@@ -1,7 +1,7 @@
 import getPlugins from "./plugins";
 import getEntry from "./entry";
 import rules from "./rules";
-import { inDevelopment } from "./envs";
+import { inDevelopment } from "../../envs/envs";
 import { currentDirectory, publicAssets } from "./paths";
 
 //= =============================================================================//

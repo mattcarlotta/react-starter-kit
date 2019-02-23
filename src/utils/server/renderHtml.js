@@ -2,6 +2,7 @@
 
 import serialize from "serialize-javascript";
 import { minify } from "html-minifier";
+import { inDevelopment } from "../../../envs/envs";
 
 export default (head, assets, htmlContent, initialState) => {
   const styles = assets.filter(file => file.endsWith(".css"));
@@ -63,5 +64,5 @@ export default (head, assets, htmlContent, initialState) => {
   };
 
   // Minify html in production
-  return __DEV__ ? html : minify(html, minifyConfig);
+  return inDevelopment ? html : minify(html, minifyConfig);
 };

@@ -204,11 +204,6 @@
       "lodash/prefer-lodash-typecheck": "off",
       "lodash/import-scope": "off",
       "lodash/prefer-noop": "off"
-    },
-    "globals": {
-      "__CLIENT__": true,
-      "__SERVER__": true,
-      "__DEV__": true
     }
   },
   "eslintIgnore": [
@@ -244,9 +239,6 @@
     "setupFilesAfterEnv": [
       "<rootDir>/tools/jest/setup.js"
     ],
-    "globals": {
-      "__DEV__": true
-    },
     "collectCoverageFrom": [
       "src/app/**/*.js",
       "src/pages/**/*.js",
