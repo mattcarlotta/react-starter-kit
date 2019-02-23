@@ -16,6 +16,8 @@ Note: This a SSR (Server Side Rendering) boilerplate! A React only boilerplate c
 
 [Packages Incorporated](#packages-incorporated)
 
+[Known Issues](#known-issues)
+
 ## Project Structure
 
 ```
@@ -42,8 +44,16 @@ Note: This a SSR (Server Side Rendering) boilerplate! A React only boilerplate c
 |   |
 |   ├── types
 |   ├── utils
-|   |   ├── renderHtml.js
-|   |   └── tests.js
+|   |   ├── client
+|   |   |   ├── renderApp.js
+|   |   |   └── tests.js
+|   |   |
+|   |   └── server
+|   |       ├── middlewares.js
+|   |       ├── renderHtml.js
+|   |       ├── serveProdAssets.js
+|   |       ├── serveReact.js
+|   |       └── setupDevServer.js
 |   |
 |   ├── client.js
 |   └── server.js
@@ -88,12 +98,12 @@ To build and bundle your client resources for production, while inside the clien
 
 ## Configuration
 
-- `public/assets` contains compiled, production build .CSS, .MAP, .JS, and .GZ files.
+- `public/assets` contains compiled, production build `.css`, `.map`, `.js`, and `.gz` files.
 - `public/loadable-assets.json` contains development file chunks.
 - `public/webpack-assets.json` contains production file chunks.
-- `public/assets` contains compiled, production build .CSS, .MAP, .JS, and .GZ files.
-- `src/client.js` client-side setup.
-- `src/server.js` express server that serves the client.
+- `public/assets` contains compiled, production build `.css`, `.map`, `.js`, and `.gz` files.
+- `src/client.js` client-side React setup.
+- `src/server.js` express server.
 - `src/styles/assets` media assets imports.
 - `src/styles/extensions` partial shared extensions.
 - `src/styles/globals` global asset imports (see notes in `global.scss` for important information).
@@ -108,8 +118,13 @@ To build and bundle your client resources for production, while inside the clien
 - `tools/webpack/plugins.js` webpack plugins required for development or production.
 - `tools/webpack/rules.js` webpack rules testing.
 - `tools/webpack/webpack.babel.js` webpack config for both development and production environments (must be `.babel.js` to accept ES6 `import/export`).
-- `utils/renderHtml.js` factory function to rewrite client-side DOM structure.
-- `utils/tests.js` test setup for Jest and Enzyme (see notes in `tests.js` for important information).
+- `utils/client/renderApp.js` client-side React setup.
+- `utils/client/tests.js` custom functions tests to leverage `mount`, `shallow`, and `checkProps` (see notes in `tests.js` for utilization).
+- `utils/client/middlewares.js` express middlewares.
+- `utils/server/renderHtml.js` factory function to rewrite client-side DOM structure.
+- `utils/server/serveProdAssets.js` serves compiled webpack production assets.
+- `utils/server/serveReact.js` server side rendering setup to serve React to the client-side.
+- `utils/server/setupDevServer.js` webpack setup for client-side compilation and hot module replacement.
 
 ## Packages Incorporated
 
@@ -149,3 +164,8 @@ These packages are updated by an automated script that can be found <a href="htt
 - [Webpackbar](https://www.npmjs.com/package/webpackbar)
 - [Webpack Dev Middleware](https://github.com/webpack/webpack-dev-middleware)
 - [Webpack Hot Middleware](https://github.com/webpack-contrib/webpack-hot-middleware)
+
+## Known Issues
+
+- <a href="https://stackoverflow.com/a/54816859/7376526">React Hot Loader throws a warning: react-🔥-dom patch is not detected. React 16.6+ features may not work.</a>
+- <a href="https://github.com/jamiebuilds/react-loadable/pull/140"> ReactLoadablePlugin throws a warning: DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead</a>

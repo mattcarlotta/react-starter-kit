@@ -1,7 +1,11 @@
 import { JSDOM } from "jsdom";
 import { configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import { checkProps, mountWrap, shallowWrap } from "../../src/utils/tests";
+import {
+  checkProps,
+  mountWrap,
+  shallowWrap
+} from "../../src/utils/client/tests";
 
 configure({ adapter: new Adapter() });
 global.fetch = require("jest-fetch-mock");

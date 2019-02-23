@@ -20,7 +20,6 @@ const config = {
 export const App = ({ route: { routes } }) => (
   <div className={app}>
     <Helmet {...config} />
-    {/* Child routes won't render without this */}
     {renderRoutes(routes)}
   </div>
 );
