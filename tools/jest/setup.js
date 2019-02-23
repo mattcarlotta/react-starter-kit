@@ -20,7 +20,7 @@ WARNING: Due to the below being accessible to the global DOM,
          all *.test.js files will have custom rules for ESLint.
          Otherwise, ESLint will throw errors that the functions/
          modules are undefined because they are not explictly
-         imported! See "overrides"under "eslintConfig" in the
+         imported! See "overrides" under "eslintConfig" in the
          package.json for more information.
 */
 const exposedProperties = ["window", "navigator", "document"];

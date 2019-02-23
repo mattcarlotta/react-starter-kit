@@ -98,6 +98,8 @@ To run your tests, while inside the client's root directory, run `npm run test` 
 
 To build and bundle your client resources for production, while inside the client's root directory, use `npm run build` (source maps will be excluded). After you have built your React application for production, use `npm start` while at the application's root directory. You should now see your React application running on `http://localhost:3000`.
 
+To see more script commands, please check out the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/ssr/package.json">package.json</a>
+
 ## Configuration
 
 - `envs/envs.js` node and webpack environment variables.
