@@ -10,7 +10,7 @@ import Loadable from "react-loadable";
 import configureStore from "./store/configureStore";
 import routes from "./routes";
 
-import "normalize.css/normalize.css"; // eslint-disable-line import/first
+import "normalize.css/normalize.css";
 import "./styles/globals/globals.scss";
 
 const history = createBrowserHistory();
