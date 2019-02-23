@@ -55,7 +55,8 @@ Note: This a SSR (Server Side Rendering) boilerplate! A React only boilerplate c
 |   |       ├── renderHtml.js
 |   |       ├── serveProdAssets.js
 |   |       ├── serveReact.js
-|   |       └── setupDevServer.js
+|   |       ├── setupDevServer.js
+|   |       └── startServer.js
 |   |
 |   ├── client.js
 |   └── server.js
@@ -117,7 +118,8 @@ To build and bundle your client resources for production, while inside the clien
 - `src/utils/server/renderHtml.js` factory function to rewrite client-side DOM structure.
 - `src/utils/server/serveProdAssets.js` serves compiled webpack production assets.
 - `src/utils/server/serveReact.js` server side rendering setup to serve React to the client-side.
-- `src/utils/server/setupDevServer.js` webpack setup for client-side compilation and hot module replacemen
+- `src/utils/server/setupDevServer.js` webpack setup for client-side compilation and hot module replacement.
+- `src/utils/server/startServer.js` starts express server.
 - `tools/jest/assetMock.js` jest mocks for media imports.
 - `tools/jest/setup.js` jest test setup environment (see notes in `setup.js` for important information).
 - `tools/webpack/entry.js` webpack entry variables.
@@ -168,5 +170,5 @@ These packages are updated by an automated script that can be found <a href="htt
 
 ## Known Issues
 
-- <a href="https://stackoverflow.com/a/54816859/7376526">React Hot Loader throws a warning: react-🔥-dom patch is not detected. React 16.6+ features may not work.</a>
-- <a href="https://github.com/jamiebuilds/react-loadable/pull/140"> ReactLoadablePlugin throws a warning: DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead</a>
+- React Hot Loader throws a warning: <a href="https://stackoverflow.com/a/54816859/7376526">react-🔥-dom patch is not detected. React 16.6+ features may not work.</a>
+- ReactLoadablePlugin throws two deprecation warnings during compilation: <a href="https://github.com/jamiebuilds/react-loadable/pull/140">DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead. DeprecationWarning: Chunk.forEachModule: Use for(const module of chunk.modulesIterable) instead.</a>

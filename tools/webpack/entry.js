@@ -1,7 +1,7 @@
 import { inDevelopment, showErrorOverlay } from "../../envs/envs";
 
 //= =============================================================================//
-// ENTRY SETUP FOR DEVELOPMENT & PRODUCTION                                      /
+// ENTRY SETUP FOR WEBPACK DEVELOPMENT & PRODUCTION                               /
 //= =============================================================================//
 
 export default () => {

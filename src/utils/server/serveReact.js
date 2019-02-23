@@ -14,6 +14,10 @@ import configureStore from "../../store/configureStore";
 import routes from "../../routes";
 import { inDevelopment } from "../../../envs/envs";
 
+//= =============================================================================//
+// SERVER-SIDE ROUTING TO HANDLE ASSET CHUNKING AND DISPERSAL                     /
+//= =============================================================================//
+
 export default app => {
   app.get("*", (req, res) => {
     const history = createMemoryHistory();
@@ -71,7 +75,6 @@ export default app => {
         const initialState = store.getState();
         const htmlContent = renderToString(AppComponent);
 
-        // $FlowFixMe: isn't an issue
         const loadableManifest = require("../../../public/loadable-assets.json");
         const bundles = getBundles(loadableManifest, modules);
         let assets = bundles
@@ -83,7 +86,6 @@ export default app => {
           .concat(["/assets/main.css", "/assets/main.js"]);
 
         if (!inDevelopment) {
-          // $FlowFixMe: isn't an issue
           const webpackManifest = require("../../../public/webpack-assets.json");
           assets = bundles
             .map(({ publicPath }) => publicPath)

@@ -1,9 +1,11 @@
 import Loadable from "react-loadable";
 import render from "./utils/client/renderApp";
 import routes from "./routes";
-
-// global styles
 import "./styles/globals/globals.scss";
 
-// react-loadable preload routes
+//= =============================================================================//
+// CLIENT-SIDE RENDERING SETUP                                                    /
+//= =============================================================================//
+
+// react-loadable preloaded routes
 Loadable.preloadReady().then(() => render(routes));

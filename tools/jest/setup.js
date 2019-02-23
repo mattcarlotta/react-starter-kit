@@ -10,13 +10,18 @@ import {
 configure({ adapter: new Adapter() });
 global.fetch = require("jest-fetch-mock");
 
+//= =============================================================================//
+// JEST AND ENZYME TESTING SETUP                                                  /
+//= =============================================================================//
+
 /*
 THE BELOW ARE ACCESSIBLE AND PREDEFINED FOR ALL *.TEST.JS FILES
 WARNING: Due to the below being accessible to the global DOM,
-         all *.test.js files will custom rules for ESLint. Otherwise,
-         ESLint will throw errors that the functions are undefined
-         because they are not explictly imported! See "overrides"
-         under "eslintConfig" in the package.json for more information.
+         all *.test.js files will have custom rules for ESLint.
+         Otherwise, ESLint will throw errors that the functions/
+         modules are undefined because they are not explictly
+         imported! See "overrides"under "eslintConfig" in the
+         package.json for more information.
 */
 const exposedProperties = ["window", "navigator", "document"];
 const { document } = new JSDOM("").window;

@@ -1,5 +1,9 @@
-import { shallow, mount } from 'enzyme';
-import checkPropTypes from 'check-prop-types';
+import { shallow, mount } from "enzyme";
+import checkPropTypes from "check-prop-types";
+
+//= =============================================================================//
+// CUSTOM TESTING FUNCTIONS                                                       /
+//= =============================================================================//
 
 /**
  * Factory function to create a ShallowWrapper for a component
@@ -37,8 +41,8 @@ export const checkProps = (Component, conformingProps) => {
   const propError = checkPropTypes(
     Component.propTypes,
     conformingProps,
-    'prop',
-    Component.name,
+    "prop",
+    Component.name
   );
   expect(propError).toBeUndefined();
 };

@@ -1,3 +1,7 @@
+//= =============================================================================//
+// SERVER-SIDE MIDDLEWARES FOR CLIENT-SIDE COMPILATION                            /
+//= =============================================================================//
+
 module.exports = app => {
   const webpack = require("webpack");
   const webpackConfig = require("../../../tools/webpack/webpack.babel");

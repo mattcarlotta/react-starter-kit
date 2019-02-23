@@ -7,6 +7,10 @@ import favicon from "serve-favicon";
 
 const { cwd } = process;
 
+//= =============================================================================//
+//  SERVER-SIDE EXPRESS MIDDLEWARES                                               /
+//= =============================================================================//
+
 export default app => {
   // Use helmet to secure Express with various HTTP headers
   app.use(helmet());

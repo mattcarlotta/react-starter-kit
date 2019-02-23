@@ -1,6 +1,6 @@
-// Allows you to precompile ES6 syntax
+// precompiles ES6 syntax
 require("@babel/register");
-// Run assets require hooks
+// webpack hooks
 require("./tools/webpack/hooks")();
-// Run server
+// runs server
 require("./src/server");

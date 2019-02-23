@@ -1,9 +1,21 @@
 /* eslint-disable lodash/prefer-lodash-method */
-
 import serialize from "serialize-javascript";
 import { minify } from "html-minifier";
 import { inDevelopment } from "../../../envs/envs";
 
+//= =============================================================================//
+// SERVER-SIDE FUNCTION TO CREATE CLIENT-SIDE HTML                                /
+//= =============================================================================//
+
+/**
+ * Factory function to create client-side DOM.
+ * @function renderHtml
+ * @param {object} head - supporting head tags.
+ * @param {object} assets - supporting styles and scripts tags.
+ * @param {object} htmlContent - JSX to be rendered inside of root.
+ * @param {object} initialState - initial Redux state for client.
+ * @returns {html}
+ */
 export default (head, assets, htmlContent, initialState) => {
   const styles = assets.filter(file => file.endsWith(".css"));
   const scripts = assets.filter(file => file.endsWith(".js"));

@@ -7,11 +7,19 @@ import { ConnectedRouter } from "connected-react-router";
 import { renderRoutes } from "react-router-config";
 import configureStore from "../../store/configureStore";
 
+//= =============================================================================//
+// CLIENT-SIDE HOT LOADING, REDUX STATE, AND ROUTE SETUP                          /
+//= =============================================================================//
+
 const history = createBrowserHistory();
-// Get the initial state from server-side rendering
-const initialState = window.__INITIAL_STATE__;
+const initialState = window.__INITIAL_STATE__; // grabbing the initial state from server-side
 const store = configureStore(history, initialState);
 
+/**
+ * Factory function to hydrate the client-side DOM
+ * @function render
+ * @param {node} Component - Routes to be rendered
+ */
 const render = Routes => {
   hydrate(
     <AppContainer>
@@ -25,8 +33,8 @@ const render = Routes => {
   );
 };
 
+// Enable webpack hot module replacement for routes
 if (module.hot) {
-  // Enable webpack hot module replacement for routes
   module.hot.accept("../../routes", () => {
     try {
       const nextRoutes = require("../../routes").default;
