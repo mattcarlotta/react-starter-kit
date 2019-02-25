@@ -1,10 +1,10 @@
-// import bluebird from "bluebird";
-// import mongoose from "mongoose";
-const bluebird = require("bluebird");
-const mongoose = require("mongoose");
+import bluebird from "bluebird";
+import mongoose from "mongoose";
+// const bluebird = require("bluebird");
+// const mongoose = require("mongoose");
 // import { DB } from "../envs";
 
-const db = "mongodb://127.0.0.1/boilerplate-ssr-dev-db";
+const db = "mongodb://localhost/boilerplate-ssr-dev-db";
 
 mongoose.connect(db, { useNewUrlParser: true }); // connect to our mongoDB database
 mongoose.Promise = bluebird; // bluebird for mongoose promises
