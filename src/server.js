@@ -1,10 +1,9 @@
 import express from "express";
-import middlewares from "../middlewares";
+import middlewares from "./utils/server/middlewares";
 import setupDevServer from "./utils/server/setupDevServer";
 import serveProdAssets from "./utils/server/serveProdAssets";
 import serveReact from "./utils/server/serveReact";
 import startServer from "./utils/server/startServer";
-import connectToDB from "../database";
 import { inDevelopment } from "../envs";
 
 const app = express();
@@ -20,8 +19,6 @@ if (!inDevelopment) {
 } else {
   setupDevServer(app); // set up a dev server
 }
-
-connectToDB(); // connect to mongodb
 
 serveReact(app); // handles server-side routing
 

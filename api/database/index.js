@@ -1,6 +1,6 @@
 import bluebird from "bluebird";
 import mongoose from "mongoose";
-import { DB } from "../envs";
+import { DB } from "../../envs";
 
 export default () => {
   mongoose.connect(DB, { useNewUrlParser: true }); // connect to our mongoDB database
