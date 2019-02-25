@@ -14,13 +14,14 @@ const app = express();
 //= =============================================================================//
 
 middlewares(app); // express middlewares
-connectToDB(); // connect to mongodb
 
 if (!inDevelopment) {
   serveProdAssets(app); // serves production assets
 } else {
   setupDevServer(app); // set up a dev server
 }
+
+connectToDB(); // connect to mongodb
 
 serveReact(app); // handles server-side routing
 
