@@ -3,14 +3,14 @@ import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 import { linkStyle } from "./styles.scss";
 
-const StyledLink = ({ children, link }) => (
-  <NavLink className={linkStyle} to={link}>
+const StyledLink = ({ children, to }) => (
+  <NavLink className={linkStyle} to={to}>
     {children}
   </NavLink>
 );
 
 StyledLink.propTypes = {
-  link: PropTypes.string.isRequired,
+  to: PropTypes.string.isRequired,
   children: PropTypes.string.isRequired
 };
 

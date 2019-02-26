@@ -12,7 +12,7 @@ import configureStore from "../../store/configureStore";
 //= =============================================================================//
 
 const history = createBrowserHistory();
-const initialState = window.__INITIAL_STATE__; // grabbing the initial state from server-side
+const initialState = window.__INITIAL_PROPS__; // grabbing the initial state from server-side
 const store = configureStore(history, initialState);
 
 /**

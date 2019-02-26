@@ -21,7 +21,7 @@ export default [
   {
     test: /\.css$/,
     use: [
-      "css-hot",
+      "css-hot-loader",
       MiniCssExtractPlugin.loader,
       {
         loader: "css",
@@ -39,7 +39,7 @@ export default [
   {
     test: /\.(scss|sass)$/,
     use: [
-      "css-hot",
+      "css-hot-loader",
       MiniCssExtractPlugin.loader,
       {
         loader: "css",

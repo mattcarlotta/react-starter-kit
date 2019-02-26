@@ -55,8 +55,8 @@ export default (head, assets, htmlContent, initialState, initialProps) => {
         <script>
           // Use serialize-javascript for mitigating XSS attacks. See the following security issues:
           // http://redux.js.org/docs/recipes/ServerRendering.html#security-considerations
-          window.__INITIAL_DATA__=${serialize(initialState)};
-          window.__INITIAL_STATE__=${serialize(initialProps)};
+          window.__INITIAL_STATE__=${serialize(initialState)};
+          window.__INITIAL_PROPS__=${serialize(initialProps)};
         </script>
 
         <!-- Insert bundled scripts into <script> tag -->

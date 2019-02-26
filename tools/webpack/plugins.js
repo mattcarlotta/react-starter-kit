@@ -15,7 +15,7 @@ import WebpackBar from "webpackbar";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import { ReactLoadablePlugin } from "react-loadable/webpack";
 import { inDevelopment, nodeENV, PORT } from "../../envs";
-import paths from "./paths";
+import { loadableAssets, webpackAssets } from "./paths";
 
 //= =============================================================================//
 // PLUGIN SETUP FOR WEBPACK DEVELOPMENT & PRODUCTION CONFIGS                     /
@@ -25,12 +25,12 @@ export default () => {
   // Shared plugins
   const plugins = [
     new ManifestPlugin({
-      fileName: paths.webpackAssets,
+      fileName: webpackAssets,
       filter: file => file.isInitial
     }),
     // Creates client loadable asset chunks
     new ReactLoadablePlugin({
-      filename: paths.loadableAssets
+      filename: loadableAssets
     }),
     new MiniCssExtractPlugin({
       // Don't use hash in development, we need the persistent for "renderHtml.js"

@@ -6,10 +6,10 @@
 }
 
 .logoContainer {
-  @extend %centered;
-
+  width: 800px;
+  margin: 0 auto;
+  margin-top: 10%;
   color: $lightblue;
-  min-height: 100vh;
 }
 
 .logoStyle {

@@ -11,7 +11,7 @@ module.exports = {
   /* current host */
   HOST: process.env.NODE_HOST || "localhost",
   /* how the CSS class names will be declared in the DOM */
-  localIdentName: "[name]__[local]--[hash:base64:5]",
+  localIdentName: "[folder]_[name]__[local]--[hash:base64:5]",
   /* current envirnoment */
   nodeENV: env || "development",
   /* current express port */

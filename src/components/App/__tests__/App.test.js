@@ -17,6 +17,6 @@ const wrapper = mount(
 
 describe("App", () => {
   it("renders without errors", () => {
-    expect(wrapper.find(".app")).toHaveLength(1);
+    expect(wrapper.find(".appContainer")).toHaveLength(1);
   });
 });

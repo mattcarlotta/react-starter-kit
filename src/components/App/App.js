@@ -3,7 +3,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import { renderRoutes } from "react-router-config";
 import { hot } from "react-hot-loader";
-import { app } from "./styles.scss";
+import { appContainer } from "./styles.scss";
 
 const config = {
   htmlAttributes: { lang: "en" },
@@ -18,7 +18,7 @@ const config = {
 };
 
 export const App = ({ route: { routes } }) => (
-  <div className={app}>
+  <div className={appContainer}>
     <Helmet {...config} />
     {renderRoutes(routes)}
   </div>

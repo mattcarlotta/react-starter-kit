@@ -16,7 +16,7 @@ export default () => (
       <img className={logoStyle} src={logo} alt="" />
       <h1 className={textInfo}>Webpack SSR Boilerplate</h1>
       <h1 className={textInfo}>Edit ./components and save to reload.</h1>
-      <NavLink link="/users">See Example</NavLink>
+      <NavLink to="/users">See Example</NavLink>
     </div>
   </div>
 );
