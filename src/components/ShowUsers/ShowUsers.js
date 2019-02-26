@@ -1,49 +1,48 @@
 /* eslint-disable */
 import isEmpty from "lodash/isEmpty";
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import NavLink from "../NavLink";
 import { fetchUsers } from "../../actions/users";
 
 export default class ShowUsers extends Component {
   constructor(props) {
     super(props);
 
-    let users;
+    let data;
     if (__CLIENT__) {
-      console.log("initalData: ", window.__INITIAL_DATA__);
-      users = window.__INITIAL_DATA__;
+      data = window.__INITIAL_DATA__;
       delete window.__INITIAL_DATA__;
     } else {
-      users = this.props.staticContext;
+      data = this.props.staticContext;
     }
 
-    this.state = { users };
+    this.state = { data, isLoading: isEmpty(data) ? true : false };
   }
 
   componentDidMount = () => {
-    if (isEmpty(this.state.users)) {
-      this.fetchUsers();
+    if (this.state.isLoading) {
+      this.fetchData();
     }
   };
 
-  fetchUsers = () => {
+  fetchData = () => {
     fetchUsers()
-      .then(users => {
-        this.setState({ users });
+      .then(res => {
+        this.setState({ data: res.data, isLoading: false });
       })
       .catch(err => {
-        this.setState({ err: err.toString() });
+        this.setState({ error: err.toString(), isLoading: false });
       });
   };
 
   render = () =>
-    isEmpty(this.state.users) ? (
+    this.state.isLoading ? (
       <p>Loading...</p>
     ) : (
       <div>
-        <NavLink to="/">Go Back</NavLink>
+        <NavLink link="/">Go Back</NavLink>
         <pre style={{ width: 800, background: "#eee" }}>
-          <code>{JSON.stringify(this.state.users, null, 2)}</code>
+          <code>{JSON.stringify(this.state.data, null, 2)}</code>
         </pre>
       </div>
     );

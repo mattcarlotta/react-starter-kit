@@ -20,7 +20,7 @@ module.exports = app => {
     getUsers: async (req, res, done) => {
       try {
         const users = await User.find({});
-        return res.status(201).json({ users });
+        return res.status(200).send({ users });
       } catch (err) {
         return sendError(err, res, done);
       }

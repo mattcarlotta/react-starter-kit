@@ -5,9 +5,9 @@ module.exports = {
     portal: "http://localhost:3000"
   },
   production: {
-    database: "mongodb://localhost/boilerplate-ssr-prod-db",
+    database: "mongodb://localhost/boilerplate-srr-prod-db",
     port: 5000,
-    portal: "http://example.com"
+    portal: "http://localhost:8080"
   },
   staging: {
     database: "mongodb://localhost/boilerplate-ssr-staging-db",

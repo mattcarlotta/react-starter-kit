@@ -43,6 +43,7 @@ module.exports = app => {
 
   (async () => {
     try {
+      // await User.remove({});
       await User.insertMany(users);
       return console.log("--[SUCCESS]-- Seeded database!");
     } catch (err) {

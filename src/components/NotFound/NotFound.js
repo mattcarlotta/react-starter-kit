@@ -1,6 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
-import { NavLink } from "react-router-dom";
+import NavLink from "../NavLink";
 import { notfound, notfoundContainer } from "./styles.scss";
 
 export default () => (

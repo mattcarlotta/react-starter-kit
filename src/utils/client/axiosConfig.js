@@ -1,12 +1,10 @@
 import axios from "axios";
-
-const env = process.env.NODE_ENV;
+import { inDevelopment } from "../../../envs";
 
 export const app = axios.create({
-  baseURL:
-    env === "production"
-      ? "http://example.com/api/"
-      : "http://localhost:5000/api/"
+  baseURL: inDevelopment
+    ? "http://localhost:3000/api/"
+    : "http://localhost:8080/api/"
 });
 
 export default app;

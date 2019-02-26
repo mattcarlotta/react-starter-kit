@@ -7,7 +7,7 @@ consign({
   cwd: `${process.cwd()}/api`,
   extensions: [".js"],
   locale: "en-us",
-  verbose: true
+  verbose: false
 })
   .include("middlewares")
   .then("database")

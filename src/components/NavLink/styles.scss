@@ -1,0 +1,22 @@
+@import "../../styles/styles.scss";
+
+.linkStyle {
+  cursor: pointer;
+  color: $white;
+  background-color: $lightblue;
+  font-weight: bold;
+  font-family: "Muli Regular", "Helvetica-Light", Helvetica, Arial, sans-serif;
+  line-height: 38px;
+  margin: 10px;
+  padding: 8px 16px;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover {
+    color: $white;
+    background-color: $teal;
+    text-decoration: none;
+  }
+}
