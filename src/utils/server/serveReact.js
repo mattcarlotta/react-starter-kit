@@ -1,3 +1,4 @@
+import isNull from "lodash/isNull";
 import React from "react";
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom";
@@ -19,12 +20,25 @@ import { inDevelopment } from "../../../envs";
 //= =============================================================================//
 
 export default app => {
-  app.get("*", (req, res) => {
+  app.get("*", async (req, res) => {
     const history = createMemoryHistory();
     const store = configureStore(history);
 
+    const loadInitialState = () => {
+      const branch = matchRoutes(routes, req.path);
+
+      const promises = branch.map(({ route }) => {
+        if (route.loadInitState) {
+          return Promise.all(route.loadInitState());
+        }
+        return Promise.resolve();
+      });
+
+      return Promise.all(promises);
+    };
+
     // The method for loading data from server-side
-    const loadBranchData = () => {
+    const loadReduxData = () => {
       const branch = matchRoutes(routes, req.path);
 
       const promises = branch.map(({ route, match }) => {
@@ -45,10 +59,12 @@ export default app => {
     (async () => {
       try {
         // Load data from server-side first
-        await loadBranchData();
+        await loadReduxData();
+        const [, data] = await loadInitialState();
+        const initialState = data && !isNull(data) ? { ...data[0].data } : {};
 
         const modules = [];
-        const staticContext = {};
+        const staticContext = initialState;
         const AppComponent = (
           <Loadable.Capture report={moduleName => modules.push(moduleName)}>
             <Provider store={store}>
@@ -72,7 +88,7 @@ export default app => {
         const status = staticContext.status === "404" ? 404 : 200;
 
         const head = Helmet.renderStatic();
-        const initialState = store.getState();
+        const initialProps = store.getState();
         const htmlContent = renderToString(AppComponent);
 
         const loadableManifest = require("../../../public/loadable-assets.json");
@@ -99,7 +115,9 @@ export default app => {
         // Pass the route and initial state into html template
         res
           .status(status)
-          .send(renderHtml(head, assets, htmlContent, initialState));
+          .send(
+            renderHtml(head, assets, htmlContent, initialState, initialProps)
+          );
       } catch (err) {
         res.status(404).send("Not Found :(");
 

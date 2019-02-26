@@ -16,7 +16,10 @@
     "*.sass"
   ],
   "scripts": {
+    "api": "better-npm-run api",
     "dev": "better-npm-run dev",
+    "example": "better-npm-run example",
+    "seed": "better-npm-run seed",
     "start": "better-npm-run start",
     "build": "better-npm-run clean:build && better-npm-run build",
     "analyze": "better-npm-run clean:build && better-npm-run analyze",
@@ -32,12 +35,32 @@
     "coveralls": "better-npm-run clean:test && better-npm-run coveralls"
   },
   "betterScripts": {
+    "api": {
+      "command": "nodemon ./api",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    "example": {
+      "command": "nodemon .",
+      "env": {
+        "NODE_PATH": "./src",
+        "NODE_ENV": "development",
+        "RUNNING_EXAMPLE": "true"
+      }
+    },
     "dev": {
       "command": "nodemon .",
       "env": {
         "NODE_PATH": "./src",
         "NODE_ENV": "development",
         "PORT": 3000
+      }
+    },
+    "seed": {
+      "command": "node ./api/seed.js",
+      "env": {
+        "NODE_ENV": "development"
       }
     },
     "start": {
@@ -149,7 +172,7 @@
     "settings": {
       "import/resolver": {
         "webpack": {
-          "config": "./tools/webpack/webpack.config.js"
+          "config": "./tools/webpack/webpack.babel.js"
         }
       }
     },
@@ -299,6 +322,8 @@
     "chalk": "^2.4.2",
     "compression": "^1.7.3",
     "connected-react-router": "^6.3.1",
+    "consign": "^0.1.6",
+    "cors": "^2.8.5",
     "cross-spawn": "^6.0.5",
     "css-modules-require-hook": "^4.2.3",
     "express": "^4.16.4",

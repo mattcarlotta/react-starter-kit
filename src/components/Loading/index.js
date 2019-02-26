@@ -13,6 +13,8 @@ const Loading = ({ pastDelay, error }) => {
       </div>
     );
 
+  console.log("loading...");
+
   return null;
 };
 

@@ -13,10 +13,11 @@ import { inDevelopment } from "../../../envs";
  * @param {object} head - supporting head tags.
  * @param {object} assets - supporting styles and scripts tags.
  * @param {object} htmlContent - JSX to be rendered inside of root.
- * @param {object} initialState - initial Redux state for client.
+ * @param {object} initialState - initial React state for client.
+ * @param {object} initialProps - initial Redux props for client.
  * @returns {html}
  */
-export default (head, assets, htmlContent, initialState) => {
+export default (head, assets, htmlContent, initialState, initialProps) => {
   const styles = assets.filter(file => file.endsWith(".css"));
   const scripts = assets.filter(file => file.endsWith(".js"));
 
@@ -54,7 +55,8 @@ export default (head, assets, htmlContent, initialState) => {
         <script>
           // Use serialize-javascript for mitigating XSS attacks. See the following security issues:
           // http://redux.js.org/docs/recipes/ServerRendering.html#security-considerations
-          window.__INITIAL_STATE__=${serialize(initialState)};
+          window.__INITIAL_DATA__=${serialize(initialState)};
+          window.__INITIAL_STATE__=${serialize(initialProps)};
         </script>
 
         <!-- Insert bundled scripts into <script> tag -->

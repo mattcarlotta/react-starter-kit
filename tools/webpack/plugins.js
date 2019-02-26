@@ -1,4 +1,5 @@
 import {
+  DefinePlugin,
   EnvironmentPlugin,
   HashedModuleIdsPlugin,
   HotModuleReplacementPlugin
@@ -13,7 +14,7 @@ import FriendlyErrorsWebpackPlugin from "friendly-errors-webpack-plugin";
 import WebpackBar from "webpackbar";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import { ReactLoadablePlugin } from "react-loadable/webpack";
-import { inDevelopment, nodeENV } from "../../envs";
+import { inDevelopment, nodeENV, PORT } from "../../envs";
 import paths from "./paths";
 
 //= =============================================================================//
@@ -45,6 +46,11 @@ export default () => {
       color: "#268bd2",
       minimal: false,
       compiledIn: false
+    }),
+    // Setup global variables for client
+    new DefinePlugin({
+      __CLIENT__: true,
+      __RUNNING_EXAMPLE__: !!process.env.RUNNING_EXAMPLE || false
     })
   ];
 
@@ -55,9 +61,7 @@ export default () => {
       new FriendlyErrorsWebpackPlugin({
         compilationSuccessInfo: {
           messages: [
-            `Your application is running on \x1b[1mhttp://localhost:${
-              process.env.PORT
-            }\x1b[0m`
+            `Your application is running on \x1b[1mhttp://localhost:${PORT}\x1b[0m`
           ],
           notes: [
             "Note that the development build is not optimized.",

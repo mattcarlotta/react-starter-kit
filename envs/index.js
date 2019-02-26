@@ -4,8 +4,6 @@ const env = process.env.NODE_ENV;
 // ENV SETUP FOR WEBPACK DEVELOPMENT & PRODUCTION CONFIGS                        /
 //= =============================================================================//
 module.exports = {
-  /* mongo DB database connection */
-  DB: "mongodb://localhost/boilerplate-dev-db",
   /* working in development ENV */
   inDevelopment: env === "development",
   /* hased name gives to images or fonts */
@@ -17,7 +15,7 @@ module.exports = {
   /* current envirnoment */
   nodeENV: env || "development",
   /* current express port */
-  PORT: process.env.PORT,
+  PORT: process.env.PORT || 3000,
   /* enable/disable webpack-hot-middleware overlay */
   showErrorOverlay: true,
   /* enable/disable css module imports */

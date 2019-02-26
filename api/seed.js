@@ -11,10 +11,6 @@ consign({
 })
   .include("middlewares")
   .then("database")
-  .then("utils")
   .then("models")
-  // .then("services")
-  .then("controllers")
-  .then("routes")
-  .then("server")
+  .then("seeds")
   .into(app);

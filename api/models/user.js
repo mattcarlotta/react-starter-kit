@@ -1,15 +1,17 @@
-module.exports = ({ Schema }) => {
-  const userSchema = new Schema({
+module.exports = app => {
+  const mongoose = app.get("mongoose");
+
+  const userSchema = new mongoose.Schema({
+    email: String,
+    firstName: String,
+    lastName: String,
+    username: { type: String, unique: true, lowercase: true },
     address: {
       street: String,
       suite: String,
       city: String,
       zipCode: String
-    },
-    email: String,
-    firstName: String,
-    lastName: String,
-    username: { type: String, unique: true, lowercase: true }
+    }
   });
 
   userSchema.statics.createUser = async function newUser(user) {
