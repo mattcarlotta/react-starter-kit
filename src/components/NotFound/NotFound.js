@@ -1,6 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
-import NavLink from "../NavLink";
+import Link from "../Link";
 import { notfound, notfoundContainer } from "./styles.scss";
 
 export default () => (
@@ -8,7 +8,7 @@ export default () => (
     <Helmet title="Page Not Found" />
     <div className={notfound}>
       <h1>404 - Page Not Found!</h1>
-      <NavLink to="/">Go Back</NavLink>
+      <Link to="/">Go Back</Link>
     </div>
   </div>
 );

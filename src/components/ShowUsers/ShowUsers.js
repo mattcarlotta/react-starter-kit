@@ -2,7 +2,7 @@
 import isEmpty from "lodash/isEmpty";
 import React, { Component } from "react";
 import Helmet from "react-helmet";
-import NavLink from "../NavLink";
+import Link from "../Link";
 import { fetchUsers } from "../../actions/users";
 
 export default class ShowUsers extends Component {
@@ -43,7 +43,7 @@ export default class ShowUsers extends Component {
         <p>Loading...</p>
       ) : (
         <div>
-          <NavLink to="/">Go Back</NavLink>
+          <Link to="/">Go Back</Link>
           <pre style={{ width: 800, background: "#eee" }}>
             <code>{JSON.stringify(this.state.data, null, 2)}</code>
           </pre>

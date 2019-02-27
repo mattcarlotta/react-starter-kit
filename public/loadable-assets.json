@@ -51,7 +51,7 @@
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "?f94d",
+      "id": "?949e",
       "name": null,
       "file": "main.css",
       "publicPath": "/assets/main.css"
@@ -105,7 +105,7 @@
       "publicPath": "/assets/main.js"
     },
     {
-      "id": "?f94d",
+      "id": "?949e",
       "name": null,
       "file": "main.js",
       "publicPath": "/assets/main.js"
@@ -159,7 +159,7 @@
       "publicPath": "/assets/main.css.map"
     },
     {
-      "id": "?f94d",
+      "id": "?949e",
       "name": null,
       "file": "main.css.map",
       "publicPath": "/assets/main.css.map"
@@ -213,7 +213,7 @@
       "publicPath": "/assets/main.js.map"
     },
     {
-      "id": "?f94d",
+      "id": "?949e",
       "name": null,
       "file": "main.js.map",
       "publicPath": "/assets/main.js.map"
@@ -2941,7 +2941,7 @@
       "publicPath": "/assets/main.js.map"
     }
   ],
-  "./es6.array.iterator": [
+  "core-js/modules/es6.array.iterator": [
     {
       "id": "./node_modules/core-js/modules/es6.array.iterator.js",
       "name": "./node_modules/core-js/modules/es6.array.iterator.js",
@@ -4859,8 +4859,8 @@
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "./src/components/NavLink/styles.scss",
-      "name": "./src/components/NavLink/styles.scss",
+      "id": "./src/components/Link/styles.scss",
+      "name": "./src/components/Link/styles.scss",
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
@@ -4895,8 +4895,8 @@
       "publicPath": "/assets/main.js"
     },
     {
-      "id": "./src/components/NavLink/styles.scss",
-      "name": "./src/components/NavLink/styles.scss",
+      "id": "./src/components/Link/styles.scss",
+      "name": "./src/components/Link/styles.scss",
       "file": "main.js",
       "publicPath": "/assets/main.js"
     },
@@ -4931,8 +4931,8 @@
       "publicPath": "/assets/main.css.map"
     },
     {
-      "id": "./src/components/NavLink/styles.scss",
-      "name": "./src/components/NavLink/styles.scss",
+      "id": "./src/components/Link/styles.scss",
+      "name": "./src/components/Link/styles.scss",
       "file": "main.css.map",
       "publicPath": "/assets/main.css.map"
     },
@@ -4967,8 +4967,8 @@
       "publicPath": "/assets/main.js.map"
     },
     {
-      "id": "./src/components/NavLink/styles.scss",
-      "name": "./src/components/NavLink/styles.scss",
+      "id": "./src/components/Link/styles.scss",
+      "name": "./src/components/Link/styles.scss",
       "file": "main.js.map",
       "publicPath": "/assets/main.js.map"
     },
@@ -5843,28 +5843,28 @@
       "publicPath": "/assets/main.js.map"
     }
   ],
-  "../NavLink": [
+  "../Link": [
     {
-      "id": "./src/components/NavLink/index.js",
-      "name": "./src/components/NavLink/index.js",
+      "id": "./src/components/Link/index.js",
+      "name": "./src/components/Link/index.js",
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "./src/components/NavLink/index.js",
-      "name": "./src/components/NavLink/index.js",
+      "id": "./src/components/Link/index.js",
+      "name": "./src/components/Link/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
     },
     {
-      "id": "./src/components/NavLink/index.js",
-      "name": "./src/components/NavLink/index.js",
+      "id": "./src/components/Link/index.js",
+      "name": "./src/components/Link/index.js",
       "file": "main.css.map",
       "publicPath": "/assets/main.css.map"
     },
     {
-      "id": "./src/components/NavLink/index.js",
-      "name": "./src/components/NavLink/index.js",
+      "id": "./src/components/Link/index.js",
+      "name": "./src/components/Link/index.js",
       "file": "main.js.map",
       "publicPath": "/assets/main.js.map"
     }
