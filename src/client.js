@@ -8,3 +8,16 @@ import "./styles/globals/globals.scss";
 //= =============================================================================//
 
 Loadable.preloadReady().then(() => render(routes)); // react-loadable preloaded routes
+
+// Enable webpack hot module replacement for routes
+if (module.hot) {
+  module.hot.accept("./routes", () => {
+    try {
+      const nextRoutes = require("./routes").default;
+
+      render(nextRoutes);
+    } catch (error) {
+      console.error(`Hot reloading error: ${error}`);
+    }
+  });
+}
