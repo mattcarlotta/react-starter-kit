@@ -5,7 +5,7 @@ import serveProdAssets from "./utils/server/serveProdAssets";
 import serveReact from "./utils/server/serveReact";
 import startServer from "./utils/server/startServer";
 import { inDevelopment } from "../envs";
-import api from "../api";
+import startAPI from "../api";
 
 const app = express();
 
@@ -15,7 +15,7 @@ const app = express();
 
 middlewares(app); // express middlewares
 
-api(app);
+startAPI(app); // example API setup
 
 if (!inDevelopment) {
   serveProdAssets(app); // serves production assets

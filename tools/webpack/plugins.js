@@ -39,7 +39,7 @@ export default () => {
         ? "[id].chunk.css"
         : "[id].[contenthash:8].chunk.css"
     }),
-    // Setup enviorment variables for client
+    // Setup enviornment variables for client
     new EnvironmentPlugin({ NODE_ENV: JSON.stringify(nodeENV) }),
     // Displays compilation bar
     new WebpackBar({
@@ -49,8 +49,7 @@ export default () => {
     }),
     // Setup global variables for client
     new DefinePlugin({
-      __CLIENT__: true,
-      __RUNNING_EXAMPLE__: !!process.env.RUNNING_EXAMPLE || false
+      __CLIENT__: true
     })
   ];
 

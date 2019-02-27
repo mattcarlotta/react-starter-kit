@@ -1,10 +1,7 @@
-// precompiles ES6 syntax
-require("@babel/register");
+require("@babel/register"); // precompiles ES6 syntax
 
-global.__CLIENT__ = false;
-global.__RUNNING_EXAMPLE__ = false;
+global.__CLIENT__ = false; // global server-side variables
 
-// webpack hooks
-require("./tools/webpack/hooks")();
-// runs server
-require("./src/server");
+require("./tools/webpack/hooks"); // webpack hooks
+
+require("./src/server"); // start server
