@@ -1,7 +1,7 @@
 import App from "../components/App";
-import Home from "../components/Home";
-import NotFound from "../components/NotFound";
-import ShowUsers from "../components/ShowUsers/ShowUsers";
+import Home from "../pages/Home";
+import NotFound from "../pages/NotFound";
+import ShowUsers from "../pages/ShowUsers";
 import { fetchUsers } from "../actions/users";
 
 export default [

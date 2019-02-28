@@ -12,7 +12,7 @@ import {
 } from "./styles.scss";
 
 const Card = ({
-  address: { street, suite, city, zipCode },
+  address: { street, state, suite, city, zipCode },
   backgroundInfo,
   email,
   firstName,
@@ -36,6 +36,8 @@ const Card = ({
           </Fragment>
         )}
         <li>{city}</li>
+        <Divider />
+        <li>{state}</li>
         <Divider />
         <li>{zipCode}</li>
       </ul>

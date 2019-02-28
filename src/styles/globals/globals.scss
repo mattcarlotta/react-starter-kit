@@ -10,14 +10,19 @@
     from the main 'src/styles/styles.scss' file. For
     simplicity, import static fonts, images, and
     stylesheets from within in this file.
+
     local stylesheets:
     @import '../assets/styles/stylesheet.(s)css'
+
     local fonts:
     src: url('../assets/fonts/font.ext') format('ext')
+    
     local images:
     src: url('../../images/imageFile.ext');
+
     node_modules (must be imported with a tilda (~)):
     @import '~ModuleName/path/to/stylesheet.(s)css';
+
     Component-level scss imports are similiar to the
     above examples as long as they contain relative
     pathing to the asset and are NOT partial scss

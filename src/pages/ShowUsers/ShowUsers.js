@@ -2,13 +2,13 @@
 import isEmpty from "lodash/isEmpty";
 import React, { Component, Fragment } from "react";
 import Helmet from "react-helmet";
-import Link from "../Link";
-import Card from "../Card";
-import Modal from "../Modal";
-import Button from "../Button";
+import Link from "../../components/Link";
+import Card from "../../components/Card";
+import Modal from "../../components/Modal";
+import Button from "../../components/Button";
 import AddUserForm from "../../containers/AddUserForm";
 import { fetchUsers } from "../../actions/users";
-import { prevetScroll, usersContainer } from "./styles.scss";
+import { preventScroll, usersContainer } from "./styles.scss";
 
 export default class ShowUsers extends Component {
   constructor(props) {
@@ -56,7 +56,7 @@ export default class ShowUsers extends Component {
   render = () => (
     <div
       className={`${usersContainer} ${
-        this.state.openModal ? prevetScroll : ""
+        this.state.openModal ? preventScroll : ""
       }`}
     >
       <Helmet title="Users" />

@@ -7,6 +7,7 @@ import fields from "./fields";
 import {
   errors,
   formContainer,
+  hasError,
   inputContainer,
   inputStyle,
   labelStyle
@@ -63,7 +64,6 @@ export default class AddUserForm extends Component {
       !city,
       !zipCode)
     ) {
-      console.log("triggered");
       this.setState({ submitted: true });
       return;
     }
@@ -87,7 +87,9 @@ export default class AddUserForm extends Component {
             </label>
             <input
               id={fieldName}
-              className={inputStyle}
+              className={`${inputStyle} ${
+                this.state.submitted && !this.state[fieldName] ? hasError : ""
+              }`}
               name={fieldName}
               value={this.state[fieldName]}
               onChange={this.handleChange}
@@ -97,8 +99,8 @@ export default class AddUserForm extends Component {
             ) : null}
           </div>
         ))}
+        <Button type="submit">Submit</Button>
       </form>
-      <Button type="submit">Submit</Button>
     </Fragment>
   );
 }
