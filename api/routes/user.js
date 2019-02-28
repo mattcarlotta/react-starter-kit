@@ -3,7 +3,7 @@ module.exports = app => {
 
   app.get("/api/users", getUsers);
   // app.get('/api/user/:id', getUser);
-  app.post("/api/create-user", createUser);
+  app.post("/api/users/create", createUser);
   // app.put('/api/update-user', updateUser);
   // app.delete('/api/delete/:id', deleteUser)
 };

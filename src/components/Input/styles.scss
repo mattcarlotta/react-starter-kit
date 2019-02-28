@@ -1,0 +1,26 @@
+@import "../../styles/styles.scss";
+
+.hasFieldError {
+  border: 1px solid $red !important;
+}
+
+.inputContainer {
+  height: 92px;
+  padding: 0 10px;
+}
+
+.inputStyle {
+  text-indent: 10px;
+  height: 40px;
+  width: 100%;
+  background-color: $white;
+  color: $neutralgrey;
+  border: 1px solid $lightgrey;
+  transition: 0.2s ease-in-out;
+  transition-property: color, background-color, border;
+}
+
+.labelStyle {
+  margin: 0;
+  display: block;
+}

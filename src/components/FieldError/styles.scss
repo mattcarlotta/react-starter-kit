@@ -1,0 +1,13 @@
+@import "../../styles/styles.scss";
+
+.hidden {
+  margin: 0;
+  opacity: 0;
+}
+
+.errorStyle {
+  color: $red;
+  margin: 0;
+  font-family: "Muli Regular", "Helvetica-Light", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}

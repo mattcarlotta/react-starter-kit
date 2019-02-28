@@ -208,6 +208,7 @@
           }
         }
       ],
+      "consistent-return": 0,
       "no-console": "off",
       "no-underscore-dangle": "off",
       "function-paren-newline": "off",

@@ -5,6 +5,11 @@
   margin-bottom: 10px;
 }
 
+.modalClose {
+  float: right;
+  padding: 2px;
+}
+
 .modalContainer {
   background: $grey;
   position: relative;
@@ -12,7 +17,7 @@
   z-index: 11;
   padding: 0;
   overflow: hidden;
-  width: 700px;
+  width: 750px;
   margin: 0 auto;
   border-radius: 4px;
   margin-bottom: 20px;
@@ -31,21 +36,18 @@
 
 .modalTitle {
   display: inline-block;
+  padding: 2px;
   float: left;
   font-weight: bold;
   color: $darkgrey;
 }
 
 .modalTitleContainer {
-  padding: 5px 10px;
+  padding: 7px 12px;
   border-bottom: 1px solid $lightgrey;
   height: 30px;
 
   &::after {
     @extend .clear-fix;
   }
-}
-
-.modalClose {
-  float: right;
 }

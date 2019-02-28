@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { closeButton } from "./styles.scss";
 
-const Close = ({ onClick }) => (
-  <button type="button" onClick={onClick} className={closeButton}>
+const Close = ({ onClick, style }) => (
+  <button type="button" style={style} onClick={onClick} className={closeButton}>
     <svg
       width="14"
       height="14"
@@ -33,7 +33,10 @@ const Close = ({ onClick }) => (
 );
 
 Close.propTypes = {
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func.isRequired,
+  style: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+  )
 };
 
 export default Close;

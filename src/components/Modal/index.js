@@ -16,7 +16,7 @@ const Modal = ({ closeModal, children, title }) => (
       <div className={modalTitleContainer}>
         <div className={modalTitle}>{title}</div>
         <div className={modalClose}>
-          <CloseButton onClick={closeModal} />
+          <CloseButton onClick={closeModal} style={{ color: "#999" }} />
         </div>
       </div>
       <div className={modalBody}>{children}</div>

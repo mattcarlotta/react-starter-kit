@@ -1,17 +1,12 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
-
 import Button from "../../components/Button";
+import FormError from "../../components/FormError";
+import Input from "../../components/Input";
+import TextArea from "../../components/TextArea";
 import { createUser } from "../../actions/users";
 import fields from "./fields";
-import {
-  errors,
-  formContainer,
-  hasError,
-  inputContainer,
-  inputStyle,
-  labelStyle
-} from "./styles.scss";
+import { formContainer, submitContainer } from "./styles.scss";
 
 export default class AddUserForm extends Component {
   state = {
@@ -37,6 +32,8 @@ export default class AddUserForm extends Component {
     this.setState({ [name]: value });
   };
 
+  handleCloseError = () => this.setState({ error: "" });
+
   handleSubmit = e => {
     e.preventDefault();
     const {
@@ -53,22 +50,36 @@ export default class AddUserForm extends Component {
     } = this.state;
 
     if (
-      (!email,
-      !firstName,
-      !lastName,
-      !userName,
-      !backgroundInfo,
-      !street,
-      !state,
-      !suite,
-      !city,
-      !zipCode)
+      !email ||
+      !firstName ||
+      !lastName ||
+      !userName ||
+      !backgroundInfo ||
+      !street ||
+      !state ||
+      !city ||
+      !zipCode
     ) {
-      this.setState({ submitted: true });
-      return;
+      if (!this.state.submitted) {
+        this.setState({ submitted: true });
+      }
+      return null;
     }
 
-    createUser()
+    const formProps = {
+      email,
+      firstName,
+      lastName,
+      userName,
+      backgroundInfo,
+      street,
+      state,
+      suite,
+      city,
+      zipCode
+    };
+
+    createUser(formProps)
       .then(() => {
         this.props.updateUserList();
       })
@@ -80,27 +91,34 @@ export default class AddUserForm extends Component {
   render = () => (
     <Fragment>
       <form className={formContainer} onSubmit={this.handleSubmit}>
-        {fields.map(({ fieldName, label }) => (
-          <div key={fieldName} className={inputContainer}>
-            <label className={labelStyle} htmlFor={fieldName}>
-              {label}
-            </label>
-            <input
-              id={fieldName}
-              className={`${inputStyle} ${
-                this.state.submitted && !this.state[fieldName] ? hasError : ""
-              }`}
-              name={fieldName}
-              value={this.state[fieldName]}
-              onChange={this.handleChange}
-            />
-            {this.state.submitted && !this.state[fieldName] ? (
-              <p className={errors}>Required!</p>
-            ) : null}
-          </div>
+        {fields.map(({ fieldName, ...props }) => (
+          <Input
+            {...props}
+            key={fieldName}
+            hasError={this.state.submitted && !this.state[fieldName]}
+            name={fieldName}
+            onHandleChange={this.handleChange}
+            value={this.state[fieldName]}
+            submitted={this.state.submitted}
+          />
         ))}
-        <Button type="submit">Submit</Button>
+        <TextArea
+          name="backgroundInfo"
+          hasError={this.state.submitted && !this.state.backgroundInfo}
+          label="Background"
+          onHandleChange={this.handleChange}
+          value={this.state.backgroundInfo}
+          submitted={this.state.submitted}
+          isRequired
+        />
+        <div className={submitContainer}>
+          <Button type="submit">Submit</Button>
+        </div>
       </form>
+      <FormError
+        hasError={this.state.error}
+        onHandleClose={this.handleCloseError}
+      />
     </Fragment>
   );
 }

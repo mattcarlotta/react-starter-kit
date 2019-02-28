@@ -1,0 +1,29 @@
+@import "../../styles/styles.scss";
+
+.hasFieldError {
+  border: 1px solid $red !important;
+}
+
+.labelStyle {
+  margin: 0;
+  display: block;
+}
+
+.textAreaContainer {
+  height: 225px;
+  padding: 0 10px;
+}
+
+.textAreaStyle {
+  box-sizing: border-box;
+  padding: 10px;
+  height: 173px;
+  overflow-y: auto;
+  width: 100%;
+  background-color: $white;
+  color: $neutralgrey;
+  border: 1px solid $lightgrey;
+  transition: 0.2s ease-in-out;
+  transition-property: color, background-color, border;
+  resize: none;
+}

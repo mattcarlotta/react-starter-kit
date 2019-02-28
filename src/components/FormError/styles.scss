@@ -1,0 +1,17 @@
+@import "../../styles/styles.scss";
+
+.errorContainer {
+  position: relative;
+  padding: 15px 29px 15px 15px;
+  background: $palered;
+  color: $red;
+  border: 1px dotted;
+}
+
+.errorStyle {
+  color: $red;
+  margin: 0 10px;
+  font-family: "Muli Regular", "Helvetica-Light", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+}
