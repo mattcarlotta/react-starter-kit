@@ -1,9 +1,14 @@
 /* eslint-disable */
 import isEmpty from "lodash/isEmpty";
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import Helmet from "react-helmet";
 import Link from "../Link";
+import Card from "../Card";
+import Modal from "../Modal";
+import Button from "../Button";
+import AddUserForm from "../../containers/AddUserForm";
 import { fetchUsers } from "../../actions/users";
+import { prevetScroll, usersContainer } from "./styles.scss";
 
 export default class ShowUsers extends Component {
   constructor(props) {
@@ -17,7 +22,11 @@ export default class ShowUsers extends Component {
       data = this.props.staticContext;
     }
 
-    this.state = { data, isLoading: isEmpty(data) ? true : false };
+    this.state = {
+      data,
+      isLoading: isEmpty(data) ? true : false,
+      openModal: false
+    };
   }
 
   componentDidMount = () => {
@@ -36,18 +45,38 @@ export default class ShowUsers extends Component {
       });
   };
 
+  handleOpenModal = () => this.setState({ openModal: true });
+
+  handleCloseModal = () => this.setState({ openModal: false });
+
+  updateUserList = () => {
+    this.setState({ isLoading: true, openModal: false }, () => this.fetchData);
+  };
+
   render = () => (
-    <div>
+    <div
+      className={`${usersContainer} ${
+        this.state.openModal ? prevetScroll : ""
+      }`}
+    >
       <Helmet title="Users" />
       {this.state.isLoading ? (
         <p>Loading...</p>
       ) : (
-        <div>
+        <Fragment>
           <Link to="/">Go Back</Link>
-          <pre style={{ width: 800, background: "#eee" }}>
-            <code>{JSON.stringify(this.state.data, null, 2)}</code>
-          </pre>
-        </div>
+          <Button type="button" onClick={this.handleOpenModal}>
+            Create New User
+          </Button>
+          {this.state.openModal && (
+            <Modal closeModal={this.handleCloseModal} title="Create New User">
+              <AddUserForm updateUserList={this.updateUserList} />
+            </Modal>
+          )}
+          {this.state.data.users.map(props => (
+            <Card key={props._id} {...props} />
+          ))}
+        </Fragment>
       )}
     </div>
   );

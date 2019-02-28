@@ -1,11 +1,12 @@
 import React from "react";
 import { hydrate } from "react-dom";
 import { createBrowserHistory } from "history";
-import { AppContainer } from "react-hot-loader";
+// import { AppContainer } from "react-hot-loader";
 import { Provider } from "react-redux";
 import { ConnectedRouter } from "connected-react-router";
 import { renderRoutes } from "react-router-config";
 import configureStore from "../../store/configureStore";
+import routes from "../../routes";
 
 //= =============================================================================//
 // CLIENT-SIDE HOT LOADING, REDUX STATE, AND ROUTE SETUP                          /
@@ -18,17 +19,14 @@ const store = configureStore(history, initialState);
 /**
  * Factory function to hydrate the client-side DOM
  * @function render
- * @param {node} Component - Routes to be rendered
  */
-const render = Routes => {
+const render = () => {
   hydrate(
-    <AppContainer>
-      <Provider store={store}>
-        <ConnectedRouter history={history}>
-          {renderRoutes(Routes)}
-        </ConnectedRouter>
-      </Provider>
-    </AppContainer>,
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+        {renderRoutes(routes)}
+      </ConnectedRouter>
+    </Provider>,
     document.getElementById("root")
   );
 };

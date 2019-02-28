@@ -23,9 +23,6 @@
     pathing to the asset and are NOT partial scss
     files.
 */
-
-@import "~normalize.css/normalize.css";
-
 @font-face {
   font-family: "Handlee";
   font-style: normal;
@@ -46,3 +43,5 @@
   font-weight: normal;
   src: url("../assets/fonts/Muli-ExtraLight.ttf") format("truetype");
 }
+
+@import "~normalize.css/normalize.css";

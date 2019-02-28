@@ -5,11 +5,13 @@ module.exports = app => {
     email: String,
     firstName: String,
     lastName: String,
-    username: { type: String, unique: true, lowercase: true },
+    userName: { type: String, unique: true, lowercase: true },
+    backgroundInfo: String,
     address: {
       street: String,
       suite: String,
       city: String,
+      state: String,
       zipCode: String
     }
   });

@@ -1,5 +1,10 @@
 @import "../../styles/styles.scss";
 
+html,
+body {
+  height: 100vh;
+}
+
 .appContainer {
   background-color: $white;
   font-family: "Muli Extra Light", "Helvetica-Light", Helvetica, Arial,

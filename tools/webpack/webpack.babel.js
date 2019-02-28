@@ -39,10 +39,7 @@ module.exports = {
   resolve: {
     modules: ["src", "node_modules"],
     descriptionFiles: ["package.json"],
-    extensions: [".js", ".jsx", ".json"],
-    alias: {
-      "react-dom": "@hot-loader/react-dom"
-    }
+    extensions: [".js", ".jsx", ".json", ".scss"]
   },
   cache: inDevelopment,
   // Some libraries import Node modules but don't use them in the browser.

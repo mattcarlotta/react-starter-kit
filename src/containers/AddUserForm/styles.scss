@@ -1,0 +1,40 @@
+@import "../../styles/styles.scss";
+
+.cancelButton {
+  margin: 0;
+}
+
+.errors {
+  color: $red;
+  margin: 0;
+}
+
+.formContainer {
+  margin: 0 auto;
+  text-align: left;
+  width: 800px;
+}
+
+.inputContainer {
+  width: 800px;
+  margin: 20px 0;
+  padding: 0 10px;
+  height: 40px;
+}
+
+.inputStyle {
+  height: 40px;
+  vertical-align: middle;
+  max-width: 100%;
+  width: 100%;
+  padding: 0 10px;
+  background: #fff;
+  color: #666;
+  border: 1px solid #e5e5e5;
+  transition: 0.2s ease-in-out;
+  transition-property: color, background-color, border;
+}
+
+.labelStyle {
+  margin: 0;
+}

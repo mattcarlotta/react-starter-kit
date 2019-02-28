@@ -2,7 +2,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import { renderRoutes } from "react-router-config";
-import { hot } from "react-hot-loader";
+// import { hot } from "react-hot-loader";
 import { appContainer } from "./styles.scss";
 
 const config = {
@@ -24,5 +24,5 @@ export const App = ({ route: { routes } }) => (
   </div>
 );
 
-export default hot(module)(App);
+export default App;
 /* eslint-enable */

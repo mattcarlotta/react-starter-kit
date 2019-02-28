@@ -1,0 +1,17 @@
+@import "../../styles/styles.scss";
+
+.closeButton {
+  cursor: pointer;
+  background-color: transparent;
+  outline: 0;
+  border: none;
+  color: #999;
+  transition: 0.1s ease-in-out;
+  transition-property: color;
+
+  &:hover,
+  &:focus {
+    color: #666;
+    outline: none;
+  }
+}

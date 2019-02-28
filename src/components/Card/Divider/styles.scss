@@ -1,0 +1,8 @@
+@import "../../../styles/styles.scss";
+
+.divider {
+  content: "";
+  height: 10px;
+  margin: 0 10px;
+  border-left: 1px solid $lightgrey;
+}

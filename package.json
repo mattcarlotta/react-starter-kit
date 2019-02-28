@@ -131,7 +131,6 @@
       "@babel/preset-react"
     ],
     "plugins": [
-      "react-hot-loader/babel",
       "react-loadable/babel",
       "dynamic-import-node",
       "lodash",
@@ -187,10 +186,33 @@
     ],
     "rules": {
       "global-require": "off",
+      "jsx-a11y/label-has-associated-control": [
+        "error",
+        {
+          "required": {
+            "some": [
+              "nesting",
+              "id"
+            ]
+          }
+        }
+      ],
+      "jsx-a11y/label-has-for": [
+        "error",
+        {
+          "required": {
+            "some": [
+              "nesting",
+              "id"
+            ]
+          }
+        }
+      ],
       "no-console": "off",
       "no-underscore-dangle": "off",
       "function-paren-newline": "off",
       "react/require-default-props": 0,
+      "react/destructuring-assignment": 0,
       "react/jsx-filename-extension": [
         "error",
         {
@@ -343,7 +365,8 @@
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "serialize-javascript": "^1.6.1",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.0",
+    "uikit": "^3.0.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
