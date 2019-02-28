@@ -12,11 +12,10 @@ const env = process.env.NODE_ENV;
 module.exports = app => {
   app.set("env", env); // sets current env mode (development, production or test)
   app.set("database", config[env].database); // sets database name
-  app.set("port", config[env].port); // current listening port
   app.set("portal", config[env].portal); // sets current front-end url
 
   app.set("bluebird", bluebird); // promise library
-  app.set("mongoose", mongoose); // MongoDB
+  app.set("mongoose", mongoose); // creates models and connections to local MongoDB
 
   app.use(bodyParser.json()); // parses header requests (req.body)
   app.use(bodyParser.urlencoded({ extended: true })); // allows objects and arrays to be URL-encoded

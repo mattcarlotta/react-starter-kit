@@ -12,6 +12,8 @@ Note: This a SSR (Server Side Rendering) boilerplate! A React only boilerplate c
 
 [Commands](#commands)
 
+[Example](#example)
+
 [Configuration](#configuration)
 
 [Packages Incorporated](#packages-incorporated)
@@ -34,6 +36,7 @@ Note: This a SSR (Server Side Rendering) boilerplate! A React only boilerplate c
 |   ├── actions
 |   ├── components
 |   ├── containers
+|   ├── pages
 |   ├── reducers
 |   ├── routes
 |   ├── store
@@ -100,6 +103,10 @@ To run your tests, while inside the client's root directory, run `npm run test` 
 To build and bundle your client resources for production, while inside the client's root directory, use `npm run build` (source maps will be excluded). After you have built your React application for production, use `npm start` while at the application's root directory. You should now see your React application running on `http://localhost:3000`.
 
 To see more script commands, please check out the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/b799752d789526a0eac8b5b8a477843f6382fa92/package.json#L18-L33">package.json</a>.
+
+## Example
+
+Provided in this boilerplate is an example how to integrate a RESTFUL API.
 
 ## Configuration
 

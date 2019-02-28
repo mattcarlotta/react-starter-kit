@@ -11,9 +11,7 @@ module.exports = app => {
     .then("database")
     .then("utils")
     .then("models")
-    // .then("services")
     .then("controllers")
     .then("routes")
-    // .then("server")
     .into(app);
 };
