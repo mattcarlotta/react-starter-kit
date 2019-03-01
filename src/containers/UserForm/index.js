@@ -94,7 +94,9 @@ class UserForm extends Component {
         this.props.updateUserList(res.data.message);
       })
       .catch(err => {
-        this.setState({ error: err.toString() });
+        this.setState({
+          error: err ? err.toString() : "Unable to create a new user!"
+        });
       });
   };
 

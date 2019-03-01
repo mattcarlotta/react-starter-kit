@@ -94,7 +94,7 @@ class ShowUsers extends Component {
 
   handleCloseModal = () => this.setState({ openModal: false });
 
-  handleResetMessage = () => this.setState({ message: "" });
+  handleResetMessage = () => this.setState({ message: "", error: "" });
 
   handleSetMessage = message => this.setState({ message });
 
