@@ -54,7 +54,12 @@ class ShowUsers extends Component {
         this.setState({ data: res.data, isLoading: false, error: "" });
       })
       .catch(err => {
-        this.setState({ error: err.toString(), isLoading: false });
+        this.setState({
+          error: err
+            ? err.toString()
+            : "Unable to retrieve data from database!",
+          isLoading: false
+        });
       });
   };
 
@@ -64,14 +69,21 @@ class ShowUsers extends Component {
         this.setState({ data: res.data, isLoading: false, error: "" });
       })
       .catch(err => {
-        this.setState({ error: err.toString(), isLoading: false });
+        this.setState({
+          error: err ? err.toString() : "Unable to seed database!",
+          isLoading: false
+        });
       });
   };
 
   handleDeleteClick = id => {
     deleteUser(id)
       .then(res => this.updateUserList(res.data.message))
-      .catch(err => this.setState({ error: err.toString() }));
+      .catch(err =>
+        this.setState({
+          error: err ? err.toString() : "Unable to delete item!"
+        })
+      );
   };
 
   handleEditClick = id => this.setState({ isEditingID: id });

@@ -12,7 +12,7 @@ Note: This a SSR (Server Side Rendering) boilerplate! A React only boilerplate c
 
 [Commands](#commands)
 
-[Example](#example-api)
+[Example API](#example-api)
 
 [Configuration](#configuration)
 
