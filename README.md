@@ -111,7 +111,6 @@ Provided in this boilerplate is an example of how to integrate a RESTFUL API (ut
 If you wish to utilize the API:
 
 - <a href="https://docs.mongodb.com/manual/installation/">Install MongoDB</a> and make sure the service is up and running.
-- _OPTIONAL_: After following the [installation](#installation) steps above, simply type `npm run seed` to seed the database.
 - Navigate to `http://localhost:3000/users` to interact with the API from the client-side.
 
 If you wish to remove the API:

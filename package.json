@@ -17,7 +17,6 @@
   ],
   "scripts": {
     "dev": "better-npm-run dev",
-    "seed": "better-npm-run seed",
     "start": "better-npm-run start",
     "build": "better-npm-run clean:build && better-npm-run build",
     "analyze": "better-npm-run clean:build && better-npm-run analyze",
@@ -39,12 +38,6 @@
         "NODE_PATH": "./src",
         "NODE_ENV": "development",
         "PORT": 3000
-      }
-    },
-    "seed": {
-      "command": "node ./api/seed.js",
-      "env": {
-        "NODE_ENV": "development"
       }
     },
     "start": {
