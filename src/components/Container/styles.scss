@@ -1,0 +1,26 @@
+@import "../../styles/styles.scss";
+
+.animation {
+  animation: pulse 1.5s infinite;
+}
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+  text-align: left;
+  font-family: "Muli Regular", "Helvetica-Light", Helvetica, Arial, sans-serif;
+}
+
+.grid {
+  background-color: $white;
+  min-height: 350px;
+  padding: 10px 15px;
+  margin-bottom: 0;
+  position: relative;
+  min-width: 1px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}

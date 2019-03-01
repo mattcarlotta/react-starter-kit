@@ -4,29 +4,33 @@ import Button from "../../components/Button";
 import FormError from "../../components/FormError";
 import Input from "../../components/Input";
 import TextArea from "../../components/TextArea";
-import { createUser } from "../../actions/users";
 import fields from "./fields";
-import { formContainer, submitContainer } from "./styles.scss";
+import {
+  cancelContainer,
+  formButtons,
+  formContainer,
+  submitContainer
+} from "./styles.scss";
 
-export default class AddUserForm extends Component {
-  state = {
-    error: "",
-    email: "",
-    firstName: "",
-    lastName: "",
-    userName: "",
-    backgroundInfo: "",
-    street: "",
-    state: "",
-    suite: "",
-    city: "",
-    zipCode: "",
-    submitted: false
-  };
+class UserForm extends Component {
+  constructor(props) {
+    super(props);
 
-  static propTypes = {
-    updateUserList: PropTypes.func.isRequired
-  };
+    this.state = {
+      error: "",
+      email: props.email || "",
+      firstName: props.firstName || "",
+      lastName: props.lastName || "",
+      userName: props.userName || "",
+      backgroundInfo: props.backgroundInfo || "",
+      street: props.address ? props.address.street : "",
+      state: props.address ? props.address.state : "",
+      suite: props.address ? props.address.suite : "",
+      city: props.address ? props.address.city : "",
+      zipCode: props.address ? props.address.zipCode : "",
+      submitted: false
+    };
+  }
 
   handleChange = ({ target: { name, value } }) => {
     this.setState({ [name]: value });
@@ -48,6 +52,8 @@ export default class AddUserForm extends Component {
       city,
       zipCode
     } = this.state;
+
+    const { _id: id } = this.props;
 
     if (
       !email ||
@@ -72,14 +78,17 @@ export default class AddUserForm extends Component {
       lastName,
       userName,
       backgroundInfo,
-      street,
-      state,
-      suite,
-      city,
-      zipCode
+      address: {
+        street,
+        state,
+        suite,
+        city,
+        zipCode
+      }
     };
 
-    createUser(formProps)
+    this.props
+      .submitAction({ formProps, id })
       .then(() => {
         this.props.updateUserList();
       })
@@ -90,7 +99,11 @@ export default class AddUserForm extends Component {
 
   render = () => (
     <Fragment>
-      <form className={formContainer} onSubmit={this.handleSubmit}>
+      <form
+        className={formContainer}
+        style={{ padding: this.props.isEditing ? 10 : 0 }}
+        onSubmit={this.handleSubmit}
+      >
         {fields.map(({ fieldName, ...props }) => (
           <Input
             {...props}
@@ -111,8 +124,17 @@ export default class AddUserForm extends Component {
           submitted={this.state.submitted}
           isRequired
         />
-        <div className={submitContainer}>
-          <Button type="submit">Submit</Button>
+        <div className={formButtons}>
+          {this.props.isEditing && (
+            <div className={cancelContainer}>
+              <Button type="button" onClick={this.props.cancelUpdate}>
+                Cancel
+              </Button>
+            </div>
+          )}
+          <div className={submitContainer}>
+            <Button type="submit">Submit</Button>
+          </div>
         </div>
       </form>
       <FormError
@@ -122,3 +144,27 @@ export default class AddUserForm extends Component {
     </Fragment>
   );
 }
+
+UserForm.propTypes = {
+  _id: PropTypes.string,
+  isEditing: PropTypes.bool,
+  email: PropTypes.string,
+  backgroundInfo: PropTypes.string,
+  firstName: PropTypes.string,
+  lastName: PropTypes.string,
+  onDeleteClick: PropTypes.func,
+  onEditClick: PropTypes.func,
+  userName: PropTypes.string,
+  address: PropTypes.shape({
+    street: PropTypes.string,
+    suite: PropTypes.string,
+    city: PropTypes.string,
+    state: PropTypes.string,
+    zipCode: PropTypes.string
+  }),
+  cancelUpdate: PropTypes.func,
+  submitAction: PropTypes.func.isRequired,
+  updateUserList: PropTypes.func.isRequired
+};
+
+export default UserForm;

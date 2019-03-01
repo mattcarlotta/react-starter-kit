@@ -13,5 +13,6 @@ module.exports = app => {
     .then("models")
     .then("controllers")
     .then("routes")
+    // .then("seeds")
     .into(app);
 };

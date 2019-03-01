@@ -339,7 +339,6 @@
     "compression": "^1.7.3",
     "connected-react-router": "^6.3.1",
     "consign": "^0.1.6",
-    "cors": "^2.8.5",
     "cross-spawn": "^6.0.5",
     "css-modules-require-hook": "^4.2.3",
     "express": "^4.16.4",

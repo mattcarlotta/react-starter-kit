@@ -12,7 +12,7 @@ Note: This a SSR (Server Side Rendering) boilerplate! A React only boilerplate c
 
 [Commands](#commands)
 
-[Example](#example)
+[Example](#example-api)
 
 [Configuration](#configuration)
 
@@ -104,9 +104,21 @@ To build and bundle your client resources for production, while inside the clien
 
 To see more script commands, please check out the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/b799752d789526a0eac8b5b8a477843f6382fa92/package.json#L18-L33">package.json</a>.
 
-## Example
+## Example API
 
-Provided in this boilerplate is an example how to integrate a RESTFUL API.
+Provided in this boilerplate is an example of how to integrate a RESTFUL API (utilizing MongoDB) with SSR. The main advantage of integrating an API with SSR is to avoid using <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">CORS</a>. As such, this pre-configured setup can be utilized or removed.
+
+If you wish to utilize the API:
+
+- <a href="https://docs.mongodb.com/manual/installation/">Install MongoDB</a> and make sure the service is up and running.
+- _OPTIONAL_: After following the [installation](#installation) steps above, simply type `npm run seed` to seed the database.
+- Navigate to `http://localhost:3000/users` to interact with the API from the client-side.
+
+If you wish to remove the API:
+
+- Delete the `api` folder.
+- In `src/server.js` remove `import startAPI from "../api";` and `startAPI(app);`.
+- Type `npm uninstall -S bluebird body-parser consign mongoose` to remove its dependencies.
 
 ## Configuration
 

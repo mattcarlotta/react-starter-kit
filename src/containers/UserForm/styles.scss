@@ -1,5 +1,13 @@
 @import "../../styles/styles.scss";
 
+.cancelContainer {
+  float: left;
+}
+
+.formButtons {
+  padding: 0 10px;
+}
+
 .formContainer {
   margin: 0 auto;
   text-align: left;
@@ -11,6 +19,6 @@
 }
 
 .submitContainer {
-  margin: 10px 10px 20px 0;
+  // margin: 10px 10px 20px 0;
   float: right;
 }

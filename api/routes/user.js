@@ -1,9 +1,15 @@
 module.exports = app => {
-  const { createUser, getUsers } = app.controllers.user;
+  const {
+    createUser,
+    deleteUser,
+    getUsers,
+    seedDatabase,
+    updateUser
+  } = app.controllers.user;
 
   app.get("/api/users", getUsers);
-  // app.get('/api/user/:id', getUser);
   app.post("/api/users/create", createUser);
-  // app.put('/api/update-user', updateUser);
-  // app.delete('/api/delete/:id', deleteUser)
+  app.put("/api/users/update/:id", updateUser);
+  app.delete("/api/users/delete/:id", deleteUser);
+  app.post("/api/users/seed", seedDatabase);
 };

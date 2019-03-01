@@ -1,0 +1,21 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    background-color: $white;
+  }
+  50% {
+    background-color: $lightergrey;
+  }
+  100% {
+    background-color: $white;
+  }
+}

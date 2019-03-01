@@ -10,30 +10,9 @@
   }
 }
 
-.container {
-  width: 800px;
-  margin: 0 auto;
-  padding: 10px;
-  text-align: left;
-  font-family: "Muli Regular", "Helvetica-Light", Helvetica, Arial, sans-serif;
-}
-
 .emailDetails {
   margin-left: 5px;
   font-size: 14px;
-}
-
-.gridColumn {
-  background-color: $white;
-  padding: 10px;
-  margin-bottom: 0;
-  flex: 1;
-  min-width: 1px;
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 100%;
-  padding-left: 30px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
 .listDetails {
@@ -58,4 +37,12 @@
 .user {
   color: #666;
   margin: 0;
+}
+
+.userButtonsContainer {
+  display: inline-block;
+  float: right;
+  &::after {
+    @extend .clear-fix;
+  }
 }

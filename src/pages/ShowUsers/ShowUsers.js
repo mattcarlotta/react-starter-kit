@@ -1,14 +1,23 @@
 /* eslint-disable */
 import isEmpty from "lodash/isEmpty";
+import isNull from "lodash/isNull";
 import React, { Component, Fragment } from "react";
 import Helmet from "react-helmet";
-import Link from "../../components/Link";
-import Card from "../../components/Card";
-import Modal from "../../components/Modal";
 import Button from "../../components/Button";
-import AddUserForm from "../../containers/AddUserForm";
-import { fetchUsers } from "../../actions/users";
-import { preventScroll, usersContainer } from "./styles.scss";
+import Card from "../../components/Card";
+import Container from "../../components/Container";
+import Link from "../../components/Link";
+import Modal from "../../components/Modal";
+import Placeholder from "../../components/Placeholder";
+import UserForm from "../../containers/UserForm";
+import {
+  createUser,
+  deleteUser,
+  fetchUsers,
+  seedDB,
+  updateUser
+} from "../../actions/users";
+import { preventScroll, seedLinkStyle, usersContainer } from "./styles.scss";
 
 export default class ShowUsers extends Component {
   constructor(props) {
@@ -24,6 +33,8 @@ export default class ShowUsers extends Component {
 
     this.state = {
       data,
+      error: "",
+      isEditingID: "",
       isLoading: isEmpty(data) ? true : false,
       openModal: false
     };
@@ -38,19 +49,41 @@ export default class ShowUsers extends Component {
   fetchData = () => {
     fetchUsers()
       .then(res => {
-        this.setState({ data: res.data, isLoading: false });
+        this.setState({ data: res.data, isLoading: false, error: "" });
       })
       .catch(err => {
         this.setState({ error: err.toString(), isLoading: false });
       });
   };
 
+  handleSeedDatabase = () => {
+    seedDB()
+      .then(res => {
+        this.setState({ data: res.data, isLoading: false, error: "" });
+      })
+      .catch(err => {
+        this.setState({ error: err.toString(), isLoading: false });
+      });
+  };
+
+  handleDeleteClick = id => {
+    deleteUser(id)
+      .then(() => this.updateUserList())
+      .catch(err => this.setState({ error: err.toString() }));
+  };
+
+  handleEditClick = id => this.setState({ isEditingID: id });
+
+  handleResetEditClick = id => this.setState({ isEditingID: "" });
+
   handleOpenModal = () => this.setState({ openModal: true });
 
   handleCloseModal = () => this.setState({ openModal: false });
 
   updateUserList = () => {
-    this.setState({ isLoading: true, openModal: false }, () => this.fetchData);
+    this.setState({ isLoading: true, openModal: false, isEditingID: "" }, () =>
+      this.fetchData()
+    );
   };
 
   render = () => (
@@ -59,23 +92,50 @@ export default class ShowUsers extends Component {
         this.state.openModal ? preventScroll : ""
       }`}
     >
+      {console.log(this.state)}
       <Helmet title="Users" />
+      <Link to="/">Go Back</Link>
+      <p className={seedLinkStyle} onClick={this.handleSeedDatabase}>
+        Seed Database
+      </p>
+      <Button type="button" onClick={this.handleOpenModal}>
+        Create New User
+      </Button>
       {this.state.isLoading ? (
-        <p>Loading...</p>
+        <Placeholder />
       ) : (
         <Fragment>
-          <Link to="/">Go Back</Link>
-          <Button type="button" onClick={this.handleOpenModal}>
-            Create New User
-          </Button>
           {this.state.openModal && (
             <Modal closeModal={this.handleCloseModal} title="Create New User">
-              <AddUserForm updateUserList={this.updateUserList} />
+              <UserForm
+                submitAction={createUser}
+                updateUserList={this.updateUserList}
+              />
             </Modal>
           )}
-          {this.state.data.users.map(props => (
-            <Card key={props._id} {...props} />
-          ))}
+          {!isEmpty(this.state.data)
+            ? this.state.data.users.map(props => (
+                <Container key={props._id}>
+                  {this.state.isEditingID !== props._id ? (
+                    <Card
+                      key={props._id}
+                      {...props}
+                      onEditClick={() => this.handleEditClick(props._id)}
+                      onDeleteClick={() => this.handleDeleteClick(props._id)}
+                    />
+                  ) : (
+                    <UserForm
+                      key={props._id}
+                      {...props}
+                      cancelUpdate={this.handleResetEditClick}
+                      submitAction={updateUser}
+                      updateUserList={this.updateUserList}
+                      isEditing
+                    />
+                  )}
+                </Container>
+              ))
+            : null}
         </Fragment>
       )}
     </div>

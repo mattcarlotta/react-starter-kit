@@ -1,0 +1,32 @@
+@import "../../styles/styles.scss";
+
+.deleteIconStyle {
+  color: #f5222d;
+  path,
+  polygon,
+  rect {
+    fill: #f5222d;
+  }
+  circle {
+    stroke: #f5222d;
+    stroke-width: 1;
+  }
+}
+
+.deleteButtonStyle {
+  cursor: pointer;
+  background-color: transparent;
+  outline: 0;
+  border: none;
+  color: inherit;
+  transition: 0.1s ease-in-out;
+  transition-property: color;
+  opacity: 0.4;
+
+  &:hover,
+  &:focus {
+    color: inherit;
+    outline: none;
+    opacity: 0.8;
+  }
+}
