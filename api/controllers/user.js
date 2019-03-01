@@ -1,7 +1,7 @@
 module.exports = app => {
   const { model } = app.get("mongoose");
   const { sendError } = app.utils.helpers;
-  const userSeeds = app.seeds;
+  const seeds = app.seeds.data;
   const User = model("user");
 
   return {
@@ -13,17 +13,26 @@ module.exports = app => {
         await User.createUser(req.body);
         return res
           .status(201)
-          .json({ message: `Successfully created ${req.username}` });
+          .json({ message: `Successfully created ${req.body.userName}` });
       } catch (err) {
-        return sendError(err, res, done);
+        if (err.toString().includes("E11000")) {
+          return sendError(
+            "Error: That username is already in use!",
+            res,
+            done
+          );
+        } 
+          return sendError(err, res, done);
+        
       }
     },
     deleteUser: async (req, res, done) => {
       try {
+        const user = await User.findById(req.params.id);
         await User.findByIdAndDelete(req.params.id, req.body);
         return res
           .status(201)
-          .json({ message: `Successfully deleted ${req.username}` });
+          .json({ message: `Successfully deleted ${user.userName}` });
       } catch (err) {
         return sendError(err, res, done);
       }
@@ -38,26 +47,21 @@ module.exports = app => {
     },
     seedDatabase: async (req, res, done) => {
       try {
+        await User.deleteMany({});
+        await User.insertMany(seeds);
         const users = await User.find({});
 
-        if (users) {
-          await User.remove({});
-        }
-
-        await User.insertMany(userSeeds);
-
-        return res.status(200).send({ users: userSeeds });
+        return res.status(200).send({ users });
       } catch (err) {
-        console.log("triggered bad seed");
         return sendError(err, res, done);
       }
     },
     updateUser: async (req, res, done) => {
       try {
-        await User.findByIdAndUpdate(req.params.id, req.body);
+        await User.findOneAndUpdate({ _id: req.params.id }, req.body);
         return res
           .status(201)
-          .json({ message: `Successfully updated ${req.username}` });
+          .json({ message: `Successfully updated ${req.body.userName}` });
       } catch (err) {
         return sendError(err, res, done);
       }

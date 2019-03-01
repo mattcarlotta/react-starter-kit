@@ -1,0 +1,31 @@
+@import "../../styles/styles.scss";
+
+.noDataContainer {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.noDataIconStyle {
+  height: 100px;
+  width: 100px;
+  color: $lightgrey;
+  path,
+  polygon,
+  rect {
+    fill: $lightgrey;
+  }
+  circle {
+    stroke: $lightgrey;
+    stroke-width: 1;
+  }
+}
+
+.noDataMessage {
+  color: $semilightgrey;
+  margin: 0;
+}
+
+.noDataTitle {
+  color: $semilightgrey;
+  margin: 20px 0 0 0;
+}

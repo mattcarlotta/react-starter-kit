@@ -1,13 +1,12 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Container from "../Container";
-import { placeholderContainer } from "./styles.scss";
 
 const Placeholder = () => (
-  <div className={placeholderContainer}>
+  <Fragment>
     <Container animated />
     <Container animated />
     <Container animated />
-  </div>
+  </Fragment>
 );
 
 export default Placeholder;

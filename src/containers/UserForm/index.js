@@ -8,6 +8,7 @@ import fields from "./fields";
 import {
   cancelContainer,
   formButtons,
+  formErrorStyle,
   formContainer,
   submitContainer
 } from "./styles.scss";
@@ -89,8 +90,8 @@ class UserForm extends Component {
 
     this.props
       .submitAction({ formProps, id })
-      .then(() => {
-        this.props.updateUserList();
+      .then(res => {
+        this.props.updateUserList(res.data.message);
       })
       .catch(err => {
         this.setState({ error: err.toString() });
@@ -137,10 +138,12 @@ class UserForm extends Component {
           </div>
         </div>
       </form>
-      <FormError
-        hasError={this.state.error}
-        onHandleClose={this.handleCloseError}
-      />
+      <div className={formErrorStyle}>
+        <FormError
+          hasError={this.state.error}
+          onHandleClose={this.handleCloseError}
+        />
+      </div>
     </Fragment>
   );
 }

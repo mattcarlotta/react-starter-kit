@@ -1,14 +1,15 @@
-/* eslint-disable */
 import isEmpty from "lodash/isEmpty";
-import isNull from "lodash/isNull";
 import React, { Component, Fragment } from "react";
+import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import Button from "../../components/Button";
 import Card from "../../components/Card";
 import Container from "../../components/Container";
 import Link from "../../components/Link";
 import Modal from "../../components/Modal";
+import NoData from "../../components/NoData";
 import Placeholder from "../../components/Placeholder";
+import PopMessage from "../../components/PopMessage";
 import UserForm from "../../containers/UserForm";
 import {
   createUser,
@@ -19,11 +20,12 @@ import {
 } from "../../actions/users";
 import { preventScroll, seedLinkStyle, usersContainer } from "./styles.scss";
 
-export default class ShowUsers extends Component {
+class ShowUsers extends Component {
   constructor(props) {
     super(props);
 
     let data;
+    // eslint-disable-next-line no-undef
     if (__CLIENT__) {
       data = window.__INITIAL_STATE__;
       delete window.__INITIAL_STATE__;
@@ -35,7 +37,7 @@ export default class ShowUsers extends Component {
       data,
       error: "",
       isEditingID: "",
-      isLoading: isEmpty(data) ? true : false,
+      isLoading: !!isEmpty(data),
       openModal: false
     };
   }
@@ -68,55 +70,79 @@ export default class ShowUsers extends Component {
 
   handleDeleteClick = id => {
     deleteUser(id)
-      .then(() => this.updateUserList())
+      .then(res => this.updateUserList(res.data.message))
       .catch(err => this.setState({ error: err.toString() }));
   };
 
   handleEditClick = id => this.setState({ isEditingID: id });
 
-  handleResetEditClick = id => this.setState({ isEditingID: "" });
+  handleResetEditClick = () => this.setState({ isEditingID: "" });
 
   handleOpenModal = () => this.setState({ openModal: true });
 
   handleCloseModal = () => this.setState({ openModal: false });
 
-  updateUserList = () => {
-    this.setState({ isLoading: true, openModal: false, isEditingID: "" }, () =>
-      this.fetchData()
+  handleResetMessage = () => this.setState({ message: "" });
+
+  handleSetMessage = message => this.setState({ message });
+
+  updateUserList = message => {
+    this.setState(
+      {
+        isLoading: true,
+        openModal: false,
+        isEditingID: "",
+        message: message || ""
+      },
+      () => this.fetchData()
     );
   };
 
-  render = () => (
-    <div
-      className={`${usersContainer} ${
-        this.state.openModal ? preventScroll : ""
-      }`}
-    >
-      {console.log(this.state)}
-      <Helmet title="Users" />
-      <Link to="/">Go Back</Link>
-      <p className={seedLinkStyle} onClick={this.handleSeedDatabase}>
-        Seed Database
-      </p>
-      <Button type="button" onClick={this.handleOpenModal}>
-        Create New User
-      </Button>
-      {this.state.isLoading ? (
-        <Placeholder />
-      ) : (
-        <Fragment>
-          {this.state.openModal && (
-            <Modal closeModal={this.handleCloseModal} title="Create New User">
-              <UserForm
-                submitAction={createUser}
-                updateUserList={this.updateUserList}
-              />
-            </Modal>
-          )}
-          {!isEmpty(this.state.data)
-            ? this.state.data.users.map(props => (
+  render = () => {
+    const {
+      data,
+      error,
+      isEditingID,
+      isLoading,
+      message,
+      openModal
+    } = this.state;
+
+    return (
+      <div className={`${usersContainer} ${openModal ? preventScroll : ""}`}>
+        <Helmet title="Users" />
+        <PopMessage
+          message={message || error || ""}
+          onHandleClose={this.handleResetMessage}
+        />
+        <Link to="/">Go Back</Link>
+        <p
+          className={seedLinkStyle}
+          onKeyUp={this.handleSeedDatabase}
+          onClick={this.handleSeedDatabase}
+          role="presentation"
+        >
+          Seed Database
+        </p>
+        <Button type="button" onClick={this.handleOpenModal}>
+          Create New User
+        </Button>
+        {isLoading ? (
+          <Placeholder />
+        ) : (
+          <Fragment>
+            {openModal && (
+              <Modal closeModal={this.handleCloseModal} title="Create New User">
+                <UserForm
+                  submitAction={createUser}
+                  updateUserList={this.updateUserList}
+                />
+              </Modal>
+            )}
+            {!isEmpty(data) && !isEmpty(data.users) ? (
+              data.users.map(props => (
                 <Container key={props._id}>
-                  {this.state.isEditingID !== props._id ? (
+                  {isEditingID !== props._id ? (
                     <Card
                       key={props._id}
                       {...props}
@@ -135,10 +161,39 @@ export default class ShowUsers extends Component {
                   )}
                 </Container>
               ))
-            : null}
-        </Fragment>
-      )}
-    </div>
-  );
+            ) : (
+              <NoData />
+            )}
+          </Fragment>
+        )}
+      </div>
+    );
+  };
 }
-/* eslint-enable */
+
+ShowUsers.propTypes = {
+  staticContext: PropTypes.shape({
+    users: PropTypes.arrayOf(
+      PropTypes.shape({
+        _id: PropTypes.string,
+        isEditing: PropTypes.bool,
+        email: PropTypes.string,
+        backgroundInfo: PropTypes.string,
+        firstName: PropTypes.string,
+        lastName: PropTypes.string,
+        onDeleteClick: PropTypes.func,
+        onEditClick: PropTypes.func,
+        userName: PropTypes.string,
+        address: PropTypes.shape({
+          street: PropTypes.string,
+          suite: PropTypes.string,
+          city: PropTypes.string,
+          state: PropTypes.string,
+          zipCode: PropTypes.string
+        })
+      })
+    )
+  })
+};
+
+export default ShowUsers;

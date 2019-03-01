@@ -9,10 +9,10 @@ module.exports = app => {
   })
     .include("middlewares")
     .then("database")
+    .then("seeds")
     .then("utils")
     .then("models")
     .then("controllers")
     .then("routes")
-    // .then("seeds")
     .into(app);
 };
