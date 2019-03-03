@@ -21,9 +21,8 @@ module.exports = app => {
             res,
             done
           );
-        } 
-          return sendError(err, res, done);
-        
+        }
+        return sendError(err, res, done);
       }
     },
     deleteUser: async (req, res, done) => {

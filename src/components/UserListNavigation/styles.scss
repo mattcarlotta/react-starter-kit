@@ -1,0 +1,11 @@
+@import "../../styles/styles.scss";
+
+.buttonContainer {
+  width: 800px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+
+  &::after {
+    @extend .clear-fix;
+  }
+}

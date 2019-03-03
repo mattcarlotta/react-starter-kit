@@ -15,13 +15,9 @@ export default (history, initialState = {}) => {
 
   if (module.hot) {
     module.hot.accept("../reducers", () => {
-      try {
-        const createNextReducer = require("../reducers").default;
+      const createNextReducer = require("../reducers").default;
 
-        store.replaceReducer(createNextReducer(history));
-      } catch (error) {
-        console.error(`==> 😭  Reducer hot reloading error ${error}`);
-      }
+      store.replaceReducer(createNextReducer(history));
     });
   }
 

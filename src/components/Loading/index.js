@@ -4,7 +4,7 @@ import ErrorDisplay from "../ErrorDisplay";
 import { loadingContainer } from "./styles.scss";
 
 const Loading = ({ pastDelay, error }) => {
-  if (error) return <ErrorDisplay error={err.toString()} />;
+  if (error) return <ErrorDisplay error={error.toString()} />;
 
   if (pastDelay)
     return (

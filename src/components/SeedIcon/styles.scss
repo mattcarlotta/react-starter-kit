@@ -1,0 +1,18 @@
+.seedIconContainer {
+  position: relative;
+  top: 6px;
+  margin-right: 4px;
+}
+
+.seedIconStyle {
+  color: inherit;
+  path,
+  polygon,
+  rect {
+    fill: currentColor;
+  }
+  circle {
+    stroke: currentColor;
+    stroke-width: 1;
+  }
+}

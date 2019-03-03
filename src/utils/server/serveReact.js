@@ -42,10 +42,13 @@ export default app => {
       const branch = matchRoutes(routes, req.path);
 
       const promises = branch.map(({ route, match }) => {
-        if (route.loadData) {
+        if (route.loadReduxStore) {
           return Promise.all(
             route
-              .loadData({ params: match.params, getState: store.getState })
+              .loadReduxStore({
+                params: match.params,
+                getState: store.getState
+              })
               .map(item => store.dispatch(item))
           );
         }

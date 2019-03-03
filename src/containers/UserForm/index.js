@@ -130,13 +130,15 @@ class UserForm extends Component {
         <div className={formButtons}>
           {this.props.isEditing && (
             <div className={cancelContainer}>
-              <Button type="button" onClick={this.props.cancelUpdate}>
+              <Button danger type="button" onClick={this.props.cancelUpdate}>
                 Cancel
               </Button>
             </div>
           )}
           <div className={submitContainer}>
-            <Button type="submit">Submit</Button>
+            <Button primary type="submit">
+              Submit
+            </Button>
           </div>
         </div>
       </form>

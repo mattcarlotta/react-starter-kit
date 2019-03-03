@@ -3,6 +3,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import { renderRoutes } from "react-router-config";
 // import { hot } from "react-hot-loader";
+import PopMessage from "../../containers/PopMessage";
 import { appContainer } from "./styles.scss";
 
 const config = {
@@ -20,6 +21,7 @@ const config = {
 export const App = ({ route: { routes } }) => (
   <div className={appContainer}>
     <Helmet {...config} />
+    <PopMessage />
     {renderRoutes(routes)}
   </div>
 );

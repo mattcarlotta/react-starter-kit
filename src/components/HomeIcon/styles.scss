@@ -1,0 +1,18 @@
+.homeIconContainer {
+  position: relative;
+  top: 7px;
+  margin-right: 4px;
+}
+
+.homeIconStyle {
+  color: inherit;
+  path,
+  polygon,
+  rect {
+    fill: currentColor;
+  }
+  circle {
+    stroke: currentColor;
+    stroke-width: 1;
+  }
+}

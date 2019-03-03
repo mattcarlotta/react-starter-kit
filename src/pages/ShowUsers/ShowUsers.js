@@ -1,24 +1,14 @@
 import isEmpty from "lodash/isEmpty";
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
-import Button from "../../components/Button";
-import Card from "../../components/Card";
-import Container from "../../components/Container";
-import Link from "../../components/Link";
-import Modal from "../../components/Modal";
-import NoData from "../../components/NoData";
+import { connect } from "react-redux";
 import Placeholder from "../../components/Placeholder";
-import PopMessage from "../../components/PopMessage";
-import UserForm from "../../containers/UserForm";
-import {
-  createUser,
-  deleteUser,
-  fetchUsers,
-  seedDB,
-  updateUser
-} from "../../actions/users";
-import { preventScroll, seedLinkStyle, usersContainer } from "./styles.scss";
+import DisplayUserList from "../../components/DisplayUserList";
+import UserListNavigation from "../../components/UserListNavigation";
+import { deleteUser, fetchUsers, seedDB } from "../../actions/users";
+import { setPopMessage, setPopErrorMessage } from "../../actions/server";
+import { preventScroll, usersContainer } from "./styles.scss";
 
 class ShowUsers extends Component {
   constructor(props) {
@@ -35,7 +25,6 @@ class ShowUsers extends Component {
 
     this.state = {
       data,
-      error: "",
       isEditingID: "",
       isLoading: !!isEmpty(data),
       openModal: false
@@ -50,29 +39,35 @@ class ShowUsers extends Component {
 
   fetchData = () => {
     fetchUsers()
-      .then(res => {
-        this.setState({ data: res.data, isLoading: false, error: "" });
-      })
+      .then(res => this.setState({ data: res.data, isLoading: false }))
       .catch(err => {
-        this.setState({
-          error: err
-            ? err.toString()
-            : "Unable to retrieve data from database!",
-          isLoading: false
-        });
+        this.setState(
+          {
+            isLoading: false
+          },
+          () =>
+            this.props.setPopErrorMessage(
+              err ? err.toString() : "Unable to retrieve data from database!"
+            )
+        );
       });
   };
 
   handleSeedDatabase = () => {
     seedDB()
-      .then(res => {
-        this.setState({ data: res.data, isLoading: false, error: "" });
-      })
+      .then(res => this.setState({ data: res.data, isLoading: false }))
       .catch(err => {
-        this.setState({
-          error: err ? err.toString() : "Unable to seed database!",
-          isLoading: false
-        });
+        this.setState(
+          {
+            isLoading: false
+          },
+          () =>
+            this.props.setPopErrorMessage(
+              err
+                ? err.toString()
+                : "Unable to seed database! Make sure the API is running."
+            )
+        );
       });
   };
 
@@ -80,9 +75,9 @@ class ShowUsers extends Component {
     deleteUser(id)
       .then(res => this.updateUserList(res.data.message))
       .catch(err =>
-        this.setState({
-          error: err ? err.toString() : "Unable to delete item!"
-        })
+        this.props.setPopErrorMessage(
+          err ? err.toString() : "Unable to delete item!"
+        )
       );
   };
 
@@ -90,93 +85,45 @@ class ShowUsers extends Component {
 
   handleResetEditClick = () => this.setState({ isEditingID: "" });
 
-  handleOpenModal = () => this.setState({ openModal: true });
+  handleOpenModal = () => this.setState({ openModal: true, isEditingID: "" });
 
   handleCloseModal = () => this.setState({ openModal: false });
 
-  handleResetMessage = () => this.setState({ message: "", error: "" });
-
-  handleSetMessage = message => this.setState({ message });
-
   updateUserList = message => {
+    if (message) this.props.setPopMessage(message);
     this.setState(
       {
         isLoading: true,
         openModal: false,
-        isEditingID: "",
-        message: message || ""
+        isEditingID: ""
       },
       () => this.fetchData()
     );
   };
 
   render = () => {
-    const {
-      data,
-      error,
-      isEditingID,
-      isLoading,
-      message,
-      openModal
-    } = this.state;
+    const { data, isEditingID, isLoading, openModal } = this.state;
 
     return (
       <div className={`${usersContainer} ${openModal ? preventScroll : ""}`}>
         <Helmet title="Users" />
-        <PopMessage
-          message={message || error || ""}
-          onHandleClose={this.handleResetMessage}
+        <UserListNavigation
+          onHandleOpenModal={this.handleOpenModal}
+          onHandleSeedDatabase={this.handleSeedDatabase}
         />
-        <Link to="/">Go Back</Link>
-        <p
-          className={seedLinkStyle}
-          onKeyUp={this.handleSeedDatabase}
-          onClick={this.handleSeedDatabase}
-          role="presentation"
-        >
-          Seed Database
-        </p>
-        <Button type="button" onClick={this.handleOpenModal}>
-          Create New User
-        </Button>
         {isLoading ? (
           <Placeholder />
         ) : (
-          <Fragment>
-            {openModal && (
-              <Modal closeModal={this.handleCloseModal} title="Create New User">
-                <UserForm
-                  submitAction={createUser}
-                  updateUserList={this.updateUserList}
-                />
-              </Modal>
-            )}
-            {!isEmpty(data) && !isEmpty(data.users) ? (
-              data.users.map(props => (
-                <Container key={props._id}>
-                  {isEditingID !== props._id ? (
-                    <Card
-                      key={props._id}
-                      {...props}
-                      onEditClick={() => this.handleEditClick(props._id)}
-                      onDeleteClick={() => this.handleDeleteClick(props._id)}
-                    />
-                  ) : (
-                    <UserForm
-                      key={props._id}
-                      {...props}
-                      cancelUpdate={this.handleResetEditClick}
-                      submitAction={updateUser}
-                      updateUserList={this.updateUserList}
-                      isEditing
-                    />
-                  )}
-                </Container>
-              ))
-            ) : (
-              <NoData />
-            )}
-          </Fragment>
+          <DisplayUserList
+            data={data}
+            isEditingID={isEditingID}
+            openModal={openModal}
+            onHandleCloseModal={this.handleCloseModal}
+            onHandleDeleteClick={this.handleDeleteClick}
+            onHandleEditClick={this.handleEditClick}
+            onHandleResetEditClick={this.handleResetEditClick}
+            onUpdateUserList={this.updateUserList}
+          />
         )}
       </div>
     );
@@ -184,6 +131,8 @@ class ShowUsers extends Component {
 }
 
 ShowUsers.propTypes = {
+  setPopMessage: PropTypes.func.isRequired,
+  setPopErrorMessage: PropTypes.func.isRequired,
   staticContext: PropTypes.shape({
     users: PropTypes.arrayOf(
       PropTypes.shape({
@@ -208,4 +157,7 @@ ShowUsers.propTypes = {
   })
 };
 
-export default ShowUsers;
+export default connect(
+  null,
+  { setPopMessage, setPopErrorMessage }
+)(ShowUsers);
