@@ -91,14 +91,13 @@ const {resolve} = require('path');
 const express = require('express');
 const app = express();
 
-
 const currentDirectory = process.cwd();
 const ENV = process.env.NODE_ENV;
 const PORT = process.env.PORT || 5000;
 
 if (ENV === 'production') {
-  app.use(express.static('build')); // express will serve up production assets
-  app.get('\*', (req, res) => res.sendFile(resolve(`\${currentDirectory}/client/build/index.html))); // express will serve up the front-end index.html file if it doesn't recognize the route
+app.use(express.static('build')); // express will serve up production assets
+app.get('\*', (req, res) => res.sendFile(resolve(`\${currentDirectory}/build/index.html))); // express will serve up the front-end index.html file if it doesn't recognize the route
 }
 
 app.listen(PORT);
