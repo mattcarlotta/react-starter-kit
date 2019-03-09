@@ -1,13 +1,7 @@
-const env = process.env.NODE_ENV;
-
 module.exports = {
+  currentDirectory: process.cwd(),
   /* working in development ENV */
-  inDevelopment: env === 'development',
-  /*
-    source maps aren't needed nor recommended for production,
-    so we'll only use them for staging and development
-  */
-  requiresSourceMap: env !== 'production',
+  inDevelopment: process.env.NODE_ENV === 'development',
   /*
     how the CSS class names will be defined in the DOM:
     local = supplied class name
@@ -15,5 +9,5 @@ module.exports = {
   */
   localIdentName: '[local]___[hash:base64:5]',
   /* application's current port */
-  PORT: 3000,
+  PORT: process.env.PORT,
 };

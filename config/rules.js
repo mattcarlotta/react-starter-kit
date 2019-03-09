@@ -1,8 +1,13 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin').loader;
-const { inDevelopment, localIdentName, requiresSourceMap } = require('./envs');
+const { imagesFolder, fontsFolder, globalCSS, localCSS } = require('./paths');
+const { inDevelopment, localIdentName } = require('./envs');
+
+// =============================================================== //
+// COMMON RULES                                                    //
+// =============================================================== //
 
 /* defines a javascript rule */
-exports.defineJSRule = ({ enforce, loader, options }) => ({
+const jsRule = ({ enforce, loader, options }) => ({
   enforce: enforce || 'post',
   test: /\.(js|jsx)$/,
   loader,
@@ -11,7 +16,7 @@ exports.defineJSRule = ({ enforce, loader, options }) => ({
 });
 
 /* defines a media (font/image) rule */
-exports.defineMediaRule = ({ test, outputPath }) => ({
+const mediaRule = ({ test, outputPath }) => ({
   test,
   use: [
     {
@@ -24,7 +29,7 @@ exports.defineMediaRule = ({ test, outputPath }) => ({
 });
 
 /* defines a SCSS rule */
-exports.defineSCSSRule = ({ include, exclude, modules, sourceMap }) => ({
+const sassRule = ({ include, exclude, modules, sourceMap }) => ({
   test: /\.s?css$/,
   include,
   exclude,
@@ -33,7 +38,7 @@ exports.defineSCSSRule = ({ include, exclude, modules, sourceMap }) => ({
     {
       loader: 'css-loader',
       options: {
-        sourceMap: sourceMap || requiresSourceMap,
+        sourceMap: sourceMap || !inDevelopment,
         modules: modules || false,
         camelCase: true,
         localIdentName,
@@ -42,3 +47,43 @@ exports.defineSCSSRule = ({ include, exclude, modules, sourceMap }) => ({
     'sass-loader',
   ],
 });
+
+/* webpack module rules */
+const rules = [
+  /* lints JS files on compilation */
+  jsRule({
+    enforce: 'pre',
+    loader: 'eslint-loader',
+    options: {
+      emitWarning: inDevelopment,
+    },
+  }),
+  /* handle React JS files */
+  jsRule({
+    loader: 'babel-loader',
+    options: {
+      cacheDirectory: inDevelopment,
+      cacheCompression: false,
+    },
+  }),
+  /* handle image assets */
+  mediaRule({
+    test: /\.(png|jpg|gif|svg)$/,
+    outputPath: imagesFolder,
+  }),
+  /* handle font assets */
+  mediaRule({
+    test: /\.(woff2|ttf|woff|eot)$/,
+    outputPath: fontsFolder,
+  }),
+  /* handles SCSS imports that are component-level or partials */
+  sassRule({
+    include: [localCSS],
+    exclude: [globalCSS],
+    modules: true,
+  }),
+  /* handles SCSS imports that are global only */
+  sassRule({ include: [globalCSS] }),
+];
+
+module.exports = rules;

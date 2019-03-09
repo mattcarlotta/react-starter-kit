@@ -32,12 +32,13 @@ Note: A React Hot Loaded boilerplate can be found on the <a href="https://github
 |   └── index.html
 |
 ├── config
+|   ├── devServer.js
 |   ├── envs.js
+|   ├── optimization.js
+|   ├── output.js
 |   ├── paths.js
-|   ├── rules.js
-|   ├── webpack.common.js
-|   ├── webpack.dev.js
-|   └── webpack.prod.js
+|   ├── plugins.js
+|   └── rules.js
 |
 ├── public
 |   ├── favicon.ico
@@ -54,8 +55,7 @@ Note: A React Hot Loaded boilerplate can be found on the <a href="https://github
 |   ├── styles
 |   ├── tests
 |   ├── types
-|   ├── index.js
-|   └── setupTests.js
+|   └── index.js
 |
 └── webpack.config.js
 ```
@@ -88,20 +88,22 @@ To build and bundle your client resources for production, use `npm run build` wh
 
 ## Configuration
 
+- `config/devServer.js` webpack devServer options.
 - `config/envs.js` webpack environment variables.
+- `config/optimization.js` webpack optimization options.
+- `config/output.js` webpack output options.
 - `config/paths.js` webpack config folder paths.
+- `config/plugins.js` webpack plugins options.
 - `config/rules.js` webpack rules functions.
-- `config/webpack.common.js` common webpack config for both development and production environments.
-- `config/webpack.dev.js` webpack config for development environment only.
-- `config/webpack.prod.js` webpack config for production environment only.
-- `webpack.config.js` main webpack config that merges common and an environment based config
-- `src/setupTest.js` enzyme test setup for your React components.
+- `webpack.config.js` an single webpack environment based config.
+- `src/client/tests/setup/setupTest.js` enzyme test setup for your React components.
 - `.babelrc` babel config for react js files.
 - `.browserslistrc` browsers list config.
 - `.eslintignore` eslint config for ignoring scss files.
 - `.eslintrc` eslint config for linting js files.
 - `.prettierc` prettier config.
 - `.stylelintrc.json` stylelint config for linting scss files.
+- `jest.json` jest config.
 
 ## Packages Incorporated
 

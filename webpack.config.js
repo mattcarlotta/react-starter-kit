@@ -1,12 +1,29 @@
-const webpackMerge = require('webpack-merge');
-const common = require('./config/webpack.common');
+const rules = require('./config/rules');
+const getPlugins = require('./config/plugins');
+const devServer = require('./config/devServer');
+const optimization = require('./config/optimization');
+const output = require('./config/output');
+const { entryPath } = require('./config/paths');
+const { inDevelopment } = require('./config/envs');
 
-const envs = {
-  development: 'dev',
-  production: 'prod',
-  staging: 'prod',
+// =============================================================== //
+// Webpack Configuration                                           //
+// =============================================================== //
+
+module.exports = {
+  devtool: inDevelopment ? 'cheap-module-source-map' : false,
+  devServer,
+  entry: entryPath,
+  mode: inDevelopment ? 'development' : 'production',
+  module: { rules },
+  optimization,
+  output,
+  performance: {
+    hints: false,
+  },
+  resolve: {
+    modules: ['src', 'node_modules'],
+    extensions: ['*', '.js', '.jsx', '.css', '.scss'],
+  },
+  plugins: getPlugins(),
 };
-/* eslint-disable global-require,import/no-dynamic-require */
-const env = envs[process.env.NODE_ENV || 'development'];
-const envConfig = require(`./config/webpack.${env}.js`);
-module.exports = webpackMerge(common, envConfig);

@@ -1,24 +1,25 @@
-const resolve = require('path').resolve;
+const { resolve } = require('path');
+const { currentDirectory } = require('./envs');
 
 module.exports = {
   /* project root directory */
-  root: resolve(__dirname, '../'),
+  root: resolve(`${currentDirectory}`),
   /* project publicPath */
   publicPath: '/',
   /* compiled build output path (/build) */
-  outputPath: resolve(__dirname, '../', 'build'),
+  outputPath: resolve(`${currentDirectory}/build`),
   /* path to public folder (./public) */
-  publicFolder: resolve(__dirname, 'public'),
+  publicFolder: resolve(`${currentDirectory}/public`),
   /* entry point to the application index (./src/index.js) */
-  entryPath: resolve(__dirname, '../', 'src/index.js'),
+  entryPath: resolve(`${currentDirectory}/src/index.js`),
   /* path to index.html (build/index.html) */
-  templatePath: resolve(__dirname, '../', 'public/index.html'),
+  templatePath: resolve(`${currentDirectory}/public/index.html`),
   /* path to favicon.ico (build/favicon.ico) */
-  faviconPath: resolve(__dirname, '../', 'public/favicon.ico'),
+  faviconPath: resolve(`${currentDirectory}/public/favicon.ico`),
   /* path to local styles (/src) */
-  localCSS: resolve(__dirname, '../', 'src'),
+  localCSS: resolve(`${currentDirectory}/src`),
   /* path to the globals.scss file (src/styles/globals/globals.scss) */
-  globalCSS: resolve(__dirname, '../', 'src/styles/globals'),
+  globalCSS: resolve(`${currentDirectory}/src/styles/globals`),
   /* compiled images build path (build/media) */
   imagesFolder: 'media',
   /* compiled fonts build path (build/assets) */
