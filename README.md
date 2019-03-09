@@ -71,23 +71,21 @@ Note: A React Hot Loaded boilerplate can be found on the <a href="https://github
 
 2 - Run `yarn install` to install dependencies.
 
-3 - While at the application's root directory, start the `webpack-dev-server` by running `yarn run dev`.
+3 - While at the application's root directory, start the `webpack-dev-server` by running `yarn dev`.
 
 ## Commands
 
-To lint your .js files, run `yarn run lintjs`.
+To lint your .js files, run `yarn lintjs`.
 
-To prettify your .js files, run `yarn run format`.
+To prettify your .js files, run `yarn format`.
 
-To lint your .scss files, run `yarn run lintstyles`.
+To lint your .scss files, run `yarn lintstyles`.
 
-To run your tests, while inside the client's root directory, run `yarn run test`. Testing will watch all your changes in the `.test.js` files as well as create a `coverage` folder. To view the current coverage report, navigate to `coverage/Icov-report/src` and open `index.html` in a browser. Please note that `*.test.js` files will be partially ignored by ESlint. To find out why, please see <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/master/src/tests/setup/setupTests.js#L8-L16">setupTest.js</a> for more information.
+To run your tests, while inside the client's root directory, run `yarn test`. Running `yarn test` will watch all your changes in the `.test.js` files. Running `yarn test:coverage` will create a `coverage` folder. To view the current coverage report, navigate to `coverage/Icov-report/src` and open `index.html` in a browser. Please note that `*.test.js` files will be partially ignored by ESlint. To find out why, please see <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/master/src/tests/setup/setupTests.js#L8-L16">setupTest.js</a> for more information.
 
-To build and bundle your client resources for staging, use `yarn run staging` while inside the root directory (staging utilizes source maps for errors).
+To build and bundle your client resources for production, use `yarn build` while inside the root directory (source maps will be excluded).
 
-To build and bundle your client resources for production, use `yarn run build` while inside the root directory (source maps will be excluded).
-
-Once your application has been compiled, to run a local production build, run `yarn start`. By default, your application will be served on `http://localhost:8080` unless changed in the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/master/package.json#L25-L32">start script</a>.
+Once your application has been compiled, to run a local production build, run `yarn start`. By default, your application will be served on `http://localhost:8080` unless changed in the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/master/package.json#L24-L32">start script</a>.
 
 ## Configuration
 
@@ -111,7 +109,7 @@ Once your application has been compiled, to run a local production build, run `y
 
 ## Packages Incorporated
 
-These packages are updated by an automated script that can be found <a href="https://github.com/mattcarlotta/UpdateBoilerplate">here</a>. To see the latest package versions, please check out the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/master/package.json#L75-L162">package.json</a>. If you run into any issues, please fill out an issue report <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/issues">here</a>.
+These packages are updated by an automated script that can be found <a href="https://github.com/mattcarlotta/UpdateBoilerplate">here</a>. To see the latest package versions, please check out the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/master/package.json#L98-L164">package.json</a>. If you run into any issues, please fill out an issue report <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/issues">here</a>.
 
 - [Axios](https://github.com/axios/axios)
 - [Babel](https://github.com/babel/babel)

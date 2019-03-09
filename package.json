@@ -7,7 +7,6 @@
     "dev": "better-npm-run dev",
     "start": "better-npm-run start",
     "build": "better-npm-run build",
-    "staging": "better-npm-run staging",
     "test": "better-npm-run test",
     "test:coverage": "better-npm-run test:coverage",
     "format": "prettier --write 'src/**/*.js'",
@@ -36,12 +35,6 @@
         "NODE_ENV": "production"
       }
     },
-    "staging": {
-      "command": "webpack",
-      "env": {
-        "NODE_ENV": "staging"
-      }
-    },
     "test": {
       "command": "jest --config ./jest.json --watchAll",
       "env": {
@@ -55,12 +48,21 @@
       }
     }
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
-    "*.{js,jsx,scss,json}": [
+    "*.{js,jsx}": [
       "prettier --write --single-quote",
       "eslint --fix",
-      "stylelint **/*.scss",
       "jest --config ./jest.json /src",
+      "git add"
+    ],
+    "*.scss": "stylelint **/*.scss",
+    "*.{json,md}": [
+      "prettier --write",
       "git add"
     ]
   },
@@ -159,10 +161,5 @@
     "webpack-cli": "3.2.3",
     "webpack-dev-server": "^3.2.1",
     "webpackbar": "^3.1.5"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }
