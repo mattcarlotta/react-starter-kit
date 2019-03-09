@@ -1,6 +1,6 @@
 ## React Starter Kit
 
-![y9EmWzr.png](https://i.imgur.com/y9EmWzr.png)
+![Z6Qqlng.png](https://i.imgur.com/Z6Qqlng.png)
 
 ## Table of contents
 
