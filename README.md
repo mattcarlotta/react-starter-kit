@@ -68,23 +68,23 @@ Note: A React Hot Loaded boilerplate can be found on the <a href="https://github
  git clone -b master git@github.com:mattcarlotta/Webpack-React-Boilerplate.git
 ```
 
-2 - Run `npm i` to install dependencies.
+2 - Run `yarn install` to install dependencies.
 
-3 - While at the application's root directory, start the `webpack-dev-server` by running `npm run dev`.
+3 - While at the application's root directory, start the `webpack-dev-server` by running `yarn run dev`.
 
 ## Commands
 
-To lint your .js files, run `npm run lintjs`.
+To lint your .js files, run `yarn run lintjs`.
 
-To prettify your .js files, run `npm run format`.
+To prettify your .js files, run `yarn run format`.
 
-To lint your .scss files, run `npm run lintstyles`.
+To lint your .scss files, run `yarn run lintstyles`.
 
-To run your tests, while inside the client's root directory, run `npm run test`. Testing will watch all your changes in the `.test.js` files as well as create a `coverage` folder. To view the current coverage report, navigate to `coverage/Icov-report/src` and open `index.html` in a browser. Please note that `*.test.js` files will be ignored by ESlint. To find out why, please see <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/master/src/tests/setup/setupTests.js">setupTest.js</a> for more information.
+To run your tests, while inside the client's root directory, run `yarn run test`. Testing will watch all your changes in the `.test.js` files as well as create a `coverage` folder. To view the current coverage report, navigate to `coverage/Icov-report/src` and open `index.html` in a browser. Please note that `*.test.js` files will be ignored by ESlint. To find out why, please see <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/master/src/tests/setup/setupTests.js">setupTest.js</a> for more information.
 
-To build and bundle your client resources for staging, use `npm run staging` while inside the root directory (staging utilizes source maps for errors).
+To build and bundle your client resources for staging, use `yarn run staging` while inside the root directory (staging utilizes source maps for errors).
 
-To build and bundle your client resources for production, use `npm run build` while inside the root directory (source maps will be excluded).
+To build and bundle your client resources for production, use `yarn run build` while inside the root directory (source maps will be excluded).
 
 ## Configuration
 

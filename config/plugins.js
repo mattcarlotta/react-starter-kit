@@ -5,13 +5,7 @@ const { HotModuleReplacementPlugin } = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const WebpackBar = require('webpackbar');
-const {
-  cssFolder,
-  faviconPath,
-  outputPath,
-  root,
-  templatePath,
-} = require('./paths');
+const { cssFolder, faviconPath, templatePath } = require('./paths');
 const { inDevelopment, PORT } = require('./envs');
 
 /* friendly errors console notes */
@@ -70,14 +64,11 @@ module.exports = () => {
         chunkFilename: `[id].[contenthash:8].css`,
       }),
       /* removes old build folder for each new compile */
-      new CleanWebpackPlugin([outputPath.split('/').pop()], {
-        root,
+      new CleanWebpackPlugin({
+        dry: !!PORT,
       }),
     );
   }
-
-  /* removes CleanWebpackPlugin if "npm start" was ran */
-  if (PORT) plugins.pop();
 
   return plugins;
 };
