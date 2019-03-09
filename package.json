@@ -69,7 +69,7 @@
       "git add"
     ]
   },
-  "repository": "https://github.com/mattcarlotta/Webpack-React-Boilerplate",
+  "repository": "https://github.com/mattcarlotta/react-starter-kit",
   "author": "Matt Carlotta",
   "license": "ISC",
   "private": false,
