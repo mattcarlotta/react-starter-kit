@@ -82,6 +82,8 @@ To lint your .scss files, run `yarn run lintstyles`.
 
 To run your tests, while inside the client's root directory, run `yarn run test`. Testing will watch all your changes in the `.test.js` files as well as create a `coverage` folder. To view the current coverage report, navigate to `coverage/Icov-report/src` and open `index.html` in a browser. Please note that `*.test.js` files will be ignored by ESlint. To find out why, please see <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/master/src/tests/setup/setupTests.js">setupTest.js</a> for more information.
 
+To run a local production build, run `yarn start`. Please note that this shouldn't be used for serving production assets remotely (on a website host). You must use a viable server-side solution (such as <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/fullstack/server/server.js">express</a>) to serve your compiled assets.
+
 To build and bundle your client resources for staging, use `yarn run staging` while inside the root directory (staging utilizes source maps for errors).
 
 To build and bundle your client resources for production, use `yarn run build` while inside the root directory (source maps will be excluded).
