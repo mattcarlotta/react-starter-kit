@@ -2,7 +2,12 @@
 
 ![ZSLxywi.gif](https://i.imgur.com/ZSLxywi.gif)
 
-Note: A React Hot Loaded boilerplate can be found on the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/hotloaded">hotloaded</a> branch, a fullstack M.E.R.N boilerplate can be found on the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/fullstack">fullstack</a> branch, or a React SSR boilerplate can be found on the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/ssr">ssr</a> branch..
+## Versions
+
+- <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/master">React Boilerplate</a>
+- <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/hotloaded">React Hot Loader Boilerplate</a>
+- <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/fullstack">Fullstack M.E.R.N Boilerplate</a>
+- <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/ssr">React Server Side Rendering Boilerplate</a>
 
 ## Table of contents
 
