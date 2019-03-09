@@ -71,7 +71,7 @@
   },
   "repository": "https://github.com/mattcarlotta/react-starter-kit",
   "author": "Matt Carlotta",
-  "license": "ISC",
+  "license": "MIT",
   "private": false,
   "engines": {
     "node": ">=8",
