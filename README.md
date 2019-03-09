@@ -57,6 +57,7 @@ Note: A React Hot Loaded boilerplate can be found on the <a href="https://github
 |   ├── types
 |   └── index.js
 |
+├── server.js
 └── webpack.config.js
 ```
 
@@ -97,7 +98,6 @@ Once your application has been compiled, to run a local production build, run `y
 - `config/paths.js` webpack config folder paths.
 - `config/plugins.js` webpack plugins options.
 - `config/rules.js` webpack rules functions.
-- `webpack.config.js` an single webpack environment based config.
 - `src/client/tests/setup/setupTest.js` enzyme test setup for your React components.
 - `.babelrc` babel config for react js files.
 - `.browserslistrc` browsers list config.
@@ -106,6 +106,8 @@ Once your application has been compiled, to run a local production build, run `y
 - `.prettierc` prettier config.
 - `.stylelintrc.json` stylelint config for linting scss files.
 - `jest.json` jest config.
+- `server.js` an express configuration to serve production assets.
+- `webpack.config.js` an single webpack environment based config.
 
 ## Packages Incorporated
 
