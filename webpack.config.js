@@ -1,13 +1,13 @@
-const rules = require('./config/rules');
-const getPlugins = require('./config/plugins');
 const devServer = require('./config/devServer');
+const getPlugins = require('./config/plugins');
 const optimization = require('./config/optimization');
 const output = require('./config/output');
+const rules = require('./config/rules');
 const { entryPath } = require('./config/paths');
 const { inDevelopment } = require('./config/envs');
 
 // =============================================================== //
-// Webpack Configuration                                           //
+// WEBPACK CONFIGURATION                                           //
 // =============================================================== //
 
 module.exports = {

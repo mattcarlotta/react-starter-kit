@@ -2,6 +2,10 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const { inDevelopment } = require('./envs');
 
+// =============================================================== //
+// WEBPACK OPTIMATIZATIONS                                         //
+// =============================================================== //
+
 const cssProcessorOptions = !inDevelopment
   ? { cssProcessorOptions: { map: { inline: false, annotation: true } } }
   : {};

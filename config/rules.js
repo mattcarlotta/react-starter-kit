@@ -3,7 +3,7 @@ const { imagesFolder, fontsFolder, globalCSS, localCSS } = require('./paths');
 const { inDevelopment, localIdentName } = require('./envs');
 
 // =============================================================== //
-// COMMON RULES                                                    //
+// WEBPACK RULES                                                   //
 // =============================================================== //
 
 /* defines a javascript rule */

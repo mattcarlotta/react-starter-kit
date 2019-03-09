@@ -1,6 +1,10 @@
 const { resolve } = require('path');
 const { currentDirectory } = require('./envs');
 
+// =============================================================== //
+// WEBPACK PATHS                                                   //
+// =============================================================== //
+
 module.exports = {
   /* project root directory */
   root: resolve(`${currentDirectory}`),

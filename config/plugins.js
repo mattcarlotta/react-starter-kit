@@ -8,6 +8,10 @@ const WebpackBar = require('webpackbar');
 const { cssFolder, faviconPath, templatePath } = require('./paths');
 const { inDevelopment, PORT } = require('./envs');
 
+// =============================================================== //
+// WEBPACK PLUGINS                                                 //
+// =============================================================== //
+
 /* friendly errors console notes */
 const notes = inDevelopment
   ? [`Note that the development build is not optimized.`]

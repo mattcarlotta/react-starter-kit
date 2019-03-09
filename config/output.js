@@ -1,14 +1,14 @@
 const { jsFolder, outputPath, publicPath } = require('./paths');
 const { inDevelopment } = require('./envs');
 
-const filename = '[name].js';
+// =============================================================== //
+// WEBPACK COMPILATION OUTPUT                                      //
+// =============================================================== //
 
 /* webpack compile output options */
-const output = {
-  filename: inDevelopment ? filename : `${jsFolder}/[name].[hash].js`,
+module.exports = {
+  filename: inDevelopment ? '[name].js' : `${jsFolder}/[name].[hash].js`,
   path: outputPath,
-  chunkFilename: inDevelopment ? filename : '[name].[chunkhash].js',
+  chunkFilename: inDevelopment ? '[name].js' : '[name].[chunkhash].js',
   publicPath,
 };
-
-module.exports = output;
