@@ -85,7 +85,7 @@ To run your tests, while inside the client's root directory, run `yarn test`. Ru
 
 To build and bundle your client resources for production, use `yarn build` while inside the root directory (source maps will be excluded).
 
-Once your application has been compiled, to run a local production build, run `yarn start`. By default, your application will be served on `http://localhost:8080` unless changed in the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/master/package.json#L24-L32">start script</a>.
+Once your application has been compiled, to run a local production build, run `yarn start`. By default, your application will be served on `http://localhost:8080` unless changed in the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/master/package.json#L24-L31">start script</a>.
 
 ## Configuration
 
