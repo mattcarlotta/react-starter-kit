@@ -80,7 +80,7 @@ To prettify your .js files, run `npm run format`.
 
 To lint your .scss files, run `npm run lintstyles`.
 
-To run your tests, while inside the client's root directory, run `npm run test`. Testing will watch all your changes in the `.test.js` files as well as create a `coverage` folder. To view the current coverage report, navigate to `coverage/Icov-report/src` and open `index.html` in a browser. Please note that `*.test.js` files will be ignored by ESlint. To find out why, please see <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/master/src/setupTests.js">setupTest.js</a> for more information.
+To run your tests, while inside the client's root directory, run `npm run test`. Testing will watch all your changes in the `.test.js` files as well as create a `coverage` folder. To view the current coverage report, navigate to `coverage/Icov-report/src` and open `index.html` in a browser. Please note that `*.test.js` files will be ignored by ESlint. To find out why, please see <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/master/src/tests/setup/setupTests.js">setupTest.js</a> for more information.
 
 To build and bundle your client resources for staging, use `npm run staging` while inside the root directory (staging utilizes source maps for errors).
 
@@ -107,36 +107,35 @@ To build and bundle your client resources for production, use `npm run build` wh
 
 ## Packages Incorporated
 
-These packages are updated by an automated script that can be found <a href="https://github.com/mattcarlotta/UpdateBoilerplate">here</a>. To see the latest package versions, please check out the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/master/package.json">package.json</a>. If you run into any issues, please fill out an issue report <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/issues">here</a>.
+These packages are updated by an automated script that can be found <a href="https://github.com/mattcarlotta/UpdateBoilerplate">here</a>. To see the latest package versions, please check out the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/master/package.json#L74-L162">package.json</a>. If you run into any issues, please fill out an issue report <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/issues">here</a>.
 
-- [Webpack](https://github.com/webpack/webpack)
+- [Axios](https://github.com/axios/axios)
 - [Babel](https://github.com/babel/babel)
+- [Browsers List](https://github.com/browserslist/browserslist)
+- [Connected React Router](https://github.com/supasate/connected-react-router)
+- [CSS Loader](https://github.com/webpack-contrib/css-loader)
+- [Enzyme](http://airbnb.io/enzyme/)
+- [Error Overlay Webpack Plugin](https://github.com/smooth-code/error-overlay-webpack-plugin)
+- [Eslint](https://github.com/eslint/eslint/)
+- [Friendly Errors Webpack Plugin](https://github.com/geowarin/friendly-errors-webpack-plugin)
+- [History](https://github.com/ReactTraining/history)
+- [Husky](https://github.com/typicode/husky)
+- [Jest](https://github.com/facebook/jest)
+- [Lodash](https://github.com/lodash/lodash)
+- [Mini CSS Extract Plugin](https://github.com/webpack-contrib/mini-css-extract-plugin)
+- [Prettier](https://github.com/prettier/prettier)
 - [React](https://github.com/facebook/react)
 - [React Router Dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
 - [Redux](https://github.com/reduxjs/redux)
-- [Redux Thunk](https://github.com/reduxjs/redux-thunk)
-- [Redux Form](https://redux-form.com/)
 - [Redux DevTools Extension](https://github.com/zalmoxisus/redux-devtools-extension)
-- [Connected React Router](https://github.com/supasate/connected-react-router)
-- [History](https://github.com/ReactTraining/history)
-- [Stylized Components](https://github.com/styled-components/styled-components)
-- [Stylized Theming](https://github.com/styled-components/styled-theming)
-- [Axios](https://github.com/axios/axios)
-- [Lodash](https://github.com/lodash/lodash)
-- [Jest](https://github.com/facebook/jest)
-- [Enzyme](http://airbnb.io/enzyme/)
-- [Eslint](https://github.com/eslint/eslint/)
-- [Husky](https://github.com/typicode/husky)
+- [Redux Form](https://redux-form.com/)
+- [Redux Thunk](https://github.com/reduxjs/redux-thunk)
 - [Stylelint](https://stylelint.io/)
 - [Stylelint-SCSS](https://github.com/kristerkari/stylelint-scss)
 - [Stylelint-Config-Recommended](https://github.com/stylelint/stylelint-config-recommended)
-- [Prettier](https://github.com/prettier/prettier)
-- [CSS Loader](https://github.com/webpack-contrib/css-loader)
-- [Style Loader](https://github.com/webpack-contrib/style-loader)
+- [Stylized Components](https://github.com/styled-components/styled-components)
 - [Sass Loader](https://github.com/webpack-contrib/sass-loader)
-- [Mini CSS Extract Plugin](https://github.com/webpack-contrib/mini-css-extract-plugin)
-- [Error Overlay Webpack Plugin](https://github.com/smooth-code/error-overlay-webpack-plugin)
-- [Friendly Errors Webpack Plugin](https://github.com/geowarin/friendly-errors-webpack-plugin)
+- [Style Loader](https://github.com/webpack-contrib/style-loader)
 - [UglifyJS Webpack Plugin](https://www.npmjs.com/package/uglifyjs-webpack-plugin)
-- [Browsers List](https://github.com/browserslist/browserslist)
+- [Webpack](https://github.com/webpack/webpack)
 - [Webpack Dev Server (Hot Loaded)](https://github.com/webpack/webpack-dev-server)
