@@ -3,14 +3,15 @@ import ReactDOM from 'react-dom';
 import App from './root/root.js';
 import './styles/globals/globals.scss';
 
-const render = () => {
-  ReactDOM.render(<App />, document.getElementById('root'));
+const render = Component => {
+  ReactDOM.render(<Component />, document.getElementById('root'));
 };
 
-render();
+render(App);
 
 if (module.hot) {
   module.hot.accept('./root/root.js', () => {
-    render();
+    const nextApp = require('./root/root.js').default; // eslint-disable-line global-require
+    render(nextApp);
   });
 }

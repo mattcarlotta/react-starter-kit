@@ -1,13 +1,6 @@
-## Webpack React Boilerplate
+## React Start Kit
 
-![ZSLxywi.gif](https://i.imgur.com/ZSLxywi.gif)
-
-## Versions
-
-- <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/master">React Boilerplate</a>
-- <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/hotloaded">React Hot Loader Boilerplate</a>
-- <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/fullstack">Fullstack M.E.R.N Boilerplate</a>
-- <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/tree/ssr">React Server Side Rendering Boilerplate</a>
+![y9EmWzr.png](https://i.imgur.com/y9EmWzr.png)
 
 ## Table of contents
 
@@ -71,7 +64,7 @@
 1 - Clone the boilerplate repository.
 
 ```
- git clone -b master git@github.com:mattcarlotta/Webpack-React-Boilerplate.git
+ git clone git@github.com:mattcarlotta/react-starter-kit.git
 ```
 
 2 - Run `yarn install` to install dependencies.
@@ -86,11 +79,11 @@ To prettify your .js files, run `yarn format`.
 
 To lint your .scss files, run `yarn lintstyles`.
 
-To run your tests, while inside the client's root directory, run `yarn test`. Running `yarn test` will watch all your changes in the `.test.js` files. Running `yarn test:coverage` will create a `coverage` folder. To view the current coverage report, navigate to `coverage/Icov-report/src` and open `index.html` in a browser. Please note that `*.test.js` files will be partially ignored by ESlint. To find out why, please see <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/master/src/tests/setup/setupTests.js#L8-L16">setupTest.js</a> for more information.
+To run your tests, while inside the client's root directory, run `yarn test`. Running `yarn test` will watch all your changes in the `.test.js` files. Running `yarn test:coverage` will create a `coverage` folder. To view the current coverage report, navigate to `coverage/Icov-report/src` and open `index.html` in a browser. Please note that `*.test.js` files will be partially ignored by ESlint. To find out why, please see <a href="https://github.com/mattcarlotta/react-starter-kit/blob/master/src/tests/setup/setupTests.js#L8-L16">setupTest.js</a> for more information.
 
 To build and bundle your client resources for production, use `yarn build` while inside the root directory (source maps will be excluded).
 
-Once your application has been compiled, to run a local production build, run `yarn start`. By default, your application will be served on `http://localhost:8080` unless changed in the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/master/package.json#L24-L31">start script</a>.
+Once your application has been compiled, to run a local production build, run `yarn start`. By default, your application will be served on `http://localhost:8080` unless changed in the <a href="https://github.com/mattcarlotta/react-starter-kit/blob/master/package.json#L24-L31">start script</a>.
 
 ## Configuration
 
@@ -114,7 +107,7 @@ Once your application has been compiled, to run a local production build, run `y
 
 ## Packages Incorporated
 
-These packages are updated by an automated script that can be found <a href="https://github.com/mattcarlotta/UpdateBoilerplate">here</a>. To see the latest package versions, please check out the <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/blob/master/package.json#L98-L164">package.json</a>. If you run into any issues, please fill out an issue report <a href="https://github.com/mattcarlotta/Webpack-React-Boilerplate/issues">here</a>.
+These packages are updated by an automated script that can be found <a href="https://github.com/mattcarlotta/UpdateBoilerplate">here</a>. To see the latest package versions, please check out the <a href="https://github.com/mattcarlotta/react-starter-kit/blob/master/package.json#L77-L163">package.json</a>. If you run into any issues, please fill out an issue report <a href="https://github.com/mattcarlotta/react-starter-kit/issues">here</a>.
 
 - [Axios](https://github.com/axios/axios)
 - [Babel](https://github.com/babel/babel)
