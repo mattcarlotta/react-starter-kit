@@ -73,17 +73,18 @@
 
 ## Commands
 
-To lint your .js files, run `yarn lintjs`.
-
-To prettify your .js files, run `yarn format`.
-
-To lint your .scss files, run `yarn lintstyles`.
-
-To run your tests, while inside the client's root directory, run `yarn test`. Running `yarn test` will watch all your changes in the `.test.js` files. Running `yarn test:coverage` will create a `coverage` folder. To view the current coverage report, navigate to `coverage/Icov-report/src` and open `index.html` in a browser. Please note that `*.test.js` files will be partially ignored by ESlint. To find out why, please see <a href="https://github.com/mattcarlotta/react-starter-kit/blob/master/src/tests/setup/setupTests.js#L8-L16">setupTest.js</a> for more information.
-
-To build and bundle your client resources for production, use `yarn build` while inside the root directory (source maps will be excluded).
-
-Once your application has been compiled, to run a local production build, run `yarn start`. By default, your application will be served on `http://localhost:8080` unless changed in the <a href="https://github.com/mattcarlotta/react-starter-kit/blob/master/package.json#L24-L31">start script</a>.
+| `yarn <command>` | Description                                                              |
+| ---------------- | ------------------------------------------------------------------------ |
+| `dev`            | Starts a development server at `localhost:3000`.                         |
+| `start`          | Starts a production server at `localhost:8080` (must run `build` first). |
+| `build`          | Compiles application to `/build`.                                        |
+| `lintjs`         | Lint all `.js` files.                                                    |
+| `lintstyles`     | Lint all `.scss` files.                                                  |
+| `format`         | Prettify all `.js` files.                                                |
+| `flow`           | Run type checking for `.js` files.                                       |
+| `flow:stop`      | Stop type checking.                                                      |
+| `test`           | Runs and watches all `.test.js` files.                                   |
+| `test:coverage`  | Runs a coverage report for `.test.js` files.                             |
 
 ## Configuration
 
