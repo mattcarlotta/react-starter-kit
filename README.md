@@ -105,6 +105,7 @@ app.listen(PORT);
 
 </details>
 <br />
+
 To build and bundle your client resources for staging, use `yarn run staging` while inside the root directory (staging utilizes source maps for errors).
 
 To build and bundle your client resources for production, use `yarn run build` while inside the root directory (source maps will be excluded).
