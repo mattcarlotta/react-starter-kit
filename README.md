@@ -17,7 +17,7 @@
 ## Project Structure
 
 ```
-├── build
+├── dist
 |   ├── css
 |   |   ├── main.[contenthash:8].css
 |   |   └── main.[contenthash:8].css.map
