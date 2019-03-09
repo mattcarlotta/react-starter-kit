@@ -10,8 +10,8 @@
     "test": "better-npm-run test",
     "test:coverage": "better-npm-run test:coverage",
     "format": "prettier --write 'src/**/*.js'",
-    "lintjs": "eslint 'src/**/*.js' --fix",
-    "lintstyles": "stylelint **/*.scss"
+    "lint:js": "eslint 'src/**/*.js' --fix",
+    "lint:styles": "stylelint **/*.scss"
   },
   "betterScripts": {
     "dev": {

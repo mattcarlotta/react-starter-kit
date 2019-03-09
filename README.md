@@ -78,10 +78,8 @@
 | `dev`            | Starts a development server at `localhost:3000`.                         |
 | `start`          | Starts a production server at `localhost:8080` (must run `build` first). |
 | `build`          | Compiles application to `/build`.                                        |
-| `lintjs`         | Lint all `.js` files.                                                    |
-| `lintstyles`     | Lint all `.scss` files.                                                  |
-| `format`         | Prettify all `.js` files.                                                |
-| `flow`           | Run type checking for `.js` files.                                       |
+| `lint:js`        | Lint all `.js` files.                                                    |
+| `lint:styles`    | Lint all `.scss` files.                                                  |
 | `flow:stop`      | Stop type checking.                                                      |
 | `test`           | Runs and watches all `.test.js` files.                                   |
 | `test:coverage`  | Runs a coverage report for `.test.js` files.                             |
