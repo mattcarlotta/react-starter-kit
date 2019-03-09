@@ -8,7 +8,7 @@ const { currentDirectory } = require('./envs');
 module.exports = {
   root: resolve(`${currentDirectory}`), // project root directory
   publicPath: '/', // project publicPath
-  outputPath: resolve(`${currentDirectory}/build`), // compiled build output path (/build)
+  outputPath: resolve(`${currentDirectory}/dist`), // compiled build output path (/build)
   publicFolder: resolve(`${currentDirectory}/public`), // path to public folder (./public)
   entryPath: resolve(`${currentDirectory}/src/index.js`), // entry point to the application index (./src/index.js)
   templatePath: resolve(`${currentDirectory}/public/index.html`), // path to index.html (build/index.html)

@@ -77,10 +77,10 @@
 | ---------------- | ------------------------------------------------------------------------ |
 | `dev`            | Starts a development server at `localhost:3000`.                         |
 | `start`          | Starts a production server at `localhost:8080` (must run `build` first). |
-| `build`          | Compiles application to `/build`.                                        |
+| `build`          | Compiles application to a `dist` folder.                                 |
 | `lint:js`        | Lint all `.js` files.                                                    |
 | `lint:styles`    | Lint all `.scss` files.                                                  |
-| `flow:stop`      | Stop type checking.                                                      |
+| `format`         | Prettify all `.js` files.                                                |
 | `test`           | Runs and watches all `.test.js` files.                                   |
 | `test:coverage`  | Runs a coverage report for `.test.js` files.                             |
 

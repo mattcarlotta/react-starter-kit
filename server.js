@@ -8,9 +8,9 @@ const currentDirectory = process.cwd();
 const { HOST, PORT } = process.env;
 
 app.use(morgan('tiny')); // XHR request logging framework
-app.use(express.static('build')); // express will serve up production assets
+app.use(express.static('dist')); // express will serve up production assets
 app.get('*', (req, res) =>
-  res.sendFile(resolve(`${currentDirectory}/build/index.html`)),
+  res.sendFile(resolve(`${currentDirectory}/dist/index.html`)),
 ); // express will serve up the front-end index.html file if it doesn't recognize the route
 
 app.listen(PORT, err => {
