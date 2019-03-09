@@ -1,4 +1,4 @@
-## React Start Kit
+## React Starter Kit
 
 ![y9EmWzr.png](https://i.imgur.com/y9EmWzr.png)
 
