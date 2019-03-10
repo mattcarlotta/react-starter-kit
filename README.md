@@ -102,7 +102,7 @@
 - `.stylelintrc.json` stylelint config for linting scss files.
 - `jest.json` jest config.
 - `server.js` an express configuration to serve production assets.
-- `webpack.config.js` an single webpack environment based config.
+- `webpack.config.js` a single webpack environment based config.
 
 ## Packages Incorporated
 
