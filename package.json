@@ -3,6 +3,14 @@
   "version": "1.0.0",
   "description": "A starter kit for React and Redux applications.",
   "main": "./src/index.js",
+  "repository": "https://github.com/mattcarlotta/react-starter-kit",
+  "author": "Matt Carlotta",
+  "license": "MIT",
+  "private": false,
+  "engines": {
+    "node": ">=8",
+    "npm": ">=3"
+  },
   "scripts": {
     "dev": "better-npm-run dev",
     "start": "better-npm-run start",
@@ -68,14 +76,6 @@
       "prettier --write",
       "git add"
     ]
-  },
-  "repository": "https://github.com/mattcarlotta/react-starter-kit",
-  "author": "Matt Carlotta",
-  "license": "MIT",
-  "private": false,
-  "engines": {
-    "node": ">=8",
-    "npm": ">=3"
   },
   "dependencies": {
     "axios": "^0.18.0",
