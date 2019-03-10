@@ -21,7 +21,7 @@ const notes = inDevelopment
     ];
 
 notes.push(
-  `To create a production build, use \x1b[1m\x1b[32mnpm run build\x1b[0m.`,
+  `To create a production build, use \x1b[1m\x1b[32myarn build\x1b[0m.`,
 );
 
 module.exports = () => {
