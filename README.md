@@ -103,9 +103,9 @@
 - src/tests/setup/setupTest.js: enzyme test setup for your React components.
 - src/styles/assets: media assets imports.
 - src/styles/extensions: partial shared extensions.
-- src/styles/globals: global asset imports (see notes in <a href="https://github.com/mattcarlotta/react-starter-kit/blob/master/src/styles/globals/globals.scss#L1-L30">global.scss</a> for important information).
+- src/styles/globals: global asset imports (see notes in <a href="https://github.com/mattcarlotta/react-starter-kit/blob/master/src/styles/globals/globals.scss#L1-L32">global.scss</a> for important information).
 - src/styles/variables: partial shared variables.
-- src/styles/styles.scss: indexed partial files for easier sharing (see notes in <a href="https://github.com/mattcarlotta/react-starter-kit/blob/master/src/styles/styles.scss#L1-L39">styles.scss</a> for important information).
+- src/styles/styles.scss: indexed partial files for easier sharing (see notes in <a href="https://github.com/mattcarlotta/react-starter-kit/blob/master/src/styles/styles.scss#L1-L48">styles.scss</a> for important information).
 - .babelrc: babel config for react js files.
 - .browserslistrc: browsers list config.
 - .eslintignore: eslint config for ignoring scss files.
