@@ -1,4 +1,4 @@
-import App from '../root.js';
+import App from '../index.js';
 
 describe('App', () => {
   const wrapper = mount(<App />);

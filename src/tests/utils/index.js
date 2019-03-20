@@ -1,8 +1,10 @@
 import { applyMiddleware, createStore } from 'redux';
 import { shallow, mount } from 'enzyme';
 import thunk from 'redux-thunk';
-import rootReducer from '../../reducers/reducers.js';
+import { createBrowserHistory } from 'history';
+import rootReducer from '../../reducers';
 
+const history = createBrowserHistory();
 const middlewares = applyMiddleware(thunk);
 
 /**
@@ -13,7 +15,7 @@ const middlewares = applyMiddleware(thunk);
  * @returns {store} - redux store with
  */
 export const createStoreFactory = initialState =>
-  createStore(rootReducer, initialState, middlewares);
+  createStore(rootReducer(history), initialState, middlewares);
 
 /**
  * Factory function to create a ShallowWrapper for a component

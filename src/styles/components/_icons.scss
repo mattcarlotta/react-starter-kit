@@ -1,0 +1,20 @@
+.iconContainer {
+  position: relative;
+  top: 5px;
+  margin-right: 10px;
+}
+
+.iconStyle {
+  color: inherit;
+
+  path,
+  polygon,
+  rect {
+    fill: currentColor;
+  }
+  
+  circle {
+    stroke: currentColor;
+    stroke-width: 1;
+  }
+}

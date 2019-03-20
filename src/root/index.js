@@ -5,8 +5,8 @@ import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import { createBrowserHistory } from 'history';
 import thunk from 'redux-thunk';
-import createRootReducer from '../reducers/reducers.js';
-import Routes from '../routes/routes.js';
+import createRootReducer from '../reducers';
+import Routes from '../routes';
 
 const history = createBrowserHistory();
 const middlewares = applyMiddleware(thunk, routerMiddleware(history));
@@ -16,10 +16,12 @@ export const store = createStore(
   composeWithDevTools(middlewares),
 );
 
-export default () => (
+const Root = () => (
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <Routes />
     </ConnectedRouter>
   </Provider>
 );
+
+export default Root;

@@ -1,4 +1,4 @@
-import NotFound from '../NotFound.js';
+import NotFound from '../index.js';
 
 describe('NotFound', () => {
   const wrapper = shallow(<NotFound />);

@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../../images/logo.svg';
-import { app, logoContainer, logoStyle, title } from './Home.scss';
+import { app, logoContainer, logoStyle, title } from './styles.scss';
 
 export default () => (
   <div className={app}>

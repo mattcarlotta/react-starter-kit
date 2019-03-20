@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './root/root.js';
+import App from './root';
 import './styles/globals/globals.scss';
 
 const render = Component => {
@@ -10,8 +10,8 @@ const render = Component => {
 render(App);
 
 if (module.hot) {
-  module.hot.accept('./root/root.js', () => {
-    const nextApp = require('./root/root.js').default; // eslint-disable-line global-require
+  module.hot.accept('./root/index.js', () => {
+    const nextApp = require('./root/index.js').default; // eslint-disable-line global-require
     render(nextApp);
   });
 }

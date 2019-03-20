@@ -16,7 +16,9 @@
 
 ## Project Structure
 
-```
+<details>
+<summary>Click to expand project structure</summary>
+<pre><code>
 ├── dist
 |   ├── css
 |   |   ├── main.[contenthash:8].css
@@ -57,7 +59,9 @@
 |
 ├── server.js
 └── webpack.config.js
-```
+</code></pre>
+</details>
+<br />
 
 ## Installation
 
@@ -86,57 +90,74 @@
 
 ## Configuration
 
-- `config/devServer.js` webpack devServer options.
-- `config/envs.js` webpack environment variables.
-- `config/optimization.js` webpack optimization options.
-- `config/output.js` webpack output options.
-- `config/paths.js` webpack config folder paths.
-- `config/plugins.js` webpack plugins options.
-- `config/rules.js` webpack rules functions.
-- `src/client/tests/setup/setupTest.js` enzyme test setup for your React components.
-- `.babelrc` babel config for react js files.
-- `.browserslistrc` browsers list config.
-- `.eslintignore` eslint config for ignoring scss files.
-- `.eslintrc` eslint config for linting js files.
-- `.prettierc` prettier config.
-- `.stylelintrc.json` stylelint config for linting scss files.
-- `jest.json` jest config.
-- `server.js` an express configuration to serve production assets.
-- `webpack.config.js` a single webpack environment based config.
+<details>
+<summary>Click to expand configuration</summary>
+<pre><code>
+- config/devServer.js: webpack devServer options.
+- config/envs.js: webpack environment variables.
+- config/optimization.js: webpack optimization options.
+- config/output.j:` webpack output options.
+- config/paths.js` webpack config folder paths.
+- config/plugins.js: webpack plugins options.
+- config/rules.js: webpack rules functions.
+- src/tests/setup/setupTest.js: enzyme test setup for your React components.
+- src/styles/assets: media assets imports.
+- src/styles/extensions: partial shared extensions.
+- src/styles/globals: global asset imports (see notes in <a href="https://github.com/mattcarlotta/react-starter-kit/blob/master/src/styles/globals/globals.scss#L1-L30">global.scss</a> for important information).
+- src/styles/variables: partial shared variables.
+- src/styles/styles.scss: indexed partial files for easier sharing (see notes in <a href="https://github.com/mattcarlotta/react-starter-kit/blob/master/src/styles/styles.scss#L1-L39">styles.scss</a> for important information).
+- .babelrc: babel config for react js files.
+- .browserslistrc: browsers list config.
+- .eslintignore: eslint config for ignoring scss files.
+- .eslintrc: eslint config for linting js files.
+- .prettierc: prettier config.
+- .stylelintrc.json: stylelint config for linting scss files.
+- jest.json: jest config.
+- server.js: an express configuration to serve production assets.
+- webpack.config.js: a single webpack environment based config.
+</code></pre>
+</details>
+<br />
 
 ## Packages Incorporated
 
 To see the latest package versions, please check out the <a href="https://github.com/mattcarlotta/react-starter-kit/blob/master/package.json#L80-L167">package.json</a>. If you run into any issues, please fill out an issue report <a href="https://github.com/mattcarlotta/react-starter-kit/issues">here</a>.
 
-- [Axios](https://github.com/axios/axios)
-- [Babel](https://github.com/babel/babel)
-- [Browsers List](https://github.com/browserslist/browserslist)
-- [Connected React Router](https://github.com/supasate/connected-react-router)
-- [CSS Loader](https://github.com/webpack-contrib/css-loader)
-- [Enzyme](http://airbnb.io/enzyme/)
-- [Error Overlay Webpack Plugin](https://github.com/smooth-code/error-overlay-webpack-plugin)
-- [Express](https://github.com/expressjs/express)
-- [Eslint](https://github.com/eslint/eslint/)
-- [Friendly Errors Webpack Plugin](https://github.com/geowarin/friendly-errors-webpack-plugin)
-- [History](https://github.com/ReactTraining/history)
-- [Husky](https://github.com/typicode/husky)
-- [Jest](https://github.com/facebook/jest)
-- [Lodash](https://github.com/lodash/lodash)
-- [Mini CSS Extract Plugin](https://github.com/webpack-contrib/mini-css-extract-plugin)
-- [Morgan](https://github.com/expressjs/morgan)
-- [Prettier](https://github.com/prettier/prettier)
-- [React](https://github.com/facebook/react)
-- [React Router Dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
-- [Redux](https://github.com/reduxjs/redux)
-- [Redux DevTools Extension](https://github.com/zalmoxisus/redux-devtools-extension)
-- [Redux Form](https://redux-form.com/)
-- [Redux Thunk](https://github.com/reduxjs/redux-thunk)
-- [Stylelint](https://stylelint.io/)
-- [Stylelint-SCSS](https://github.com/kristerkari/stylelint-scss)
-- [Stylelint-Config-Recommended](https://github.com/stylelint/stylelint-config-recommended)
-- [Stylized Components](https://github.com/styled-components/styled-components)
-- [Sass Loader](https://github.com/webpack-contrib/sass-loader)
-- [Style Loader](https://github.com/webpack-contrib/style-loader)
-- [UglifyJS Webpack Plugin](https://www.npmjs.com/package/uglifyjs-webpack-plugin)
-- [Webpack](https://github.com/webpack/webpack)
-- [Webpack Dev Server (Hot Loaded)](https://github.com/webpack/webpack-dev-server)
+<details>
+<summary>Click to expand brief overview of packages</summary>
+<pre><code>
+- <a href="https://github.com/axios/axios">Axios</a>
+- <a href="https://github.com/babel/babel">Babel</a>
+- <a href="https://github.com/webpack-contrib/css-loader">CSS Loader</a>
+- <a href="https://github.com/supasate/connected-react-router">Connected React Router</a>
+- <a href="https://github.com/eslint/eslint/">Eslint</a>
+- <a href="http://airbnb.io/enzyme/">Enzyme</a>
+- <a href="https://github.com/smooth-code/error-overlay-webpack-plugin">Error Overlay Webpack Plugin</a>
+- <a href="https://github.com/expressjs/express">Express</a>
+- <a href="https://github.com/geowarin/friendly-errors-webpack-plugin">Friendly Errors Webpack Plugin</a>
+- <a href="https://github.com/ReactTraining/history">History</a>
+- <a href="https://github.com/typicode/husky">Husky</a>
+- <a href="https://github.com/facebook/jest">Jest</a>
+- <a href="https://github.com/lodash/lodash">Lodash</a>
+- <a href="https://github.com/webpack-contrib/mini-css-extract-plugin">Mini CSS Extract Plugin</a>
+- <a href="https://github.com/expressjs/morgan">Morgan</a>
+- <a href="https://github.com/prettier/prettier">Prettier</a>
+- <a href="https://github.com/facebook/prop-types">PropTypes</a>
+- <a href="https://github.com/facebook/react">React</a>
+- <a href="https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom">React Router Dom</a>
+- <a href="https://github.com/reduxjs/redux">Redux</a>
+- <a href="https://github.com/zalmoxisus/redux-devtools-extension">Redux DevTools Extension</a>
+- <a href="https://redux-form.com/">Redux Form</a>
+- <a href="https://github.com/reduxjs/redux-thunk">Redux Thunk</a>
+- <a href="https://github.com/webpack-contrib/sass-loader">Sass Loader</a>
+- <a href="https://stylelint.io/">Stylelint</a>
+- <a href="https://github.com/kristerkari/stylelint-scss">Stylelint-SCSS</a>
+- <a href="https://github.com/stylelint/stylelint-config-recommended">Stylelint-Config-Recommended</a>
+- <a href="https://github.com/styled-components/styled-components">Stylized Components</a>
+- <a href="https://github.com/webpack-contrib/style-loader">Style Loader</a>
+- <a href="https://github.com/webpack/webpack">Webpack</a>
+- <a href="https://www.npmjs.com/package/webpackbar">Webpackbar</a>
+- <a href="https://github.com/webpack/webpack-dev-server">Webpack Dev Server (Hot Loaded)</a>
+</code></pre>
+</details>
+<br />

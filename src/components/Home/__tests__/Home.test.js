@@ -1,4 +1,4 @@
-import Home from '../Home.js';
+import Home from '../index.js';
 
 describe('Home', () => {
   const wrapper = shallow(<Home />);
