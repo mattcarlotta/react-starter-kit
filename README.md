@@ -45,13 +45,13 @@
 |   └── index.html
 |
 ├── src
+|   ├── actions
 |   ├── components
 |   ├── containers
 |   ├── images
 |   ├── reducers
 |   ├── root
 |   ├── routes
-|   ├── store
 |   ├── styles
 |   ├── tests
 |   ├── types
