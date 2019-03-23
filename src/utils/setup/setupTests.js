@@ -1,7 +1,7 @@
 import { JSDOM } from 'jsdom';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import { createStoreFactory, mountWrap, shallowWrap } from '../utils';
+import { createStoreFactory, mountWrap, shallowWrap } from 'utils';
 
 configure({ adapter: new Adapter() });
 
