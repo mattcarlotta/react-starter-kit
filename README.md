@@ -101,12 +101,12 @@
 - config/paths.js` webpack config folder paths.
 - config/plugins.js: webpack plugins options.
 - config/rules.js: webpack rules functions.
-- src/utils/setup/setupTest.js: enzyme test setup for your React components.
 - src/styles/assets: media assets imports.
 - src/styles/extensions: partial shared extensions.
 - src/styles/globals: global asset imports (see notes in <a href="https://github.com/mattcarlotta/react-starter-kit/blob/master/src/styles/globals/globals.scss#L1-L32">global.scss</a> for important information).
 - src/styles/variables: partial shared variables.
 - src/styles/styles.scss: indexed partial files for easier sharing (see notes in <a href="https://github.com/mattcarlotta/react-starter-kit/blob/master/src/styles/styles.scss#L1-L48">styles.scss</a> for important information).
+- src/utils/setup/setupTest.js: enzyme test setup for your React components (see <a href="https://github.com/mattcarlotta/react-starter-kit/blob/master/src/utils/setup/setupTests.js#L8-L16">notes</a> in setup.js for important information).
 - .babelrc: babel config for react js files.
 - .browserslistrc: browsers list config.
 - .eslintignore: eslint config for ignoring scss files.
@@ -122,7 +122,7 @@
 
 ## Packages Incorporated
 
-To see the latest package versions, please check out the <a href="https://github.com/mattcarlotta/react-starter-kit/blob/master/package.json#L80-L167">package.json</a>. If you run into any issues, please fill out an issue report <a href="https://github.com/mattcarlotta/react-starter-kit/issues">here</a>.
+To see the latest package versions, please check out the <a href="https://github.com/mattcarlotta/react-starter-kit/blob/master/package.json#L80-L168">package.json</a>. If you run into any issues, please fill out an issue report <a href="https://github.com/mattcarlotta/react-starter-kit/issues">here</a>.
 
 <details>
 <summary>Click to expand brief overview of packages</summary>
