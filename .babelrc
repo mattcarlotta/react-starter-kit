@@ -1,6 +1,24 @@
 {
   "presets": ["@babel/preset-env", "@babel/preset-react"],
   "plugins": [
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "actions": "./src/actions",
+          "components": "./src/components",
+          "containers": "./src/containers",
+          "images": "./src/images",
+          "pages": "./src/pages",
+          "reducers": "./src/reducers",
+          "root": "./src/root",
+          "routes": "./src/routes",
+          "styles": "./src/styles",
+          "types": "./src/types",
+          "utils": "./src/utils"
+        }
+      }
+    ],
     "@babel/plugin-transform-runtime",
 
     // Stage 2 https://github.com/babel/babel/tree/master/packages/babel-preset-stage-2

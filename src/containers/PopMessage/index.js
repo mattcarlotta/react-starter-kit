@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import CloseButton from '../../components/CloseButton';
-import ErrorIcon from '../../components/ErrorIcon';
-import InfoIcon from '../../components/InfoIcon';
-import { resetPopMessages, setPopMessage } from '../../actions/server';
+import CloseButton from 'components/CloseButton';
+import ErrorIcon from 'components/ErrorIcon';
+import InfoIcon from 'components/InfoIcon';
+import { resetPopMessages, setPopMessage } from 'actions/server';
 import {
   popMessageContainer,
   popMessageInnerContainer,

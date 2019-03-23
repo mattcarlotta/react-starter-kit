@@ -1,5 +1,5 @@
 import React from 'react';
-import { iconContainer, iconStyle } from '../../styles/styles.scss';
+import { iconContainer, iconStyle } from 'styles/styles.scss';
 
 const ErrorIcon = () => (
   <span className={iconContainer}>

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import Home from '../components/Home';
-import NotFound from '../components/NotFound';
-import Message from '../containers/PopMessage';
+import Home from 'pages/Home';
+import Message from 'containers/PopMessage';
+import NotFound from 'pages/NotFound';
 
 const Routes = () => (
   <div>

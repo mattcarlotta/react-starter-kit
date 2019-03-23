@@ -49,12 +49,13 @@
 |   ├── components
 |   ├── containers
 |   ├── images
+|   ├── pages
 |   ├── reducers
 |   ├── root
 |   ├── routes
 |   ├── styles
-|   ├── tests
 |   ├── types
+|   ├── utils
 |   └── index.js
 |
 ├── server.js
@@ -100,7 +101,7 @@
 - config/paths.js` webpack config folder paths.
 - config/plugins.js: webpack plugins options.
 - config/rules.js: webpack rules functions.
-- src/tests/setup/setupTest.js: enzyme test setup for your React components.
+- src/utils/setup/setupTest.js: enzyme test setup for your React components.
 - src/styles/assets: media assets imports.
 - src/styles/extensions: partial shared extensions.
 - src/styles/globals: global asset imports (see notes in <a href="https://github.com/mattcarlotta/react-starter-kit/blob/master/src/styles/globals/globals.scss#L1-L32">global.scss</a> for important information).
