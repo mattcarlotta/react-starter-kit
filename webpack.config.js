@@ -13,7 +13,7 @@ const { inDevelopment } = require('./config/envs');
 module.exports = {
   devtool: inDevelopment ? 'cheap-module-source-map' : false,
   devServer,
-  entry: entryPath,
+  entry: [entryPath],
   mode: inDevelopment ? 'development' : 'production',
   module: { rules },
   optimization,
