@@ -19,6 +19,6 @@ module.exports = {
     poll: false, //  disable polling (continuous checking of other files to see what state they are in)
   },
   stats: 'minimal', // keep stats to minimal (only outputs for errors or new compilations)
-  contentBase: inDevelopment ? publicFolder : outputPath, // watches for changies in the publicFolder or outputPath
+  contentBase: inDevelopment ? publicFolder : outputPath, // watches for changes in the publicFolder or outputPath
   watchContentBase: true, //  watches changes in files/folders specified in contentBase
 };
