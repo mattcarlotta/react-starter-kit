@@ -40,8 +40,7 @@ const sassRule = ({ include, exclude, modules, sourceMap }) => ({
       options: {
         sourceMap: sourceMap || !inDevelopment,
         modules: modules || false,
-        camelCase: true,
-        localIdentName,
+        localsConvention: 'camelCase',
       },
     },
     'sass-loader',
@@ -80,7 +79,10 @@ const rules = [
   sassRule({
     include: [localCSS],
     exclude: [globalCSS],
-    modules: true,
+    modules: {
+      mode: 'local',
+      localIdentName,
+    },
   }),
   /* handles SCSS imports that are global only */
   sassRule({ include: [globalCSS] }),

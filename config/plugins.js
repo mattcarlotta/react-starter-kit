@@ -1,12 +1,12 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { HotModuleReplacementPlugin } = require('webpack');
+const { DefinePlugin, HotModuleReplacementPlugin } = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const WebpackBar = require('webpackbar');
 const { cssFolder, faviconPath, templatePath } = require('./paths');
-const { inDevelopment, PORT } = require('./envs');
+const { APIPORT, inDevelopment, NODE_ENV, PORT } = require('./envs');
 
 // =============================================================== //
 // WEBPACK PLUGINS                                                 //
@@ -47,6 +47,11 @@ module.exports = () => {
         notes,
       },
       clearConsole: true,
+    }),
+    new DefinePlugin({
+      'process.env.APIPORT': JSON.stringify(APIPORT),
+      'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
+      'process.env.PORT': JSON.stringify(PORT),
     }),
   ];
 

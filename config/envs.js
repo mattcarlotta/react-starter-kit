@@ -2,9 +2,13 @@
 // ENVS                                                            //
 // =============================================================== //
 
+const { APIPORT, NODE_ENV, PORT } = process.env;
+
 module.exports = {
+  APIPORT,
   currentDirectory: process.cwd(), // current working directory
-  inDevelopment: process.env.NODE_ENV === 'development', // current environment
+  inDevelopment: NODE_ENV === 'development', // current environment
   localIdentName: '[local]___[hash:base64:5]', // how class names will be defined in the DOM
-  PORT: process.env.PORT, // application's current port
+  NODE_ENV,
+  PORT, // application's current port
 };
