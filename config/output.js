@@ -9,6 +9,8 @@ const { inDevelopment } = require('./envs');
 module.exports = {
   filename: inDevelopment ? '[name].js' : `${jsFolder}/[name].[hash].js`,
   path: outputPath,
-  chunkFilename: inDevelopment ? '[name].js' : '[name].[chunkhash].js',
+  chunkFilename: inDevelopment
+    ? '[name].js'
+    : `${jsFolder}/[name].[chunkhash].js`,
   publicPath,
 };

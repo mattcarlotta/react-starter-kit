@@ -83,6 +83,7 @@
 | `dev`            | Starts a development server at `localhost:3000`.                         |
 | `start`          | Starts a production server at `localhost:8080` (must run `build` first). |
 | `build`          | Compiles application to a `dist` folder.                                 |
+| `analyze`        | Compiles application to a `dist` folder and analyzes chunk distribution. |
 | `lint:js`        | Lint all `.js` files.                                                    |
 | `lint:styles`    | Lint all `.scss` files.                                                  |
 | `format`         | Prettify all `.js` files.                                                |
@@ -122,7 +123,7 @@
 
 ## Packages Incorporated
 
-To see the latest package versions, please check out the <a href="https://github.com/mattcarlotta/react-starter-kit/blob/master/package.json#L80-L168">package.json</a>. If you run into any issues, please fill out an issue report <a href="https://github.com/mattcarlotta/react-starter-kit/issues">here</a>.
+To see the latest package versions, please check out the <a href="https://github.com/mattcarlotta/react-starter-kit/blob/master/package.json#L89-L187">package.json</a>. If you run into any issues, please fill out an issue report <a href="https://github.com/mattcarlotta/react-starter-kit/issues">here</a>.
 
 <details>
 <summary>Click to expand brief overview of packages</summary>

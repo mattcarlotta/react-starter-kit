@@ -1,12 +1,27 @@
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const {
+  DefinePlugin,
+  HotModuleReplacementPlugin,
+  IgnorePlugin,
+} = require('webpack');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin;
+const InlineChunkHtmlPlugin = require('react-dev-utils/InlineChunkHtmlPlugin');
 const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { HotModuleReplacementPlugin } = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const WebpackBar = require('webpackbar');
-const { cssFolder, faviconPath, templatePath } = require('./paths');
-const { inDevelopment, PORT } = require('./envs');
+const ManifestPlugin = require('webpack-manifest-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const { cssFolder, faviconPath, publicPath, templatePath } = require('./paths');
+const {
+  ANALYZE,
+  APIPORT,
+  inDevelopment,
+  inStaging,
+  NODE_ENV,
+  PORT,
+} = require('./envs');
 
 // =============================================================== //
 // WEBPACK PLUGINS                                                 //
@@ -21,7 +36,7 @@ const notes = inDevelopment
     ];
 
 notes.push(
-  `To create a production build, use \x1b[1m\x1b[32myarn build\x1b[0m.`,
+  `To create a production build, use \x1b[1m\x1b[32myarn build\x1b[0m.\n`,
 );
 
 module.exports = () => {
@@ -48,6 +63,29 @@ module.exports = () => {
       },
       clearConsole: true,
     }),
+    /* webpack ENV files */
+    new DefinePlugin({
+      'process.env': {
+        APIPORT: JSON.stringify(APIPORT),
+        NODE_ENV: JSON.stringify(NODE_ENV),
+        PORT: JSON.stringify(PORT),
+      },
+    }),
+    /* generates a manifest for all assets */
+    new ManifestPlugin({
+      fileName: 'asset-manifest.json',
+      publicPath,
+      generate: (seed, files) => {
+        const manifestFiles = files.reduce(function(manifest, file) {
+          manifest[file.name] = file.path;
+          return manifest;
+        }, seed);
+
+        return {
+          files: manifestFiles,
+        };
+      },
+    }),
   ];
 
   /* development webpack plugins */
@@ -62,16 +100,24 @@ module.exports = () => {
     /* production webpack plugins */
     plugins.push(
       /* compiles SCSS to a single CSS file */
+      new InlineChunkHtmlPlugin(HtmlWebpackPlugin, [/runtime/]),
+      /* removes moment locales */
+      new IgnorePlugin(/^\.\/locale$/, /moment$/),
       new MiniCssExtractPlugin({
         filename: `${cssFolder}/[name].[contenthash:8].css`,
-        chunkFilename: `[id].[contenthash:8].css`,
+        chunkFilename: `${cssFolder}/[id].[contenthash:8].css`,
       }),
-      /* removes old build folder for each new compile */
-      new CleanWebpackPlugin({
-        dry: !!PORT,
-      }),
+      /* copies some files from public to dist on build */
+      new CopyWebpackPlugin([
+        { from: 'public/robots.txt' },
+        { from: 'public/manifest.json' },
+        { from: 'public/logo_512.png' },
+        { from: 'public/logo_192.png' },
+      ]),
+      /* runs bundle analyzer if in staging */
+      inStaging && ANALYZE && new BundleAnalyzerPlugin(),
     );
   }
 
-  return plugins;
+  return plugins.filter(Boolean);
 };
