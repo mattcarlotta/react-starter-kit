@@ -1,5 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin').loader;
-const { fontsFolder, localCSS } = require('./paths');
+const { fontsFolder } = require('./paths');
 const { inDevelopment, localIdentName } = require('./envs');
 
 // =============================================================== //
@@ -51,9 +51,9 @@ const cssRule = ({ include, exclude, modules, sourceMap, test }) => ({
 });
 
 const cssRegex = /\.css$/;
-const cssModuleRegex = /\.css$/;
-const sassRegex = /\.(scss|sass)$/;
-const sassModuleRegex = /.(scss|sass)$/;
+const cssModuleRegex = /\.module\.css$/;
+const scssRegex = /\.scss$/;
+const scssModuleRegex = /\.module\.scss$/;
 
 /* webpack module rules */
 const rules = [
@@ -85,19 +85,19 @@ const rules = [
   }),
   /* handle css modules */
   cssRule({
-    test: cssModuleRegex,
-    include: [localCSS],
+    test: cssRegex,
+    include: [cssModuleRegex],
     modules: true,
   }),
-  /* handle sass */
+  /* handle scss */
   cssRule({
-    test: sassRegex,
-    exclude: sassModuleRegex,
+    test: scssRegex,
+    exclude: scssModuleRegex,
   }),
-  /* handle sass modules */
+  /* handle scss modules */
   cssRule({
-    test: sassModuleRegex,
-    include: [localCSS],
+    test: scssRegex,
+    include: scssModuleRegex,
     modules: true,
   }),
 ];
