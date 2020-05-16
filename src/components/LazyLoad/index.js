@@ -45,7 +45,6 @@ LazyLoad.propTypes = {
   file: PropTypes.string.isRequired,
 };
 
-const Lazy = file => props => <LazyLoad {...props} file={file} />;
+export default file => props => <LazyLoad {...props} file={file} />;
 
-export default Lazy;
 /* eslint-enable no-console */
