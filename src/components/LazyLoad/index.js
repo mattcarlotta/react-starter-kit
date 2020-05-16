@@ -25,7 +25,7 @@ class LazyLoad extends Component {
 
       if (!this.cancelImport) this.setState({ Component: file });
     } catch (err) {
-      this.setState({ err: err.toString() });
+      if (!this.cancelImport) this.setState({ err: err.toString() });
       console.error(err.toString());
     }
   };
