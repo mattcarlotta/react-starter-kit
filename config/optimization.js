@@ -1,6 +1,6 @@
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-const { inDevelopment } = require('./envs');
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
+const { inDevelopment } = require("./envs");
 
 // =============================================================== //
 // WEBPACK OPTIMATIZATIONS                                         //
@@ -55,10 +55,10 @@ const optimization = {
     new OptimizeCSSAssetsPlugin(cssProcessorOptions),
   ],
   /* keep run time chunk to a single chunk */
-  runtimeChunk: 'single',
+  runtimeChunk: "single",
+  /* split all chunks if possible */
   splitChunks: {
-    //   /* split all chunks if possible */
-    chunks: 'all',
+    chunks: "all",
     maxInitialRequests: Infinity,
     minSize: 0,
     //   /* group chunks by vendor to reduce large chunking */
