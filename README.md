@@ -47,6 +47,7 @@
 ├── src
 |   ├── actions
 |   ├── components
+|   ├── constants
 |   ├── containers
 |   ├── images
 |   ├── pages
@@ -54,7 +55,6 @@
 |   ├── root
 |   ├── routes
 |   ├── styles
-|   ├── types
 |   ├── utils
 |   └── index.js
 |
@@ -72,29 +72,30 @@
  git clone git@github.com:mattcarlotta/react-starter-kit.git
 ```
 
-2 - Run `yarn install` to install dependencies.
+2 - Run `yarn` or `npm install` to install dependencies.
 
-3 - While at the application's root directory, start the `webpack-dev-server` by running `yarn dev`.
+3 - Run `yarn dev` or `npm run dev` to start a development server.
 
 ## Commands
 
 | `yarn <command>` | Description                                                              |
 | ---------------- | ------------------------------------------------------------------------ |
-| `dev`            | Starts a development server at `localhost:3000`.                         |
-| `start`          | Starts a production server at `localhost:8080` (must run `build` first). |
-| `build`          | Compiles application to a `dist` folder.                                 |
 | `analyze`        | Compiles application to a `dist` folder and analyzes chunk distribution. |
+| `build`          | Compiles application to a `dist` folder.                                 |
+| `dev`            | Starts a development server at `localhost:3000`.                         |
+| `format`         | Prettify all `.js` files.                                                |
 | `lint:js`        | Lint all `.js` files.                                                    |
 | `lint:styles`    | Lint all `.scss` files.                                                  |
-| `format`         | Prettify all `.js` files.                                                |
-| `test`           | Runs and watches all `.test.js` files.                                   |
-| `test:coverage`  | Runs a coverage report for `.test.js` files.                             |
+| `start`          | Starts a production server at `localhost:8080` (must run `build` first). |
+| `test`           | Runs all `.test.js` files once.                                          |
+| `test:cov`       | Runs a coverage report for `.test.js` files in `src`.                    |
+| `test:watch`     | Runs and watches all `.test.js` files.                                   |
 
 ## Configuration
 
 <details>
 <summary>Click to expand configuration</summary>
-<pre><code>
+
 - config/devServer.js: webpack devServer options.
 - config/envs.js: webpack environment variables.
 - config/optimization.js: webpack optimization options.
@@ -104,10 +105,10 @@
 - config/rules.js: webpack rules functions.
 - src/styles/assets: media assets imports.
 - src/styles/extensions: partial shared extensions.
-- src/styles/globals: global asset imports (see notes in <a href="https://github.com/mattcarlotta/react-starter-kit/blob/master/src/styles/globals/globals.scss#L1-L32">global.scss</a> for important information).
+- src/styles/globals: global asset imports (see notes in [global.scss](src/styles/globals/globals.scss#L1-L32) for important information).
 - src/styles/variables: partial shared variables.
-- src/styles/styles.scss: indexed partial files for easier sharing (see notes in <a href="https://github.com/mattcarlotta/react-starter-kit/blob/master/src/styles/styles.scss#L1-L48">styles.scss</a> for important information).
-- src/utils/setup/setupTest.js: enzyme test setup for your React components (see <a href="https://github.com/mattcarlotta/react-starter-kit/blob/master/src/utils/setup/setupTests.js#L8-L16">notes</a> in setup.js for important information).
+- src/styles/styles.scss: indexed partial files for easier sharing (see notes in [styles.scss](src/styles/styles.scss#L1-L48) for important information).
+- src/utils/setupTests/index.js: enzyme test setup for your React components (see [notes](src/utils/setupTests/index.js#L8-L16) in setup.js for important information).
 - .babelrc: babel config for react js files.
 - .browserslistrc: browsers list config.
 - .eslintignore: eslint config for ignoring scss files.
@@ -117,13 +118,15 @@
 - jest.json: jest config.
 - server.js: an express configuration to serve production assets.
 - webpack.config.js: a single webpack environment based config.
-</code></pre>
+
 </details>
 <br />
 
+By default, any directories within `src` are aliased (`~`). This means that you can refer to root files or directories by using the `~` symbol followed by a child file or directory name. For example, `~reducers`, refers to the root `reducers/index.js` file, while `~reducers/Messages` refers to the child `reducers/Messages/index.js` file. This allows for rapid development when referring to root-level directories within src as it eliminates the hassle of specifiying relative paths (like `../../../../../../../reducers`) to the directory!
+
 ## Packages Incorporated
 
-To see the latest package versions, please check out the <a href="https://github.com/mattcarlotta/react-starter-kit/blob/master/package.json#L89-L187">package.json</a>. If you run into any issues, please fill out an issue report <a href="https://github.com/mattcarlotta/react-starter-kit/issues">here</a>.
+To see the latest package versions, please check out the [package.json](package.json). If you run into any issues, please fill out an issue report <a href="https://github.com/mattcarlotta/react-starter-kit/issues">here</a>.
 
 <details>
 <summary>Click to expand brief overview of packages</summary>
@@ -149,7 +152,6 @@ To see the latest package versions, please check out the <a href="https://github
 - <a href="https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom">React Router Dom</a>
 - <a href="https://github.com/reduxjs/redux">Redux</a>
 - <a href="https://github.com/zalmoxisus/redux-devtools-extension">Redux DevTools Extension</a>
-- <a href="https://redux-form.com/">Redux Form</a>
 - <a href="https://github.com/reduxjs/redux-thunk">Redux Thunk</a>
 - <a href="https://github.com/webpack-contrib/sass-loader">Sass Loader</a>
 - <a href="https://stylelint.io/">Stylelint</a>

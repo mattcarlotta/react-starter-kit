@@ -1,8 +1,4 @@
-const {
-  DefinePlugin,
-  HotModuleReplacementPlugin,
-  IgnorePlugin,
-} = require('webpack');
+const { DefinePlugin, HotModuleReplacementPlugin } = require('webpack');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin;
 const InlineChunkHtmlPlugin = require('react-dev-utils/InlineChunkHtmlPlugin');
@@ -20,14 +16,7 @@ const {
   publicPath,
   templatePath,
 } = require('./paths');
-const {
-  ANALYZE,
-  APIPORT,
-  inDevelopment,
-  inStaging,
-  NODE_ENV,
-  PORT,
-} = require('./envs');
+const { ANALYZE, APIPORT, inDevelopment, NODE_ENV, PORT } = require('./envs');
 
 // =============================================================== //
 // WEBPACK PLUGINS                                                 //
@@ -81,7 +70,7 @@ const plugins = [
     fileName: 'asset-manifest.json',
     publicPath,
     generate: (seed, files) => {
-      const manifestFiles = files.reduce(function(manifest, file) {
+      const manifestFiles = files.reduce(function (manifest, file) {
         manifest[file.name] = file.path;
         return manifest;
       }, seed);
@@ -106,22 +95,22 @@ if (inDevelopment) {
   plugins.push(
     /* compiles SCSS to a single CSS file */
     new InlineChunkHtmlPlugin(HtmlWebpackPlugin, [/runtime/]),
-    /* removes moment locales */
-    new IgnorePlugin(/^\.\/locale$/, /moment$/),
+    /* extracts CSS to dist folder */
     new MiniCssExtractPlugin({
       filename: `${cssFolder}/[name].[contenthash:8].css`,
       chunkFilename: `${cssFolder}/[id].[contenthash:8].css`,
     }),
     /* copies some files from public to dist on build */
-    new CopyWebpackPlugin([
-      { from: 'public/robots.txt' },
-      { from: 'public/manifest.json' },
-      { from: 'public/logo_512.png' },
-      { from: 'public/logo_192.png' },
-    ]),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'public/robots.txt' },
+        { from: 'public/manifest.json' },
+        { from: 'public/logo_512.png' },
+        { from: 'public/logo_192.png' },
+      ],
+    }),
     /* runs bundle analyzer if in staging */
-    inStaging &&
-      ANALYZE &&
+    ANALYZE &&
       new BundleAnalyzerPlugin({
         analyzerMode: 'static',
         reportFilename: analyzePath,

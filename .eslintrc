@@ -24,10 +24,13 @@
   ],
   "rules": {
     "indent": 0,
+    "no-nested-ternary": 0,
     "no-param-reassign": 0,
     "no-return-assign": 0,
     "no-shadow": 0,
     "react/no-string-refs": 0,
+    "react/state-in-constructor": 0,
+    "react/jsx-props-no-spreading": 0,
     "react/prefer-stateless-function": "warn",
     "react/self-closing-comp": [
       "warn",

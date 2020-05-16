@@ -1,6 +1,6 @@
 {
-  "verbose": false,
   "testEnvironment": "jsdom",
+  "clearMocks": true,
   "moduleDirectories": ["src", "node_modules"],
   "moduleNameMapper": {
     ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/utils/__mocks__/fileMock.js",
@@ -10,6 +10,7 @@
     "^.+\\.(js|jsx)$": "babel-jest",
     ".+\\.(css|styl|less|sass|scss)$": "<rootDir>/node_modules/jest-css-modules-transform"
   },
-  "setupFilesAfterEnv": ["<rootDir>/src/utils/setup/setupTests.js"],
+  "collectCoverageFrom": ["src/**/*.{js,jsx}"],
+  "setupFilesAfterEnv": ["<rootDir>/src/utils/setupTests/index.js"],
   "moduleFileExtensions": ["css", "scss", "js", "json", "jsx"]
 }

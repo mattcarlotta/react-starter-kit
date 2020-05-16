@@ -1,18 +1,16 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-
-import Home from 'pages/Home';
-import Message from 'containers/PopMessage';
-import NotFound from 'pages/NotFound';
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+import MessageContainer from "~containers/MessageContainer";
+import LazyLoad from "~components/LazyLoad";
 
 const Routes = () => (
-  <div>
-    <Message />
+  <>
+    <MessageContainer />
     <Switch>
-      <Route exact path="/" component={Home} />
-      <Route component={NotFound} />
+      <Route exact path="/" component={LazyLoad("Home")} />
+      <Route component={LazyLoad("NotFound")} />
     </Switch>
-  </div>
+  </>
 );
 
 export default Routes;

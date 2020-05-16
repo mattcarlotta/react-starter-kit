@@ -59,8 +59,8 @@ const optimization = {
   splitChunks: {
     //   /* split all chunks if possible */
     chunks: 'all',
-    //   maxInitialRequests: Infinity,
-    //   minSize: 0,
+    maxInitialRequests: Infinity,
+    minSize: 0,
     //   /* group chunks by vendor to reduce large chunking */
     //   cacheGroups: {
     //     vendors: {

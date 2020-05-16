@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { notfound, notfoundContainer } from './styles.scss';
+import React from "react";
+import { Link } from "react-router-dom";
+import { notfound, notfoundContainer } from "./NotFound.module.scss";
 
-export default () => (
+const NotFound = () => (
   <div className={notfoundContainer}>
     <div className={notfound}>
       <h1>404 - Page Not Found!</h1>
@@ -10,3 +10,5 @@ export default () => (
     </div>
   </div>
 );
+
+export default NotFound;

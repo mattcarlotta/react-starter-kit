@@ -1,15 +1,13 @@
-import { reducer as formReducer } from 'redux-form';
-import { combineReducers } from 'redux';
-import { connectRouter } from 'connected-react-router';
-import serverReducer from './server';
+import { combineReducers } from "redux";
+import { connectRouter } from "connected-react-router";
+import messageReducer from "./Messages";
 
 const reducers = {
-  server: serverReducer,
+  message: messageReducer,
 };
 
 export default history =>
   combineReducers({
     router: connectRouter(history),
-    form: formReducer,
     ...reducers,
   });
