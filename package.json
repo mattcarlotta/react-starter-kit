@@ -32,16 +32,13 @@
     "*.{js,jsx}": [
       "npm run format",
       "npm run lint:js",
-      "npm run test",
-      "git add"
+      "npm run test"
     ],
     "*.scss": [
-      "stylelint **/*.scss",
-      "git add"
+      "stylelint **/*.scss"
     ],
     "*.{json,md}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   },
   "dependencies": {
