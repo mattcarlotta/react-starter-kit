@@ -1,6 +1,6 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin').loader;
-const { fontsFolder } = require('./paths');
-const { inDevelopment, localIdentName } = require('./envs');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin").loader;
+const { fontsFolder } = require("./paths");
+const { inDevelopment, localIdentName } = require("./envs");
 
 // =============================================================== //
 // WEBPACK RULES                                                   //
@@ -8,7 +8,7 @@ const { inDevelopment, localIdentName } = require('./envs');
 
 /* defines a javascript rule */
 const jsRule = ({ enforce, loader, options }) => ({
-  enforce: enforce || 'post',
+  enforce: enforce || "post",
   test: /\.(js|jsx)$/,
   loader,
   exclude: /(node_modules)/,
@@ -20,7 +20,7 @@ const mediaRule = ({ test, outputPath }) => ({
   test,
   use: [
     {
-      loader: 'file-loader',
+      loader: "file-loader",
       options: {
         outputPath,
       },
@@ -34,19 +34,19 @@ const cssRule = ({ include, exclude, modules, sourceMap, test }) => ({
   include,
   exclude,
   use: [
-    inDevelopment ? 'style-loader' : MiniCssExtractPlugin,
+    inDevelopment ? "style-loader" : MiniCssExtractPlugin,
     {
-      loader: 'css-loader',
+      loader: "css-loader",
       options: {
         sourceMap: sourceMap || !inDevelopment,
         modules: {
-          mode: modules ? 'local' : 'global',
+          mode: modules ? "local" : "global",
           localIdentName,
         },
-        localsConvention: 'camelCase',
+        localsConvention: "camelCase",
       },
     },
-    'sass-loader',
+    "sass-loader",
   ],
 });
 
@@ -59,15 +59,15 @@ const scssModuleRegex = /\.module\.scss$/;
 const rules = [
   /* lints JS files on compilation */
   jsRule({
-    enforce: 'pre',
-    loader: 'eslint-loader',
+    enforce: "pre",
+    loader: "eslint-loader",
     options: {
       emitWarning: inDevelopment,
     },
   }),
   /* handle React JS files */
   jsRule({
-    loader: 'babel-loader',
+    loader: "babel-loader",
     options: {
       cacheDirectory: inDevelopment,
       cacheCompression: false,
@@ -75,7 +75,7 @@ const rules = [
   }),
   /* handle font assets */
   mediaRule({
-    test: /\.(woff2|ttf|woff|eot|svg)$/,
+    test: /\.(woff2|ttf|woff|eot|svg|png|jpg|jpeg)$/,
     outputPath: fontsFolder,
   }),
   /* handle css */
