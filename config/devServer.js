@@ -1,5 +1,5 @@
-const { outputPath, publicFolder } = require('./paths');
-const { inDevelopment, PORT } = require('./envs');
+const { outputPath, publicFolder } = require("./paths");
+const { inDevelopment, PORT } = require("./envs");
 
 // =============================================================== //
 // WEBPACK DEV SERVER CONFIGURATION                                //
@@ -8,7 +8,7 @@ const { inDevelopment, PORT } = require('./envs');
 /* webpack dev server options */
 module.exports = {
   /* where to host */
-  host: 'localhost',
+  host: "localhost",
   /* current port to host on */
   port: PORT,
   /* suppresses compiled information */
@@ -28,9 +28,9 @@ module.exports = {
     poll: false,
   },
   /* keep stats to minimal (only outputs for errors or new compilations) */
-  stats: 'minimal',
-  /* keep stats to minimal (only outputs for errors or new compilations) */
+  stats: "minimal",
+  /* reloads when public/dist folder has been changed */
   contentBase: inDevelopment ? publicFolder : outputPath,
-  /*  watches changes in files/folders specified in contentBase */
+  /* watches changes in files/folders specified in contentBase */
   watchContentBase: true,
 };

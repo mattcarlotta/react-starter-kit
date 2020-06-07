@@ -1,22 +1,22 @@
-const { DefinePlugin, HotModuleReplacementPlugin } = require('webpack');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+const { DefinePlugin, HotModuleReplacementPlugin } = require("webpack");
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin;
-const InlineChunkHtmlPlugin = require('react-dev-utils/InlineChunkHtmlPlugin');
-const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
-const WebpackBar = require('webpackbar');
-const ManifestPlugin = require('webpack-manifest-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const InlineChunkHtmlPlugin = require("react-dev-utils/InlineChunkHtmlPlugin");
+const ErrorOverlayPlugin = require("error-overlay-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
+const WebpackBar = require("webpackbar");
+const ManifestPlugin = require("webpack-manifest-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const {
   analyzePath,
   cssFolder,
   faviconPath,
   publicPath,
   templatePath,
-} = require('./paths');
-const { ANALYZE, APIPORT, inDevelopment, NODE_ENV, PORT } = require('./envs');
+} = require("./paths");
+const { ANALYZE, APIPORT, inDevelopment, NODE_ENV, PORT } = require("./envs");
 
 // =============================================================== //
 // WEBPACK PLUGINS                                                 //
@@ -38,7 +38,7 @@ notes.push(
 const plugins = [
   /* shows a compilation bar instead of the default compile message */
   new WebpackBar({
-    color: '#268bd2',
+    color: "#268bd2",
     minimal: false,
     compiledIn: false,
   }),
@@ -59,7 +59,7 @@ const plugins = [
   }),
   /* webpack ENV files */
   new DefinePlugin({
-    'process.env': {
+    "process.env": {
       APIPORT: JSON.stringify(APIPORT),
       NODE_ENV: JSON.stringify(NODE_ENV),
       PORT: JSON.stringify(PORT),
@@ -67,7 +67,7 @@ const plugins = [
   }),
   /* generates a manifest for all assets */
   new ManifestPlugin({
-    fileName: 'asset-manifest.json',
+    fileName: "asset-manifest.json",
     publicPath,
     generate: (seed, files) => {
       const manifestFiles = files.reduce(function (manifest, file) {
@@ -103,16 +103,16 @@ if (inDevelopment) {
     /* copies some files from public to dist on build */
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'public/robots.txt' },
-        { from: 'public/manifest.json' },
-        { from: 'public/logo_512.png' },
-        { from: 'public/logo_192.png' },
+        { from: "public/robots.txt" },
+        { from: "public/manifest.json" },
+        { from: "public/logo_512.png" },
+        { from: "public/logo_192.png" },
       ],
     }),
     /* runs bundle analyzer if in staging */
     ANALYZE &&
       new BundleAnalyzerPlugin({
-        analyzerMode: 'static',
+        analyzerMode: "static",
         reportFilename: analyzePath,
       }),
   );

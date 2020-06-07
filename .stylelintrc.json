@@ -4,7 +4,7 @@
   "rules": {
     "indentation": 2,
     "number-leading-zero": "always",
-    "string-quotes": "single",
+    "string-quotes": "double",
     "selector-max-id": 0,
     "selector-list-comma-newline-after": "always-multi-line",
     "rule-empty-line-before": [

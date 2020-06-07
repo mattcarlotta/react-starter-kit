@@ -1,5 +1,5 @@
-const { resolve } = require('path');
-const { currentDirectory } = require('./envs');
+const { resolve } = require("path");
+const { currentDirectory } = require("./envs");
 
 // =============================================================== //
 // WEBPACK PATHS                                                   //
@@ -9,7 +9,7 @@ module.exports = {
   /* project root directory */
   root: resolve(`${currentDirectory}`),
   /* project publicPath */
-  publicPath: '/',
+  publicPath: "/",
   /* compiled build output path (/dist) */
   outputPath: resolve(`${currentDirectory}/dist`),
   /* path to public folder (./public) */
@@ -27,11 +27,11 @@ module.exports = {
   /* path to required ant design icons */
   icons: resolve(`${currentDirectory}/src/utils/icons/index.js`),
   /* analyzed client assets (next/analyze/client.html) */
-  analyzePath: './analyze/client.html',
+  analyzePath: "./analyze/client.html",
   /* compiled fonts build path (build/assets) */
-  fontsFolder: 'assets',
+  fontsFolder: "assets",
   /* compiled CSS build path (build/css) */
-  cssFolder: 'css',
+  cssFolder: "css",
   /* compiled JS build path (build/js) */
-  jsFolder: 'js',
+  jsFolder: "js",
 };

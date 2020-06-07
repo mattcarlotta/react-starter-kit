@@ -1,5 +1,5 @@
-const { jsFolder, outputPath, publicPath } = require('./paths');
-const { inDevelopment } = require('./envs');
+const { jsFolder, outputPath, publicPath } = require("./paths");
+const { inDevelopment } = require("./envs");
 
 // =============================================================== //
 // WEBPACK COMPILATION OUTPUT                                      //
@@ -7,10 +7,10 @@ const { inDevelopment } = require('./envs');
 
 /* webpack compile output options */
 module.exports = {
-  filename: inDevelopment ? '[name].js' : `${jsFolder}/[name].[hash].js`,
+  filename: inDevelopment ? "[name].js" : `${jsFolder}/[name].[hash].js`,
   path: outputPath,
   chunkFilename: inDevelopment
-    ? '[name].js'
+    ? "[name].js"
     : `${jsFolder}/[name].[chunkhash].js`,
   publicPath,
 };
