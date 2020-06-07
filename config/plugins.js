@@ -93,7 +93,7 @@ if (inDevelopment) {
 } else {
   /* production webpack plugins */
   plugins.push(
-    /* compiles SCSS to a single CSS file */
+    /* generates an inline runtime chunk script within the index.html */
     new InlineChunkHtmlPlugin(HtmlWebpackPlugin, [/runtime/]),
     /* extracts CSS to dist folder */
     new MiniCssExtractPlugin({
